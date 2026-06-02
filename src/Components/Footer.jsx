@@ -7,7 +7,6 @@ const quickLinks = [
   ['How We Work', '#/howwework'],
   ['Projects', '#/projects'],
   ['Career', '#/career'],
-  ['Contact', '#/contact'],
 ]
 
 const footerServices = [
@@ -19,7 +18,11 @@ const footerServices = [
   ['Cloud & DevOps', '#/services/cloud-devops'],
 ]
 
-const socialLinks = ['in', 'ln', 'fb']
+const socialLinks = [
+  ['linkedin', 'LinkedIn', 'https://www.linkedin.com/company/delveflow/'],
+  ['instagram', 'Instagram', 'https://www.instagram.com/delveflow?igsh=MXh0bGtibTJqcDZucg=='],
+  ['facebook', 'Facebook', 'https://www.facebook.com/share/1AMUv5tXQB/'],
+]
 
 const icons = {
   mail: (
@@ -39,9 +42,28 @@ const icons = {
       <circle cx="12" cy="9" r="2.5" fill="none" stroke="currentColor" strokeWidth="2" />
     </svg>
   ),
+  linkedin: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
+      <path d="M6.5 9.5V18M10.5 18v-8.5M10.5 13.2c0-2.4 5-2.9 5 1.1V18M6.5 6.4v.1" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" />
+    </svg>
+  ),
+  instagram: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
+      <rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="currentColor" strokeWidth="2" />
+      <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" strokeWidth="2" />
+      <circle cx="16.4" cy="7.7" r="0.8" fill="currentColor" />
+    </svg>
+  ),
+  facebook: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
+      <path d="M14.5 8.2h-1.6c-1 0-1.4.5-1.4 1.5V12h3l-.5 3h-2.5v5M9 12h5" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+    </svg>
+  ),
 }
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear()
+
   return (
     <footer className="relative overflow-hidden bg-[#06172b] px-5 py-12 text-white lg:px-12">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(56,185,223,0.18),transparent_30%),radial-gradient(circle_at_86%_20%,rgba(18,145,111,0.18),transparent_28%),linear-gradient(135deg,#06172b_0%,#0b3765_58%,#082443_100%)]" />
@@ -49,7 +71,7 @@ const Footer = () => {
         <div className="grid gap-10 lg:grid-cols-[1.25fr_0.9fr_1fr_1.25fr]">
           <div>
             <a className="mb-6 inline-flex items-center gap-3" href="#/home" aria-label="DF home">
-              <span className="grid h-12 w-[78px] place-items-center rounded-md bg-white/95 p-1.5 shadow-sm">
+              <span className="grid h-12 w-[78px] place-items-center">
                 <img className="h-full w-full object-contain" src={dfLogoMark} alt="" aria-hidden="true" />
               </span>
               {/* <span className="text-xl font-black text-white">Df Solutions</span> */}
@@ -59,14 +81,16 @@ const Footer = () => {
               expert team.
             </p>
             <div className="mt-7 flex gap-3">
-              {socialLinks.map((item) => (
+              {socialLinks.map(([icon, label, href]) => (
                 <a
-                  className="grid h-9 w-9 place-items-center rounded-md bg-white/10 text-sm font-black text-[#aee8ff] ring-1 ring-white/15 transition hover:bg-[#38b9df] hover:text-[#06172b]"
-                  href="#/contact"
-                  key={item}
-                  aria-label={`DF social ${item}`}
+                  className="grid h-10 w-10 place-items-center rounded-lg bg-[#e9edf3] text-[#06172b] transition hover:bg-[#38b9df] hover:text-[#06172b]"
+                  href={href}
+                  key={icon}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`DF ${label}`}
                 >
-                  {item}
+                  {icons[icon]}
                 </a>
               ))}
             </div>
@@ -114,7 +138,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-10 flex flex-col justify-between gap-5 border-t border-white/15 pt-7 text-sm text-[#c7e5f8] md:flex-row">
-          <span>(c) 2026 Df Solutions. All rights reserved.</span>
+          <span>© {currentYear} Encova Solutions. All rights reserved.</span>
           <div className="flex flex-wrap gap-6">
             <a className="hover:text-[#38b9df]" href="#/terms">Terms of Service</a>
             <a className="hover:text-[#38b9df]" href="#/privacy">Privacy Policy</a>

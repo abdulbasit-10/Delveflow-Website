@@ -115,13 +115,13 @@ const Career = () => {
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {benefits.map(([icon, title, text], index) => (
-            <article className={`group rounded-xl border-2 bg-white p-6 shadow-[0_14px_34px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_20px_48px_rgba(8,36,67,0.16)] ${index === 1 ? 'border-[#0b3765]' : 'border-[#c8d3df]'}`} key={title}>
-              <span className={`mb-6 grid h-14 w-14 place-items-center rounded-lg transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df] ${index === 1 ? 'bg-[#082443] text-[#38b9df]' : 'bg-[#f7fbff] text-[#0b3765]'}`}>
+          {benefits.map(([icon, title, text]) => (
+            <article className="group rounded-xl border-2 border-[#c8d3df] bg-white p-5 shadow-[0_12px_28px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_18px_40px_rgba(8,36,67,0.16)] active:border-[#0b3765]" key={title}>
+              <span className="mb-5 grid h-12 w-12 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df] group-active:bg-[#082443] group-active:text-[#38b9df]">
                 {benefitIcons[icon]}
               </span>
-              <h3 className="mb-4 text-lg font-black text-[#06172b]">{title}</h3>
-              <p className="leading-7 text-[#27445f]">{text}</p>
+              <h3 className="mb-3 text-lg font-black text-[#06172b]">{title}</h3>
+              <p className="leading-6 text-[#27445f]">{text}</p>
             </article>
           ))}
         </div>
@@ -137,12 +137,12 @@ const Career = () => {
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {careerValues.map(([icon, title, text]) => (
-              <article className="group rounded-xl border-2 border-[#c8d3df] bg-white px-7 py-8 text-center shadow-[0_14px_34px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_20px_48px_rgba(8,36,67,0.16)]" key={title}>
-                <span className="mx-auto mb-5 grid h-14 w-14 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">
+              <article className="group rounded-xl border-2 border-[#c8d3df] bg-white px-6 py-7 text-center shadow-[0_12px_28px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_18px_40px_rgba(8,36,67,0.16)]" key={title}>
+                <span className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">
                   {benefitIcons[icon]}
                 </span>
-                <h3 className="mb-4 text-lg font-black text-[#06172b]">{title}</h3>
-                <p className="leading-7 text-[#27445f]">{text}</p>
+                <h3 className="mb-3 text-lg font-black text-[#06172b]">{title}</h3>
+                <p className="leading-6 text-[#27445f]">{text}</p>
               </article>
             ))}
           </div>
@@ -156,13 +156,13 @@ const Career = () => {
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {process.map(([icon, title, text], index) => (
-            <article className="rounded-xl border-2 border-[#c8d3df] bg-white px-6 py-8 text-center shadow-[0_14px_34px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_20px_48px_rgba(8,36,67,0.16)]" key={title}>
-              <span className="mx-auto mb-5 grid h-12 w-12 place-items-center rounded-full bg-[#06172b] text-lg font-black text-white">{index + 1}</span>
-              <span className="mx-auto mb-5 grid h-12 w-12 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765]">
+            <article className="rounded-xl border-2 border-[#c8d3df] bg-white px-6 py-7 text-center shadow-[0_12px_28px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_18px_40px_rgba(8,36,67,0.16)]" key={title}>
+              <span className="mx-auto mb-4 grid h-11 w-11 place-items-center rounded-full bg-[#06172b] text-base font-black text-white">{index + 1}</span>
+              <span className="mx-auto mb-4 grid h-11 w-11 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765]">
                 {processIcons[icon]}
               </span>
               <h3 className="mb-3 font-black text-[#06172b]">{title}</h3>
-              <p className="leading-7 text-[#27445f]">{text}</p>
+              <p className="leading-6 text-[#27445f]">{text}</p>
             </article>
           ))}
         </div>

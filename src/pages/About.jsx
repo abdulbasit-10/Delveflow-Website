@@ -1,3 +1,6 @@
+import abdulBasitPhoto from '../assets/abdul-basit.jpg'
+import warishaAsadPhoto from '../assets/warisha-asad.jpeg'
+
 const icons = {
   award: (
     <svg viewBox="0 0 24 24" aria-hidden="true" className="h-9 w-9">
@@ -74,11 +77,10 @@ const values = [
 ]
 
 const experts = [
-  ['WA', 'Warisha Asad', 'CEO & Founder', 'Visionary leader with 3+ years in Tech Industry'],
-  ['AB', 'Abdul Basit', 'Co-Founder', 'Shaping businesses with executive foresight.'],
-  ['AN', 'Arifa Naveed', 'Chief Operation Officer', 'Building reliable systems requires both technical depth and strategic vision.'],
-  ['AA', 'Ayesha Aman', 'Senior Flutter Developers', 'Efficient solutions stem from clean architecture and thoughtful design.'],
-  ['AS', 'Aqsa Siddique ', 'Software Engineer', 'Shaping businesses with executive foresight.'],
+  ['WA', 'Warisha Asad', 'CEO & Founder', 'Visionary leader with 3+ years in Tech Industry', 'https://www.linkedin.com/in/warisha-asad-6259203b0/', warishaAsadPhoto],
+  ['AB', 'Abdul Basit', 'Co-Founder', 'Shaping businesses with executive foresight.', 'https://www.linkedin.com/in/abdul-basit-1039b522b/', abdulBasitPhoto],
+  ['AN', 'Arifa Naveed', 'Chief Operation Officer', 'Building reliable systems requires both technical depth and strategic vision.', 'https://www.linkedin.com/in/arifa-naveed-2a79773a5/'],
+  ['AS', 'Aqsa Siddique ', 'Chief Technology Officer', 'Shaping businesses with executive foresight.', '#/contact'],
 
 ]
 
@@ -144,12 +146,12 @@ const About = () => {
           </div>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {values.map(([icon, title, text]) => (
-              <article className="group rounded-xl border-2 border-[#c8d3df] bg-white px-4 py-4 text-center shadow-[0_14px_34px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_20px_48px_rgba(8,36,67,0.16)]" key={title}>
-                <span className="mx-auto mb-5 grid h-14 w-14 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">
+              <article className="group rounded-xl border-2 border-[#c8d3df] bg-white px-5 py-6 text-center shadow-[0_12px_28px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_18px_40px_rgba(8,36,67,0.16)]" key={title}>
+                <span className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">
                   {icons[icon]}
                 </span>
-                <h3 className="mb-4 text-lg font-black text-[#06172b]">{title}</h3>
-                <p className="leading-7 text-[#27445f]">{text}</p>
+                <h3 className="mb-3 text-lg font-black text-[#06172b]">{title}</h3>
+                <p className="leading-6 text-[#27445f]">{text}</p>
               </article>
             ))}
           </div>
@@ -161,16 +163,26 @@ const About = () => {
           <h2 className="text-[clamp(2rem,4vw,3.4rem)] font-black text-[#06172b]">Meet The Experts</h2>
           <p className="mt-3 text-sm font-black uppercase text-[#0d5790]">Our Team</p>
         </div>
-        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-5">
-          {experts.map(([initials, name, role, text]) => (
+        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+          {experts.map(([initials, name, role, text, linkedinUrl, photo]) => (
             <article className="rounded-xl border-2 border-[#d7e5f2] bg-white px-7 py-8 text-center shadow-[0_14px_34px_rgba(6,23,43,0.06)]" key={name}>
-              <div className="mx-auto mb-6 grid h-28 w-28 place-items-center rounded-full bg-[radial-gradient(circle_at_35%_25%,#38b9df,#0b3765_62%,#06172b)] text-3xl font-black text-white">
-                {initials}
+              <div className="mx-auto mb-6 grid h-28 w-28 place-items-center overflow-hidden rounded-full bg-[radial-gradient(circle_at_35%_25%,#38b9df,#0b3765_62%,#06172b)] text-3xl font-black text-white">
+                {photo ? (
+                  <img className="h-full w-full object-cover" src={photo} alt={name} />
+                ) : (
+                  initials
+                )}
               </div>
               <h3 className="text-xl font-black text-[#06172b]">{name}</h3>
               <p className="mt-2 text-sm text-[#0d5790]">{role}</p>
               <p className="mt-4 min-h-20 leading-7 text-[#5c6f84]">{text}</p>
-              <a className="mx-auto mt-4 grid h-8 w-8 place-items-center rounded-md bg-[#082443] text-sm font-black text-[#38b9df]" href="#/contact" aria-label={`${name} LinkedIn`}>
+              <a
+                className="mx-auto mt-4 grid h-8 w-8 place-items-center rounded-md bg-[#082443] text-sm font-black text-[#38b9df]"
+                href={linkedinUrl}
+                target={linkedinUrl.startsWith('http') ? '_blank' : undefined}
+                rel={linkedinUrl.startsWith('http') ? 'noreferrer' : undefined}
+                aria-label={`${name} LinkedIn`}
+              >
                 in
               </a>
             </article>

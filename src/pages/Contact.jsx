@@ -1,12 +1,16 @@
 import { useState } from 'react'
 
 const contactItems = [
-  ['mail', 'Email', 'info@dfsolutions.com', 'mailto:info@dfsolutions.com'],
-  ['phone', 'Phone', '+92 311 9093 230', 'tel:+923119093230'],
-  ['pin', 'Address', 'Office No. TF 200, Deans Trade Center, Cantt Peshawar, Pakistan', '#/contact'],
+  ['mail', 'Email', 'info@delveflow.co', 'mailto:info@delveflow.co'],
+  ['phone', 'Phone', '+92 309 8968639', 'tel:+923098968639'],
+  ['pin', 'Address', 'Peshawar, Pakistan', '#/contact'],
 ]
 
-const socialLinks = ['in', 'x', 'f']
+const socialLinks = [
+  ['instagram', 'Instagram', 'https://www.instagram.com/delveflow?igsh=MXh0bGtibTJqcDZucg=='],
+  ['linkedin', 'LinkedIn', 'https://www.linkedin.com/company/delveflow/'],
+  ['facebook', 'Facebook', 'https://www.facebook.com/share/1AMUv5tXQB/'],
+]
 
 const icons = {
   mail: (
@@ -24,6 +28,23 @@ const icons = {
     <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
       <path d="M12 21s7-5.3 7-12a7 7 0 0 0-14 0c0 6.7 7 12 7 12z" fill="none" stroke="currentColor" strokeWidth="2" />
       <circle cx="12" cy="9" r="2.5" fill="none" stroke="currentColor" strokeWidth="2" />
+    </svg>
+  ),
+  linkedin: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
+      <path d="M6.5 9.5V18M10.5 18v-8.5M10.5 13.2c0-2.4 5-2.9 5 1.1V18M6.5 6.4v.1" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" />
+    </svg>
+  ),
+  instagram: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
+      <rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="currentColor" strokeWidth="2" />
+      <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" strokeWidth="2" />
+      <circle cx="16.4" cy="7.7" r="0.8" fill="currentColor" />
+    </svg>
+  ),
+  facebook: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
+      <path d="M14.5 8.2h-1.6c-1 0-1.4.5-1.4 1.5V12h3l-.5 3h-2.5v5M9 12h5" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
     </svg>
   ),
 }
@@ -96,7 +117,6 @@ const Contact = () => {
                   <span>
                     <strong className="block text-sm font-black text-[#06172b]">{title}</strong>
                     <span className="mt-1 block text-sm text-[#0b3765]">{value}</span>
-                    {title === 'Address' && <small className="mt-2 block text-xs text-[#0b3765]">View on Map -&gt;</small>}
                   </span>
                 </a>
               ))}
@@ -105,9 +125,16 @@ const Contact = () => {
             <div className="mt-6">
               <h3 className="mb-3 text-base font-black text-[#06172b]">Follow us</h3>
               <div className="flex gap-3">
-                {socialLinks.map((item) => (
-                  <a className="grid h-9 w-9 place-items-center rounded-md border border-[#b9d8ed] bg-white text-sm font-black text-[#0b3765] transition hover:border-[#0b3765] hover:bg-[#06172b] hover:text-[#38b9df]" href="#/contact" key={item} aria-label={`DF social ${item}`}>
-                    {item}
+                {socialLinks.map(([icon, label, href]) => (
+                  <a
+                    className="grid h-10 w-10 place-items-center rounded-lg bg-[#e9edf3] text-[#06172b] transition hover:bg-[#38b9df] hover:text-[#06172b]"
+                    href={href}
+                    key={icon}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`DF ${label}`}
+                  >
+                    {icons[icon]}
                   </a>
                 ))}
               </div>
