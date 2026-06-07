@@ -100,15 +100,20 @@ const Home = ({ services }) => {
       <section className="relative overflow-hidden bg-[#06172b]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(56,185,223,0.28),transparent_30%),radial-gradient(circle_at_82%_24%,rgba(18,145,111,0.24),transparent_28%),linear-gradient(135deg,#06172b_0%,#0b3765_55%,#082443_100%)]" />
         <div className="relative mx-auto grid min-h-[620px] w-[min(1180px,calc(100%-36px))] place-items-center py-20 text-center text-white">
-          <p className="mb-5 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-black uppercase text-[#aee8ff]">
+          {/* <p className="mb-5 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-black uppercase text-[#aee8ff]">
             Delve into problems. Flow with solutions.
-          </p>
+          </p> */}
           <h1 className="mb-6 max-w-4xl text-[clamp(2.5rem,5vw,6.2rem)] font-black leading-[0.95]">
-            Transforming Ideas Into Digital Experiences
+            <span className="text-[#FF9F00]">Delve</span> into Problems.{' '}
+            <span className="text-[#FF9F00]">Flow</span> with Solutions.
           </h1>
+          <h3 className="text-[#FF9F00]">
+            Your Business Has Problems.We Have the Digital Solutions.
+          </h3>
           <p className="max-w-3xl text-lg leading-8 text-[#c7e5f8]">
-            A leading IT company delivering custom apps, web platforms, AI solutions, custom software, cloud, and DevOps
-            services for growing businesses.
+            At Delve Flow, we don't just build software we listen, research, and engineer solutions that actually fit your business. From websites to AI automation, we deliver technology that works for you.
+            {/* A leading IT company delivering custom apps, web platforms, AI solutions, custom software, cloud, and DevOps
+            services for growing businesses. */}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[#38b9df] px-6 font-black text-[#06172b] shadow-[0_18px_42px_rgba(56,185,223,0.32)]" href="#/contact">
@@ -132,8 +137,8 @@ const Home = ({ services }) => {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.slice(0, 3).map((service) => (
-            <a className="rounded-lg border border-[#d7e5f2] bg-white p-7 shadow-[0_18px_48px_rgba(6,23,43,0.08)] transition hover:-translate-y-1 hover:border-[#38b9df]" href={`#/services/${service.slug}`} key={service.slug}>
-              <span className="mb-5 grid h-14 w-14 place-items-center rounded-lg bg-[#06172b] text-[#38b9df] shadow-[0_14px_30px_rgba(8,36,67,0.18)]">
+            <a className="group rounded-lg border border-[#d7e5f2] bg-white p-7 shadow-[0_18px_48px_rgba(6,23,43,0.08)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_20px_48px_rgba(8,36,67,0.16)]" href={`#/services/${service.slug}`} key={service.slug}>
+              <span className="mb-5 grid h-14 w-14 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765] shadow-[0_14px_30px_rgba(8,36,67,0.12)] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">
                 {serviceIcons[service.slug]}
               </span>
               <h3 className="mb-3 text-2xl font-black text-[#06172b]">{service.title}</h3>
@@ -151,7 +156,7 @@ const Home = ({ services }) => {
       <section className="bg-[#eef7ff] py-20">
         <div className="mx-auto w-[min(1180px,calc(100%-36px))]">
           <div className="mb-14 scroll-mt-28 text-center">
-            <h2 className="mb-4 text-[clamp(2rem,4vw,3.4rem)] font-black leading-tight text-[#06172b]">Why Choose Df Solutions</h2>
+            <h2 className="mb-4 text-[clamp(2rem,4vw,3.4rem)] font-black leading-tight text-[#06172b]">Why Choose Delveflow</h2>
             <p className="mx-auto max-w-3xl text-lg leading-8 text-[#27445f]">
               We combine technical expertise with business acumen to deliver solutions that drive real results.
             </p>
@@ -160,8 +165,8 @@ const Home = ({ services }) => {
           <div className="grid items-center gap-14 lg:grid-cols-[0.92fr_1.08fr]">
             <div className="grid gap-6">
               {reasons.map(([icon, title, text]) => (
-                <article className="grid grid-cols-[72px_1fr] items-center gap-5" key={title}>
-                  <span className="grid h-14 w-14 place-items-center rounded-lg bg-[#082443] text-[#38b9df] shadow-[0_12px_26px_rgba(8,36,67,0.18)]">
+                <article className="group grid grid-cols-[72px_1fr] items-center gap-5 rounded-lg border border-transparent p-3 transition duration-300 hover:-translate-y-1 hover:border-[#b9d8ed] hover:bg-white hover:shadow-[0_14px_34px_rgba(8,36,67,0.10)]" key={title}>
+                  <span className="grid h-14 w-14 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765] shadow-[0_12px_26px_rgba(8,36,67,0.12)] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">
                     {icons[icon]}
                   </span>
                   <div>
@@ -176,8 +181,8 @@ const Home = ({ services }) => {
               <h3 className="mb-10 text-center text-2xl font-black text-[#0b3765]">Our Track Record</h3>
               <div className="grid gap-x-12 gap-y-10 sm:grid-cols-2">
                 {stats.map(([icon, value, label, note]) => (
-                  <div className="text-center" key={label}>
-                    <span className="mx-auto mb-4 grid h-8 w-8 place-items-center text-[#0d5790]">{icons[icon]}</span>
+                  <div className="group rounded-lg p-3 text-center transition duration-300 hover:-translate-y-1 hover:bg-[#f7fbff]" key={label}>
+                    <span className="mx-auto mb-4 grid h-10 w-10 place-items-center rounded-lg bg-[#f7fbff] text-[#0d5790] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">{icons[icon]}</span>
                     <strong className="block text-4xl font-black leading-none text-[#06172b]">{value}</strong>
                     <span className="mt-2 block font-black text-[#06172b]">{label}</span>
                     <small className="mt-2 block text-[#0d5790]">{note}</small>

@@ -46,8 +46,8 @@ const HowWeWork = () => {
         </div>
         <div className="grid gap-7">
           {steps.map((step) => (
-            <article className="grid gap-5 rounded-lg border border-[#d7e5f2] bg-white p-6 shadow-[0_18px_48px_rgba(6,23,43,0.08)] lg:grid-cols-[84px_1fr]" key={step.title}>
-              <span className="grid h-16 w-16 place-items-center rounded-lg bg-[#06172b] text-xl font-black text-white">{step.number}</span>
+            <article className="group grid gap-5 rounded-lg border border-[#d7e5f2] bg-white p-6 shadow-[0_18px_48px_rgba(6,23,43,0.08)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_20px_48px_rgba(8,36,67,0.16)] lg:grid-cols-[84px_1fr]" key={step.title}>
+              <span className="grid h-16 w-16 place-items-center rounded-lg bg-[#f7fbff] text-xl font-black text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">{step.number}</span>
               <div>
                 <h3 className="mb-3 text-2xl font-black text-[#06172b]">{step.title}</h3>
                 <p className="mb-5 leading-7 text-[#5c6f84]">{step.text}</p>

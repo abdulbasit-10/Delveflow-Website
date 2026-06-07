@@ -156,9 +156,9 @@ const Career = () => {
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {process.map(([icon, title, text], index) => (
-            <article className="rounded-xl border-2 border-[#c8d3df] bg-white px-6 py-7 text-center shadow-[0_12px_28px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_18px_40px_rgba(8,36,67,0.16)]" key={title}>
+            <article className="group rounded-xl border-2 border-[#c8d3df] bg-white px-6 py-7 text-center shadow-[0_12px_28px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_18px_40px_rgba(8,36,67,0.16)]" key={title}>
               <span className="mx-auto mb-4 grid h-11 w-11 place-items-center rounded-full bg-[#06172b] text-base font-black text-white">{index + 1}</span>
-              <span className="mx-auto mb-4 grid h-11 w-11 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765]">
+              <span className="mx-auto mb-4 grid h-11 w-11 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">
                 {processIcons[icon]}
               </span>
               <h3 className="mb-3 font-black text-[#06172b]">{title}</h3>

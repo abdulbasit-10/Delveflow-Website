@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const contactItems = [
   ['mail', 'Email', 'info@delveflow.co', 'mailto:info@delveflow.co'],
-  ['phone', 'Phone', '+92 309 8968639', 'tel:+923098968639'],
+  ['phone', 'Phone', '+92 3469127976', 'tel:+92 3469127976'],
   ['pin', 'Address', 'Peshawar, Pakistan', '#/contact'],
 ]
 
@@ -110,8 +110,8 @@ const Contact = () => {
 
             <div className="grid gap-4">
               {contactItems.map(([icon, title, value, href]) => (
-                <a className="grid min-h-[92px] grid-cols-[44px_1fr] items-center gap-4 rounded-xl border border-transparent bg-white p-6 shadow-[0_8px_24px_rgba(6,23,43,0.04)] transition hover:border-[#b9d8ed] hover:shadow-[0_14px_34px_rgba(6,23,43,0.08)]" href={href} key={title}>
-                  <span className="grid h-9 w-9 place-items-center rounded-md bg-[#eef7ff] text-[#0b3765]">
+                <a className="group grid min-h-[92px] grid-cols-[44px_1fr] items-center gap-4 rounded-xl border border-transparent bg-white p-6 shadow-[0_8px_24px_rgba(6,23,43,0.04)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_14px_34px_rgba(6,23,43,0.10)]" href={href} key={title}>
+                  <span className="grid h-9 w-9 place-items-center rounded-md bg-[#eef7ff] text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">
                     {icons[icon]}
                   </span>
                   <span>

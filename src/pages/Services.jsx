@@ -70,10 +70,10 @@ const advantageIcons = {
 }
 
 const advantages = [
-  ['trophy', 'Proven Expertise', 'Years of experience delivering successful projects across diverse industries.'],
-  ['bulb', 'Modern Technology', 'We use the latest tools and frameworks to build cutting-edge solutions.'],
-  ['target', 'Custom Solutions', 'Tailored approaches designed to meet your unique business needs.'],
-  ['trend', 'Results Driven', 'Focused on delivering measurable outcomes that achieve your business goals.'],
+  ['trophy', 'AI-Native from Day One', 'We do not bolt AI on as an afterthought. Innovation is baked into everything we build.'],
+  ['bulb', 'Fast Turnaround', '2–3 week delivery on web projects. We respect your time and your business momentum.'],
+  ['target', 'Transparent Pricing', 'Clear packages, You know exactly what you are getting before you say yes.'],
+  ['trend', 'End-to-End Partnership', 'We stay with you after launch, maintenance, updates, and growth support.'],
 ]
 
 const Services = ({ services }) => {
@@ -93,8 +93,8 @@ const Services = ({ services }) => {
       <section className="mx-auto w-[min(1180px,calc(100%-36px))] py-16">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <article className="flex min-h-80 flex-col rounded-lg border border-[#d7e5f2] bg-white p-7 shadow-[0_18px_48px_rgba(6,23,43,0.08)]" key={service.slug}>
-              <span className="mb-5 grid h-14 w-14 place-items-center rounded-lg bg-[#06172b] text-[#38b9df] shadow-[0_14px_30px_rgba(8,36,67,0.18)]">
+            <article className="group flex min-h-80 flex-col rounded-lg border border-[#d7e5f2] bg-white p-7 shadow-[0_18px_48px_rgba(6,23,43,0.08)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_20px_48px_rgba(8,36,67,0.16)]" key={service.slug}>
+              <span className="mb-5 grid h-14 w-14 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765] shadow-[0_14px_30px_rgba(8,36,67,0.12)] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">
                 {serviceIcons[service.slug]}
               </span>
               <h2 className="mb-3 text-2xl font-black text-[#06172b]">{service.title}</h2>
@@ -118,8 +118,8 @@ const Services = ({ services }) => {
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
             {deliverySteps.map(([number, title, text]) => (
-              <article className="relative overflow-hidden rounded-xl bg-white p-8 shadow-[0_12px_30px_rgba(6,23,43,0.04)]" key={title}>
-                <span className="mb-12 grid h-11 w-11 place-items-center rounded-full bg-[#f7fbff] text-2xl font-black text-[#06172b]">{number}</span>
+              <article className="group relative overflow-hidden rounded-xl border-2 border-transparent bg-white p-8 shadow-[0_12px_30px_rgba(6,23,43,0.04)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_18px_40px_rgba(8,36,67,0.14)]" key={title}>
+                <span className="mb-12 grid h-11 w-11 place-items-center rounded-lg bg-[#f7fbff] text-2xl font-black text-[#06172b] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">{number}</span>
                 <span className="absolute right-7 top-7 text-6xl font-black leading-none text-[#06172b]/10">{number}</span>
                 <h3 className="mb-4 text-2xl font-black text-[#06172b]">{title}</h3>
                 <p className="leading-8 text-[#27445f]">{text}</p>

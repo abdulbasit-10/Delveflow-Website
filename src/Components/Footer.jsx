@@ -125,9 +125,9 @@ const Footer = () => {
                 <span className="text-[#38b9df]" aria-hidden="true">{icons.mail}</span>
                 <span>info@delveflow.co</span>
               </a>
-              <a className="grid grid-cols-[24px_1fr] gap-3 text-[#c7e5f8]" href="tel:+923098968639">
+              <a className="grid grid-cols-[24px_1fr] gap-3 text-[#c7e5f8]" href="tel:+92 3469127976">
                 <span className="text-[#38b9df]" aria-hidden="true">{icons.phone}</span>
-                <span>+92 309 8968639</span>
+                <span>+92 3469127976</span>
               </a>
               <p className="grid grid-cols-[24px_1fr] gap-3 text-[#c7e5f8]">
                 <span className="text-[#38b9df]" aria-hidden="true">{icons.pin}</span>

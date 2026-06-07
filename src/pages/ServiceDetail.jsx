@@ -1,3 +1,5 @@
+import portfolioProjects from '../data/portfolioProjects.js'
+
 const detailContent = {
   'app-development': {
     description:
@@ -139,6 +141,7 @@ const ServiceDetail = ({ service }) => {
     features: service.capabilities,
     technologies: ['React', 'APIs', 'Cloud', 'Analytics'],
   }
+  const relatedProjects = portfolioProjects.filter((project) => project.serviceSlug === service.slug).slice(0, 3)
 
   return (
     <>
@@ -155,8 +158,8 @@ const ServiceDetail = ({ service }) => {
         <h2 className="mb-10 text-center text-[clamp(2rem,4vw,3.4rem)] font-black text-[#06172b]">Key Features</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {detail.features.map((feature) => (
-            <article className="group grid min-h-[100px] grid-cols-[42px_1fr] items-center gap-4 rounded-xl border-2 border-[#d7e5f2] bg-white p-6 shadow-[0_12px_28px_rgba(6,23,43,0.05)] transition hover:border-[#0b3765] hover:shadow-[0_18px_42px_rgba(8,36,67,0.12)]" key={feature}>
-              <span className="text-[#0b3765] transition group-hover:text-[#38b9df]">{icons.check}</span>
+            <article className="group grid min-h-[100px] grid-cols-[42px_1fr] items-center gap-4 rounded-xl border-2 border-[#d7e5f2] bg-white p-6 shadow-[0_12px_28px_rgba(6,23,43,0.05)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_18px_42px_rgba(8,36,67,0.12)]" key={feature}>
+              <span className="grid h-10 w-10 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">{icons.check}</span>
               <p className="m-0 font-bold leading-6 text-[#27445f]">{feature}</p>
             </article>
           ))}
@@ -176,9 +179,38 @@ const ServiceDetail = ({ service }) => {
         </div>
       </section>
 
-      <section className="bg-[#f7f8fa] py-12 text-center">
-        <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-black text-[#06172b]">Related Projects</h2>
-        <p className="mt-5 text-lg text-[#697386]">No Projects Yet</p>
+      <section className="bg-[#f7f8fa] py-16">
+        <div className="mx-auto w-[min(1080px,calc(100%-36px))]">
+          <h2 className="mb-10 text-center text-[clamp(2rem,4vw,3.2rem)] font-black text-[#06172b]">Related Projects</h2>
+          {relatedProjects.length > 0 ? (
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {relatedProjects.map((project) => (
+                <article className="group flex flex-col overflow-hidden rounded-xl border-2 border-[#d7e5f2] bg-white p-5 shadow-[0_12px_28px_rgba(6,23,43,0.05)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_18px_42px_rgba(8,36,67,0.12)]" key={project.title}>
+                  {project.preview && (
+                    <img
+                      className="mb-5 h-44 w-full rounded-lg object-cover object-center"
+                      src={project.preview}
+                      alt={`${project.title} interface preview`}
+                    />
+                  )}
+                  <span className="text-xs font-black uppercase text-[#0d5790]">{project.category}</span>
+                  <h3 className="my-3 text-xl font-black text-[#06172b]">{project.title}</h3>
+                  <p className="line-clamp-3 leading-6 text-[#697386]">{project.description}</p>
+                  <a
+                    className="mt-auto pt-5 font-black text-[#082443] transition group-hover:text-[#FF9F00]"
+                    href={project.url || '#/contact'}
+                    target={project.url ? '_blank' : undefined}
+                    rel={project.url ? 'noreferrer' : undefined}
+                  >
+                    View More
+                  </a>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-lg text-[#697386]">No Projects Yet</p>
+          )}
+        </div>
       </section>
 
       <section className="bg-[#f7f8fa] py-16">
@@ -186,8 +218,8 @@ const ServiceDetail = ({ service }) => {
           <h2 className="mb-10 text-center text-[clamp(2rem,4vw,3.2rem)] font-black text-[#06172b]">Benefits You'll Get</h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {benefits.map(([icon, title, text]) => (
-              <article className="rounded-xl border-2 border-[#d7e5f2] bg-white px-6 py-8 text-center shadow-[0_12px_28px_rgba(6,23,43,0.05)]" key={title}>
-                <span className="mx-auto mb-5 grid h-12 w-12 place-items-center text-[#0b3765]">{icons[icon]}</span>
+              <article className="group rounded-xl border-2 border-[#d7e5f2] bg-white px-6 py-8 text-center shadow-[0_12px_28px_rgba(6,23,43,0.05)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_18px_42px_rgba(8,36,67,0.12)]" key={title}>
+                <span className="mx-auto mb-5 grid h-12 w-12 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">{icons[icon]}</span>
                 <h3 className="mb-3 font-black text-[#06172b]">{title}</h3>
                 <p className="leading-6 text-[#697386]">{text}</p>
               </article>

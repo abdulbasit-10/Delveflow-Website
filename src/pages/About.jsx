@@ -1,4 +1,5 @@
 import abdulBasitPhoto from '../assets/abdul-basit.jpg'
+import arifaNaveedPhoto from '../assets/arifa-naveed.jpeg'
 import warishaAsadPhoto from '../assets/warisha-asad.jpeg'
 
 const icons = {
@@ -66,21 +67,18 @@ const stats = [
 ]
 
 const values = [
-  ['bulb', 'Innovation', 'We embrace creativity and constantly seek new ways to solve problems and deliver value.'],
-  ['heart', 'Integrity', 'We conduct business with honesty, transparency, and ethical practices in every interaction.'],
-  ['target', 'Excellence', 'We are committed to delivering the highest quality in everything we do, exceeding expectations.'],
-  ['users', 'Collaboration', 'We believe in the power of teamwork and foster a culture of cooperation and mutual respect.'],
-  ['rocket', 'Growth', 'We invest in continuous learning and development for both our team and our clients.'],
-  ['headset', 'Customer Focus', 'We put our clients at the center of everything we do, ensuring their success is our priority.'],
-  ['globe', 'Accountability', 'We take ownership of our actions and results, delivering on our commitments with reliability.'],
-  ['bolt', 'Agility', 'We adapt quickly to change, embrace challenges, and respond with speed and flexibility.'],
+  ['bulb', 'Deep Research', 'We delve before we build. Every solution starts with understanding your problem fully.'],
+  ['heart', 'Innovation First', 'We never settle for generic. Every project is approached with fresh thinking and creative solutions.'],
+  ['target', 'Excellence in Delivery', 'From the first line of code to final handover, quality is non-negotiable.'],
+  ['users', 'Client Partnership', 'We treat your business like ours. Your success is our success.'],
+  ['rocket', 'Transparency', 'No hidden costs, no vague timelines. You always know exactly where your project stands.'],
+  ['headset', 'Future-Ready Thinking', 'We build for today and architect for tomorrow, AI-driven and scalable from day one.'],
 ]
 
 const experts = [
-  ['WA', 'Warisha Asad', 'CEO & Founder', 'Visionary leader with 3+ years in Tech Industry', 'https://www.linkedin.com/in/warisha-asad-6259203b0/', warishaAsadPhoto],
-  ['AB', 'Abdul Basit', 'Co-Founder', 'Shaping businesses with executive foresight.', 'https://www.linkedin.com/in/abdul-basit-1039b522b/', abdulBasitPhoto],
-  ['AN', 'Arifa Naveed', 'Chief Operation Officer', 'Building reliable systems requires both technical depth and strategic vision.', 'https://www.linkedin.com/in/arifa-naveed-2a79773a5/'],
-  ['AS', 'Aqsa Siddique ', 'Chief Technology Officer', 'Shaping businesses with executive foresight.', '#/contact'],
+  ['WA', 'Warisha Asad', 'CEO & Founder', 'Visionary leader with 3+ years in Tech Industry', 'https://www.linkedin.com/in/warisha-asad-6259203b0/', warishaAsadPhoto, 'center'],
+  ['AB', 'Abdul Basit', 'Co-Founder', 'Shaping businesses with executive foresight.', 'https://www.linkedin.com/in/abdul-basit-1039b522b/', abdulBasitPhoto, 'center'],
+  ['AN', 'Arifa Naveed', 'Chief Operation Officer', 'Building reliable systems requires both technical depth and strategic vision.', 'https://www.linkedin.com/in/arifa-naveed-2a79773a5/', arifaNaveedPhoto, 'center'],
 
 ]
 
@@ -102,8 +100,8 @@ const About = () => {
       <section className="mx-auto w-[min(1180px,calc(100%-36px))] py-16">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map(([icon, value, label]) => (
-            <article className="rounded-xl border-2 border-[#c8d3df] bg-white px-6 py-8 text-center shadow-[0_14px_34px_rgba(6,23,43,0.06)]" key={label}>
-              <span className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765]">
+            <article className="group rounded-xl border-2 border-[#c8d3df] bg-white px-6 py-8 text-center shadow-[0_14px_34px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_20px_48px_rgba(8,36,67,0.16)]" key={label}>
+              <span className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">
                 {icons[icon]}
               </span>
               <strong className="block text-3xl font-black text-[#0b3765]">{value}</strong>
@@ -120,18 +118,20 @@ const About = () => {
             Building reliable digital products for ambitious teams.
           </h2>
           <p className="leading-8 text-[#5c6f84]">
-            Delveflow combines business understanding, product design, engineering discipline, and cloud operations to create
-            software that works in the real world. We focus on clarity, maintainability, and long-term value.
+            Delve Flow is a Peshawar-based software company that believes great technology starts with understanding the
+            problem. We specialize in web development, mobile apps, AI automation, custom management systems, and SaaS
+            solutions. From startups and local businesses to enterprises, we create smart, scalable solutions that help
+            businesses grow and operate more efficiently.
           </p>
         </div>
         <div className="grid gap-4">
           <div className="min-h-40 rounded-lg bg-[linear-gradient(135deg,#082443,#0d5790_55%,#38b9df)] p-6 text-white shadow-[0_18px_45px_rgba(8,36,67,0.18)]">
             <h3 className="text-2xl font-black">Mission</h3>
-            <p className="mt-3 leading-7 text-[#d8f0ff]">To help businesses solve meaningful problems through modern, scalable, and practical technology.</p>
+            <p className="mt-3 leading-7 text-[#d8f0ff]">To listen deeply to the problems your business faces and deliver the best digital solutions, built with precision, powered by innovation, and designed to grow with you.</p>
           </div>
           <div className="min-h-40 rounded-lg bg-[linear-gradient(135deg,#082443,#0d5790_55%,#38b9df)] p-6 text-white shadow-[0_18px_45px_rgba(8,36,67,0.18)]">
             <h3 className="text-2xl font-black">Vision</h3>
-            <p className="mt-3 leading-7 text-[#d8f0ff]">To become a trusted digital transformation partner for companies that want software done properly.</p>
+            <p className="mt-3 leading-7 text-[#d8f0ff]">To be recognized as Pakistan's most innovative technology company, a name synonymous with premium digital services and AI-driven products that transform how businesses operate.</p>
           </div>
         </div>
       </section>
@@ -144,7 +144,7 @@ const About = () => {
               The principles that guide how we build, communicate, and grow as a technology company.
             </p>
           </div>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {values.map(([icon, title, text]) => (
               <article className="group rounded-xl border-2 border-[#c8d3df] bg-white px-5 py-6 text-center shadow-[0_12px_28px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_18px_40px_rgba(8,36,67,0.16)]" key={title}>
                 <span className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">
@@ -163,21 +163,26 @@ const About = () => {
           <h2 className="text-[clamp(2rem,4vw,3.4rem)] font-black text-[#06172b]">Meet The Experts</h2>
           <p className="mt-3 text-sm font-black uppercase text-[#0d5790]">Our Team</p>
         </div>
-        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
-          {experts.map(([initials, name, role, text, linkedinUrl, photo]) => (
-            <article className="rounded-xl border-2 border-[#d7e5f2] bg-white px-7 py-8 text-center shadow-[0_14px_34px_rgba(6,23,43,0.06)]" key={name}>
+        <div className="mx-auto grid max-w-[900px] gap-4 md:grid-cols-3">
+          {experts.map(([initials, name, role, text, linkedinUrl, photo, photoPosition]) => (
+            <article className="group flex h-full flex-col rounded-xl border-2 border-[#d7e5f2] bg-white px-7 py-8 text-center shadow-[0_14px_34px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_20px_48px_rgba(8,36,67,0.16)]" key={name}>
               <div className="mx-auto mb-6 grid h-28 w-28 place-items-center overflow-hidden rounded-full bg-[radial-gradient(circle_at_35%_25%,#38b9df,#0b3765_62%,#06172b)] text-3xl font-black text-white">
                 {photo ? (
-                  <img className="h-full w-full object-cover" src={photo} alt={name} />
+                  <img
+                    className="h-full w-full object-cover"
+                    src={photo}
+                    alt={name}
+                    style={{ objectPosition: photoPosition }}
+                  />
                 ) : (
                   initials
                 )}
               </div>
               <h3 className="text-xl font-black text-[#06172b]">{name}</h3>
-              <p className="mt-2 text-sm text-[#0d5790]">{role}</p>
-              <p className="mt-4 min-h-20 leading-7 text-[#5c6f84]">{text}</p>
+              <p className="mt-2 min-h-10 text-sm text-[#0d5790]">{role}</p>
+              <p className="mt-4 flex-1 leading-7 text-[#5c6f84]">{text}</p>
               <a
-                className="mx-auto mt-4 grid h-8 w-8 place-items-center rounded-md bg-[#082443] text-sm font-black text-[#38b9df]"
+                className="mx-auto mt-4 grid h-8 w-8 place-items-center rounded-md bg-[#f7fbff] text-sm font-black text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]"
                 href={linkedinUrl}
                 target={linkedinUrl.startsWith('http') ? '_blank' : undefined}
                 rel={linkedinUrl.startsWith('http') ? 'noreferrer' : undefined}
