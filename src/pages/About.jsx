@@ -1,199 +1,453 @@
+// ===== ABOUT PAGE =====
+// File: src/pages/About.jsx
+
+import React from 'react'
 import abdulBasitPhoto from '../assets/abdul-basit.jpg'
 import arifaNaveedPhoto from '../assets/arifa-naveed.jpeg'
 import warishaAsadPhoto from '../assets/warisha-asad.jpeg'
+import { CtaSection } from './Home'
 
-const icons = {
-  award: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-9 w-9">
-      <circle cx="12" cy="8" r="5" fill="none" stroke="currentColor" strokeWidth="2" />
-      <path d="M9 13l-2 8 5-3 5 3-2-8" fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="2" />
+// ============================================================
+// SECTION 1: HERO SECTION
+// ============================================================
+const HeroSection = () => {
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-br from-white via-white via-[#e9ecf7] via-[#eef1fb] via-[#fdf3df] to-[#fdf0da] py-20 px-6 md:px-12 lg:px-20">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-10 lg:flex-row">
+        {/* LEFT COLUMN */}
+        <div className="flex-1 max-w-[560px] py-10 lg:py-16">
+          {/* About Us badge */}
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#d7d7d7] bg-white/60 px-5 py-2 text-[13px] font-semibold text-[#1a1a2e]">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#1a1a2e]" />
+            About Us
+          </div>
+
+          {/* Headline */}
+          <h2 className="font-serif text-[clamp(2.5rem,4vw,1.6rem)] font-extrabold leading-[1.18] text-[#111111]">
+            Building Digital Solutions
+            <br />
+            That Turn Ideas Into
+            <br />
+            <span className="text-[#1c2a52]">Business </span>
+            <span className="text-[#8a9a3c]">Growth.</span>
+          </h2>
+
+          {/* Paragraph */}
+          <p className="mt-6 max-w-[460px] text-[13.5px] leading-relaxed text-[#5b5b5b]">
+            At DelveFlow, we combine strategy, design, and cutting-edge
+            technology to solve real business challenges. Our team helps
+            startups and enterprises build scalable digital products that
+            drive innovation, efficiency, and long-term success.
+          </p>
+
+          {/* Buttons */}
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <a
+              href="#/contact"
+              className="inline-flex items-center gap-3 rounded-full bg-[#12203f] py-1.5 pl-7 pr-1.5 text-[15px] font-semibold text-white transition hover:bg-[#1a2f5a]"
+            >
+              Let's Work Together
+              <span className="grid h-9 w-9 place-items-center rounded-full bg-[#f2c14e] text-[#12203f] transition hover:scale-105">
+                ↗
+              </span>
+            </a>
+
+            <a
+              href="#/projects"
+              className="inline-flex items-center rounded-full border border-[#c9c9c9] px-8 py-3.5 text-[15px] font-semibold text-[#1a1a2e] transition hover:border-[#12203f] hover:bg-[#f8f8f8]"
+            >
+              View Our Work
+            </a>
+          </div>
+        </div>
+
+        {/* RIGHT COLUMN */}
+        <div className="relative flex-1 max-w-[460px] py-10 lg:py-16">
+          {/* Decorative yellow circles */}
+          <div className="absolute top-2 right-2 z-0 h-11 w-11 rounded-full bg-[#f2c14e] opacity-90" />
+          <div className="absolute top-7 right-12 z-0 h-4 w-4 rounded-full bg-[#f6d873] opacity-90" />
+
+          {/* Main image */}
+          <div className="relative z-10 h-[360px] overflow-hidden rounded-[20px] shadow-[0_20px_50px_rgba(20,20,50,0.12)]">
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+              alt="Team meeting"
+              className="h-full w-full object-cover"
+            />
+          </div>
+
+          {/* Projects Delivered card */}
+          <div className="absolute -top-6 -left-2.5 z-20 min-w-[180px] rounded-[14px] bg-white p-3.5 px-5 shadow-[0_12px_30px_rgba(20,20,50,0.10)]">
+            <div className="mb-1 text-xs text-[#8a8a8a]">Projects Delivered</div>
+            <div className="flex items-center gap-2.5">
+              <span className="font-serif text-2xl font-extrabold text-[#12203f]">
+                250+
+              </span>
+              <span className="flex items-center gap-1 text-[11px] font-medium text-[#3aa0d1]">
+                ✓ Successfully Completed
+              </span>
+            </div>
+          </div>
+
+          {/* Happy Clients card */}
+          <div className="absolute -bottom-6 -right-4 z-20 min-w-[190px] rounded-[14px] bg-white p-3.5 px-5 shadow-[0_12px_30px_rgba(20,20,50,0.10)]">
+            <div className="mb-1 text-xs text-[#8a8a8a]">Happy Clients</div>
+            <div className="flex items-center gap-2.5">
+              <span className="font-serif text-2xl font-extrabold text-[#12203f]">
+                20+
+              </span>
+              <span className="flex items-center gap-1 text-[11px] font-medium text-[#5b5b5b]">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#3aa0d1]" />
+                Trusted Worldwide
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================
+// SECTION 2: STORY SECTION (Mission & Vision)
+// ============================================================
+// ===== ICONS =====
+function TargetIcon() {
+  return (
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="9" stroke="#2f6fed" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="5" stroke="#2f6fed" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="1.6" fill="#2f6fed" />
+      <path d="M17 7l2-2" stroke="#2f6fed" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
-  ),
-  globe: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-9 w-9">
-      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="2" />
-      <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" strokeWidth="2" />
+  )
+}
+
+function LensIcon() {
+  return (
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="9" stroke="#e0a800" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="5" stroke="#e0a800" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="1.8" fill="#e0a800" />
     </svg>
-  ),
-  trend: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-9 w-9">
-      <path d="M4 16l6-6 4 4 7-8m0 0v6m0-6h-6" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-    </svg>
-  ),
-  users: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-9 w-9">
-      <path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-7 2-7 5v1h14v-1c0-3-3-5-7-5zm10-1a3 3 0 1 0 0-6m-2 13h5v-1c0-2-1.4-3.5-3.6-4" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
-    </svg>
-  ),
+  )
+}
+
+function InfoCard({ accent, icon, title, text }) {
+  const isBlue = accent === "blue"
+  return (
+    <div className="flex max-w-[420px] items-start gap-5 rounded-2xl bg-white px-7 py-7 shadow-[0_10px_30px_rgba(20,20,50,0.06)]">
+      <div
+        className={`relative flex h-14 w-14 min-w-[56px] items-center justify-center rounded-full ${
+          isBlue
+            ? "bg-[radial-gradient(circle_at_35%_35%,#cfe6ff_0%,#eaf4ff_60%,#ffffff_100%)]"
+            : "bg-[radial-gradient(circle_at_35%_35%,#fbe9b8_0%,#fdf3d8_60%,#ffffff_100%)]"
+        }`}
+      >
+        <div
+          className={`absolute inset-0 rounded-full border ${
+            isBlue ? "border-[#dceaff]" : "border-[#f6e6b6]"
+          }`}
+        />
+        {icon}
+      </div>
+
+      <div>
+        <div className={`mb-3 h-0.5 w-7 ${isBlue ? "bg-[#2f6fed]" : "bg-[#e0a800]"}`} />
+        <h3 className="font-serif mb-2.5 text-[19px] font-extrabold text-[#111111]">
+          {title}
+        </h3>
+        <p className="text-sm leading-[1.65] text-[#6b6b6b]">{text}</p>
+      </div>
+    </div>
+  )
+}
+
+const StorySection = () => {
+  return (
+    <section className="w-full bg-gradient-to-br from-white via-white to-[#fdf1da] py-20 px-6 md:px-16">
+      <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-12">
+        {/* LEFT COLUMN */}
+        <div className="flex-1 min-w-[320px] max-w-xl py-4">
+          {/* Our Story badge */}
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-gray-300 px-4 py-2 text-[13px] font-semibold text-[#1a1a2e]">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#1a1a2e]" />
+            Our Story
+          </div>
+
+          {/* Headline */}
+          <h1 className="font-serif text-3xl md:text-[32px] font-extrabold leading-[1.22] text-[#111111]">
+            Turning Business Challenges
+            <br />
+            Into <span className="text-[#1c2a52]">Digital</span>{" "}
+            <span className="text-[#8a9a3c]">Success</span>{" "}
+            <span className="text-[#111111]">Stories.</span>
+          </h1>
+
+          {/* Paragraph */}
+          <p className="mt-6 max-w-lg text-[13.5px] leading-7 text-[#5b5b5b]">
+            DelveFlow was founded with a simple mission—to help businesses
+            overcome complex challenges through innovative digital solutions.
+            We take the time to understand your goals, analyze your
+            problems, and craft scalable web, mobile, AI, and cloud
+            solutions that create measurable business growth. Every project
+            is driven by collaboration, creativity, and a commitment to
+            delivering lasting value.
+          </p>
+
+          {/* Button */}
+          <div className="mt-8">
+            <a
+              href="#/about"
+              className="inline-flex items-center gap-3.5 rounded-full bg-[#12203f] py-1.5 pl-6 pr-1.5 text-[15px] font-semibold text-white transition hover:bg-[#0d1830]"
+            >
+              Discover Our Journey
+              <span className="flex h-[38px] w-[38px] items-center justify-center rounded-full bg-[#f2c14e] text-[16px] text-[#12203f]">
+                ↗
+              </span>
+            </a>
+          </div>
+        </div>
+
+        {/* RIGHT COLUMN - cards */}
+        <div className="flex-1 min-w-[320px] max-w-[440px] flex flex-col gap-5 py-4">
+          <InfoCard
+            accent="blue"
+            icon={<TargetIcon />}
+            title="Our Mission"
+            text="To deliver innovative, scalable digital solutions that help businesses overcome challenges, streamline operations, and achieve sustainable growth through technology and strategic thinking."
+          />
+          <InfoCard
+            accent="yellow"
+            icon={<LensIcon />}
+            title="Our Vision"
+            text="To become a globally recognized technology partner known for turning complex business problems into elegant, high-impact digital solutions that drive measurable success."
+          />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================
+// SECTION 4: CORE VALUES SECTION (NEW DESIGN)
+// ============================================================
+const coreValues = [
+  {
+    number: '01',
+    icon: 'bulb',
+    title: 'Innovation First',
+    text: 'We embrace creative thinking and modern technologies to deliver smarter, future-ready digital solutions.',
+  },
+  {
+    number: '02',
+    icon: 'handshake',
+    title: 'Client Partnership',
+    text: 'We believe in honest communication, collaboration, and building lasting relationships with every client.',
+  },
+  {
+    number: '03',
+    icon: 'shield',
+    title: 'Quality & Reliability',
+    text: 'Every project is built with performance, security, and attention to detail to ensure lasting success.',
+  },
+  {
+    number: '04',
+    icon: 'growth',
+    title: 'Results Driven',
+    text: 'Our focus is delivering measurable outcomes that help businesses grow, scale, and achieve their goals.',
+  },
+]
+
+const coreValueIcons = {
   bulb: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8">
-      <path d="M8 14a7 7 0 1 1 8 0c-1 1-1.5 2-1.5 3h-5c0-1-.5-2-1.5-3zM9 21h6M10 18h4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7" fill="none">
+      <path
+        d="M9 18h6M10 21h4M8 14a5 5 0 1 1 8 0c-.8.9-1.3 1.6-1.3 2.6h-5.4c0-1-.5-1.7-1.3-2.6z"
+        stroke="white"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M12 6V4" stroke="white" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   ),
-  heart: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8">
-      <path d="M12 20s-8-4.8-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 9c0 6.2-8 11-8 11z" fill="none" stroke="currentColor" strokeWidth="2" />
+  handshake: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7" fill="none">
+      <path
+        d="M2 12l4-4 4 3 3-3 2 2M2 12v5l3 2M22 12l-4-4-2 2M22 12v5l-3 2M8 15l2.5 2.5a1.7 1.7 0 0 0 2.4 0l.1-.1a1.7 1.7 0 0 0 0-2.4L11 13M12.5 17.5l1 1a1.6 1.6 0 0 0 2.3 0 1.6 1.6 0 0 0 0-2.3"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   ),
-  target: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8">
-      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="2" />
-      <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" strokeWidth="2" />
-      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+  shield: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7" fill="none">
+      <path
+        d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"
+        stroke="white"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
-  rocket: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8">
-      <path d="M14 4c3-1 6-1 6-1s0 3-1 6l-6 6-4-4 5-7zM8 14l-3 1-2 4 4-2 1-3zM15 5l4 4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-    </svg>
-  ),
-  headset: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8">
-      <path d="M4 13a8 8 0 0 1 16 0v4a3 3 0 0 1-3 3h-3M4 13v4h4v-6H4zm16 0v4h-4v-6h4z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-    </svg>
-  ),
-  bolt: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8">
-      <path d="M13 2L4 14h8l-1 8 9-13h-8l1-7z" fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="2" />
+  growth: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7" fill="none">
+      <path
+        d="M3 17c3-1 4-4 6-4s2 2 4 2 3-4 5-6"
+        stroke="white"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M14 8h4v4" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M3 20h18" stroke="white" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   ),
 }
 
-const stats = [
-  ['award', '20+', 'Projects Completed'],
-  ['globe', '20+', 'Global Clients'],
-  ['trend', '2+', 'Years Experience'],
-  ['users', '10+', 'Team Members'],
-]
+const ValueCard = ({ number, icon, title, text }) => {
+  return (
+    <div className="relative overflow-hidden rounded-2xl bg-[#f7f8fb] px-8 py-8">
+      <h3 className="font-serif text-xl font-extrabold text-[#111111]">{title}</h3>
+      <p className="mt-3 max-w-[280px] text-[13.5px] leading-relaxed text-[#5b5b5b]">
+        {text}
+      </p>
+      <div className="mt-8 text-2xl font-black text-[#c9cfdb]">{number}</div>
 
-const values = [
-  ['bulb', 'Deep Research', 'We delve before we build. Every solution starts with understanding your problem fully.'],
-  ['heart', 'Innovation First', 'We never settle for generic. Every project is approached with fresh thinking and creative solutions.'],
-  ['target', 'Excellence in Delivery', 'From the first line of code to final handover, quality is non-negotiable.'],
-  ['users', 'Client Partnership', 'We treat your business like ours. Your success is our success.'],
-  ['rocket', 'Transparency', 'No hidden costs, no vague timelines. You always know exactly where your project stands.'],
-  ['headset', 'Future-Ready Thinking', 'We build for today and architect for tomorrow, AI-driven and scalable from day one.'],
-]
+      {/* navy quarter-circle icon badge */}
+      <div className="absolute bottom-0 right-0 flex h-[92px] w-[92px] items-end justify-end rounded-tl-[60px] bg-[#0e2547]">
+        <span className="mb-5 mr-5 flex h-9 w-9 items-center justify-center">
+          {coreValueIcons[icon]}
+        </span>
+      </div>
+    </div>
+  )
+}
 
+const ValuesSection = () => {
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#fdf6ea] via-white to-[#eaf3fb] py-20 px-6 md:px-12 lg:px-20">
+      {/* decorative dashed rings */}
+      <svg
+        className="pointer-events-none absolute -left-16 top-10 h-64 w-64 text-[#0e2547]/10"
+        viewBox="0 0 200 200"
+        fill="none"
+      >
+        <circle cx="100" cy="100" r="99" stroke="currentColor" strokeDasharray="4 6" />
+        <circle cx="100" cy="100" r="70" stroke="currentColor" strokeDasharray="4 6" />
+      </svg>
+      <svg
+        className="pointer-events-none absolute -right-16 bottom-0 h-72 w-72 text-[#0e2547]/10"
+        viewBox="0 0 200 200"
+        fill="none"
+      >
+        <circle cx="100" cy="100" r="99" stroke="currentColor" strokeDasharray="4 6" />
+        <circle cx="100" cy="100" r="70" stroke="currentColor" strokeDasharray="4 6" />
+      </svg>
+
+      <div className="relative z-10 mx-auto max-w-4xl text-center">
+        {/* Core Values badge */}
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#d7d7d7] bg-white/60 px-5 py-2 text-[13px] font-semibold text-[#1a1a2e]">
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#1a1a2e]" />
+          Core Values
+        </div>
+
+        {/* Heading */}
+        <h2 className="font-serif text-[clamp(1.8rem,3.6vw,2.6rem)] font-extrabold leading-tight text-[#111111]">
+          The Values That Shape
+          <br />
+          <span className="bg-gradient-to-r from-[#3fc6c6] to-[#c7cf3f] bg-clip-text text-transparent">
+            Every Solution We Build.
+          </span>
+        </h2>
+
+        {/* Paragraph */}
+        <p className="mx-auto mt-5 max-w-2xl text-[13.5px] leading-relaxed text-[#5b5b5b]">
+          At DelveFlow, our values guide every decision we make. From understanding
+          your business challenges to delivering reliable digital solutions, we
+          believe in building long-term partnerships through innovation,
+          transparency, and excellence.
+        </p>
+      </div>
+
+      {/* Cards grid */}
+      <div className="relative z-10 mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
+        {coreValues.map((value) => (
+          <ValueCard key={value.number} {...value} />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+// ============================================================
+// SECTION 5: EXPERTS SECTION
+// ============================================================
 const experts = [
   ['WA', 'Warisha Asad', 'CEO & Founder', 'Visionary leader with 3+ years in Tech Industry', 'https://www.linkedin.com/in/warisha-asad-6259203b0/', warishaAsadPhoto, 'center'],
   ['AB', 'Abdul Basit', 'Co-Founder', 'Shaping businesses with executive foresight.', 'https://www.linkedin.com/in/abdul-basit-1039b522b/', abdulBasitPhoto, 'center'],
   ['AN', 'Arifa Naveed', 'Chief Operation Officer', 'Building reliable systems requires both technical depth and strategic vision.', 'https://www.linkedin.com/in/arifa-naveed-2a79773a5/', arifaNaveedPhoto, 'center'],
-
 ]
 
+const ExpertsSection = () => {
+  return (
+    <section className="mx-auto w-[min(1180px,calc(100%-36px))] py-16">
+      <div className="mb-10 text-center">
+        <h2 className="text-[clamp(2rem,4vw,3.4rem)] font-black text-[#06172b]">Meet The Experts</h2>
+        <p className="mt-3 text-sm font-black uppercase text-[#0d5790]">Our Team</p>
+      </div>
+      <div className="mx-auto grid max-w-[900px] gap-4 md:grid-cols-3">
+        {experts.map(([initials, name, role, text, linkedinUrl, photo, photoPosition]) => (
+          <article 
+            className="group flex h-full flex-col rounded-xl border-2 border-[#d7e5f2] bg-white px-7 py-8 text-center shadow-[0_14px_34px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_20px_48px_rgba(8,36,67,0.16)]" 
+            key={name}
+          >
+            <div className="mx-auto mb-6 grid h-28 w-28 place-items-center overflow-hidden rounded-full bg-[radial-gradient(circle_at_35%_25%,#38b9df,#0b3765_62%,#06172b)] text-3xl font-black text-white">
+              {photo ? (
+                <img
+                  className="h-full w-full object-cover"
+                  src={photo}
+                  alt={name}
+                  style={{ objectPosition: photoPosition }}
+                />
+              ) : (
+                initials
+              )}
+            </div>
+            <h3 className="text-xl font-black text-[#06172b]">{name}</h3>
+            <p className="mt-2 min-h-10 text-sm text-[#0d5790]">{role}</p>
+            <p className="mt-4 flex-1 leading-7 text-[#5c6f84]">{text}</p>
+            <a
+              className="mx-auto mt-4 grid h-8 w-8 place-items-center rounded-md bg-[#f7fbff] text-sm font-black text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]"
+              href={linkedinUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${name} LinkedIn`}
+            >
+              in
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+// ============================================================
+// MAIN ABOUT COMPONENT
+// ============================================================
 const About = () => {
   return (
     <>
-      <section className="relative overflow-hidden bg-[#06172b] py-20 text-center text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(56,185,223,0.25),transparent_28%),linear-gradient(135deg,#06172b,#0b3765)]" />
-        <div className="relative mx-auto w-[min(980px,calc(100%-36px))]">
-          <p className="mb-4 text-xs font-black uppercase text-[#aee8ff]">About Delveflow</p>
-          <h1 className="mb-5 text-[clamp(2.4rem,4vw,5.5rem)] font-black leading-none">About Delveflow</h1>
-          <p className="mx-auto max-w-3xl text-lg leading-8 text-[#c7e5f8]">
-            We are a technology company focused on delivering modern digital experiences through app development, web
-            platforms, AI solutions, custom software, cloud, and DevOps.
-          </p>
-        </div>
-      </section>
-
-      <section className="mx-auto w-[min(1180px,calc(100%-36px))] py-16">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map(([icon, value, label]) => (
-            <article className="group rounded-xl border-2 border-[#c8d3df] bg-white px-6 py-8 text-center shadow-[0_14px_34px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_20px_48px_rgba(8,36,67,0.16)]" key={label}>
-              <span className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">
-                {icons[icon]}
-              </span>
-              <strong className="block text-3xl font-black text-[#0b3765]">{value}</strong>
-              <span className="mt-1 block text-[#06172b]">{label}</span>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto grid w-[min(1180px,calc(100%-36px))] gap-10 py-16 lg:grid-cols-[0.95fr_1.05fr]">
-        <div>
-          <p className="mb-4 text-xs font-black uppercase text-[#0d5790]">Your Trusted Technology Partner</p>
-          <h2 className="mb-5 text-[clamp(2rem,4vw,3.4rem)] font-black leading-tight text-[#06172b]">
-            Building reliable digital products for ambitious teams.
-          </h2>
-          <p className="leading-8 text-[#5c6f84]">
-            Delve Flow is a Peshawar-based software company that believes great technology starts with understanding the
-            problem. We specialize in web development, mobile apps, AI automation, custom management systems, and SaaS
-            solutions. From startups and local businesses to enterprises, we create smart, scalable solutions that help
-            businesses grow and operate more efficiently.
-          </p>
-        </div>
-        <div className="grid gap-4">
-          <div className="min-h-40 rounded-lg bg-[linear-gradient(135deg,#082443,#0d5790_55%,#38b9df)] p-6 text-white shadow-[0_18px_45px_rgba(8,36,67,0.18)]">
-            <h3 className="text-2xl font-black">Mission</h3>
-            <p className="mt-3 leading-7 text-[#d8f0ff]">To listen deeply to the problems your business faces and deliver the best digital solutions, built with precision, powered by innovation, and designed to grow with you.</p>
-          </div>
-          <div className="min-h-40 rounded-lg bg-[linear-gradient(135deg,#082443,#0d5790_55%,#38b9df)] p-6 text-white shadow-[0_18px_45px_rgba(8,36,67,0.18)]">
-            <h3 className="text-2xl font-black">Vision</h3>
-            <p className="mt-3 leading-7 text-[#d8f0ff]">To be recognized as Pakistan's most innovative technology company, a name synonymous with premium digital services and AI-driven products that transform how businesses operate.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#eef7ff] py-16">
-        <div className="mx-auto w-[min(1180px,calc(100%-36px))]">
-          <div className="mb-10 text-center">
-            <h2 className="text-[clamp(2rem,4vw,3.4rem)] font-black text-[#06172b]">Our Core Values</h2>
-            <p className="mx-auto mt-3 max-w-3xl leading-8 text-[#27445f]">
-              The principles that guide how we build, communicate, and grow as a technology company.
-            </p>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {values.map(([icon, title, text]) => (
-              <article className="group rounded-xl border-2 border-[#c8d3df] bg-white px-5 py-6 text-center shadow-[0_12px_28px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_18px_40px_rgba(8,36,67,0.16)]" key={title}>
-                <span className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-lg bg-[#f7fbff] text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">
-                  {icons[icon]}
-                </span>
-                <h3 className="mb-3 text-lg font-black text-[#06172b]">{title}</h3>
-                <p className="leading-6 text-[#27445f]">{text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto w-[min(1180px,calc(100%-36px))] py-16">
-        <div className="mb-10 text-center">
-          <h2 className="text-[clamp(2rem,4vw,3.4rem)] font-black text-[#06172b]">Meet The Experts</h2>
-          <p className="mt-3 text-sm font-black uppercase text-[#0d5790]">Our Team</p>
-        </div>
-        <div className="mx-auto grid max-w-[900px] gap-4 md:grid-cols-3">
-          {experts.map(([initials, name, role, text, linkedinUrl, photo, photoPosition]) => (
-            <article className="group flex h-full flex-col rounded-xl border-2 border-[#d7e5f2] bg-white px-7 py-8 text-center shadow-[0_14px_34px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_20px_48px_rgba(8,36,67,0.16)]" key={name}>
-              <div className="mx-auto mb-6 grid h-28 w-28 place-items-center overflow-hidden rounded-full bg-[radial-gradient(circle_at_35%_25%,#38b9df,#0b3765_62%,#06172b)] text-3xl font-black text-white">
-                {photo ? (
-                  <img
-                    className="h-full w-full object-cover"
-                    src={photo}
-                    alt={name}
-                    style={{ objectPosition: photoPosition }}
-                  />
-                ) : (
-                  initials
-                )}
-              </div>
-              <h3 className="text-xl font-black text-[#06172b]">{name}</h3>
-              <p className="mt-2 min-h-10 text-sm text-[#0d5790]">{role}</p>
-              <p className="mt-4 flex-1 leading-7 text-[#5c6f84]">{text}</p>
-              <a
-                className="mx-auto mt-4 grid h-8 w-8 place-items-center rounded-md bg-[#f7fbff] text-sm font-black text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]"
-                href={linkedinUrl}
-                target={linkedinUrl.startsWith('http') ? '_blank' : undefined}
-                rel={linkedinUrl.startsWith('http') ? 'noreferrer' : undefined}
-                aria-label={`${name} LinkedIn`}
-              >
-                in
-              </a>
-            </article>
-          ))}
-        </div>
-      </section>
+      <HeroSection />
+      <StorySection />
+      <ValuesSection />
+      <CtaSection />
+      
     </>
   )
 }

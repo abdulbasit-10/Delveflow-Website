@@ -1,148 +1,187 @@
-import dfLogoMark from '../assets/df-logo-mark.png'
+
+
+import dfLogoMark from '../assets/delveLogo.png'
 
 const quickLinks = [
-  ['Home', '#/home'],
-  ['About Us', '#/about'],
-  ['Services', '#/services'],
-  ['How We Work', '#/howwework'],
-  ['Projects', '#/projects'],
-  ['Career', '#/career'],
+  { label: 'Home', href: '#/home' },
+  { label: 'About Us', href: '#/about' },
+  { label: 'Services', href: '#/services' },
+  { label: 'How We Work', href: '#/howwework' },
+  { label: 'Projects', href: '#/projects' },
+  { label: 'Career', href: '#/career' },
 ]
 
-const footerServices = [
-  ['Web Development', '#/services/web-development'],
-  ['App Development', '#/services/app-development'],
-  ['UI/UX Designing', '#/services/ui-ux-designing'],
-  ['AI Solutions', '#/services/ai-solutions'],
-  ['SaaS Development', '#/services/saas-development'],
-  ['Cloud & DevOps', '#/services/cloud-devops'],
+const services = [
+  { label: 'Web Development', href: '#/services/web-development' },
+  { label: 'App Development', href: '#/services/app-development' },
+  { label: 'UI/UX Designing', href: '#/services/ui-ux-designing' },
+  { label: 'AI Solutions', href: '#/services/ai-solutions' },
+  { label: 'SaaS Development', href: '#/services/saas-development' },
+  { label: 'Cloud & DevOps', href: '#/services/cloud-devops' },
 ]
 
 const socialLinks = [
-  ['linkedin', 'LinkedIn', 'https://www.linkedin.com/company/delveflow/'],
-  ['instagram', 'Instagram', 'https://www.instagram.com/delveflow?igsh=MXh0bGtibTJqcDZucg=='],
-  ['facebook', 'Facebook', 'https://www.facebook.com/share/1AMUv5tXQB/'],
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/delveflow?igsh=MXh0bGtibTJqcDZucg==',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+        <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" strokeWidth="1.8" />
+        <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
+        <circle cx="17.2" cy="6.8" r="1" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/delveflow/',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+        <rect x="3.5" y="3.5" width="17" height="17" rx="3" stroke="currentColor" strokeWidth="1.8" />
+        <circle cx="8" cy="9" r="1" fill="currentColor" />
+        <path d="M8 11.5v5M16 16.5v-3a2 2 0 00-4 0v3M12 11.5v5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/share/1AMUv5tXQB/',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+        <path
+          d="M14 8.5h2V5.5h-2c-2 0-3.5 1.5-3.5 3.5v2H8.5v3H10.5V19h3v-6h2l.5-3H13.5v-1.5c0-.5.5-1 1-1z"
+          stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
 ]
 
-const icons = {
-  mail: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-      <path d="M4 6h16v12H4z" fill="none" stroke="currentColor" strokeWidth="2" />
-      <path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-    </svg>
-  ),
-  phone: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-      <path d="M8 5l2 4-2.5 1.5c1.1 2.2 2.8 3.9 5 5L14 13l4 2-1 4c-7.5-.2-13.8-6.5-14-14l5-1z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-    </svg>
-  ),
-  pin: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-      <path d="M12 21s7-5.3 7-12a7 7 0 0 0-14 0c0 6.7 7 12 7 12z" fill="none" stroke="currentColor" strokeWidth="2" />
-      <circle cx="12" cy="9" r="2.5" fill="none" stroke="currentColor" strokeWidth="2" />
-    </svg>
-  ),
-  linkedin: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-      <path d="M6.5 9.5V18M10.5 18v-8.5M10.5 13.2c0-2.4 5-2.9 5 1.1V18M6.5 6.4v.1" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" />
-    </svg>
-  ),
-  instagram: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-      <rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="currentColor" strokeWidth="2" />
-      <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" strokeWidth="2" />
-      <circle cx="16.4" cy="7.7" r="0.8" fill="currentColor" />
-    </svg>
-  ),
-  facebook: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-      <path d="M14.5 8.2h-1.6c-1 0-1.4.5-1.4 1.5V12h3l-.5 3h-2.5v5M9 12h5" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-    </svg>
-  ),
-}
+const contactInfo = [
+  {
+    label: 'info@delveflow.co',
+    href: 'mailto:info@delveflow.co',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+        <rect x="3" y="5.5" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.7" />
+        <path d="M4 7l8 6 8-6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    label: '+92 3469127976',
+    href: 'tel:+923469127976',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+        <path
+          d="M5 4.5h3l1.3 4-2 1.5a12 12 0 006.7 6.7l1.5-2 4 1.3v3a1.5 1.5 0 01-1.6 1.5A16 16 0 015 6.1 1.5 1.5 0 015 4.5z"
+          stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    label: 'Peshawar, Pakistan',
+    href: '#',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+        <path
+          d="M12 21s7-6.5 7-11.5A7 7 0 105 9.5C5 14.5 12 21 12 21z"
+          stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round"
+        />
+        <circle cx="12" cy="9.5" r="2.3" stroke="currentColor" strokeWidth="1.7" />
+      </svg>
+    ),
+  },
+]
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative overflow-hidden bg-[#06172b] px-5 py-12 text-white lg:px-12">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(56,185,223,0.18),transparent_30%),radial-gradient(circle_at_86%_20%,rgba(18,145,111,0.18),transparent_28%),linear-gradient(135deg,#06172b_0%,#0b3765_58%,#082443_100%)]" />
-      <div className="relative mx-auto w-[min(1220px,100%)]">
-        <div className="grid gap-10 lg:grid-cols-[1.25fr_0.9fr_1fr_1.25fr]">
+    <footer className="bg-[#001530] text-white">
+      <div className="mx-auto w-[min(1180px,calc(100%-36px))] py-16">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
+          {/* Brand Column */}
           <div>
-            <a className="mb-6 inline-flex items-center gap-3" href="#/home" aria-label="DF home">
-              <span className="grid h-12 w-[78px] place-items-center">
-                <img className="h-full w-full object-contain" src={dfLogoMark} alt="" aria-hidden="true" />
-              </span>
-              {/* <span className="text-xl font-black text-white">Df Solutions</span> */}
+            <a href="#/home" className="inline-flex items-center gap-2" aria-label="Delveflow home">
+              <img src={dfLogoMark} alt="" className="h-10 w-auto object-contain" />
             </a>
-            <p className="max-w-[310px] leading-7 text-[#c7e5f8]">
-              Building scalable digital solutions for modern businesses. Transform your ideas into reality with our
-              expert team.
+            <p className="mt-5 max-w-xs text-[14px] leading-6 text-white/70">
+              Building scalable digital solutions for modern businesses.
+              Transform your ideas into reality with our expert team.
             </p>
-            <div className="mt-7 flex gap-3">
-              {socialLinks.map(([icon, label, href]) => (
+            <div className="mt-6 flex gap-3">
+              {socialLinks.map((s) => (
                 <a
-                  className="grid h-10 w-10 place-items-center rounded-lg bg-[#e9edf3] text-[#06172b] transition hover:bg-[#38b9df] hover:text-[#06172b]"
-                  href={href}
-                  key={icon}
+                  key={s.label}
+                  href={s.href}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={`DF ${label}`}
+                  aria-label={s.label}
+                  className="grid h-9 w-9 place-items-center rounded-full bg-[#38B9DF] text-white transition hover:bg-[#2ca3c7]"
                 >
-                  {icons[icon]}
+                  {s.icon}
                 </a>
               ))}
             </div>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h2 className="mb-6 text-base font-black text-white">Quick Links</h2>
-            <nav className="grid gap-4">
-              {quickLinks.map(([label, href]) => (
-                <a className="text-[#c7e5f8] transition hover:text-[#38b9df]" href={href} key={label}>
-                  {label}
-                </a>
+            <h4 className="text-[15px] font-bold text-white">Quick Links</h4>
+            <ul className="mt-4 grid gap-3">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className="text-[14px] text-white/70 transition hover:text-white">
+                    {link.label}
+                  </a>
+                </li>
               ))}
-            </nav>
+            </ul>
           </div>
 
+          {/* Services */}
           <div>
-            <h2 className="mb-6 text-base font-black text-white">Services</h2>
-            <nav className="grid gap-4">
-              {footerServices.map(([label, href]) => (
-                <a className="text-[#c7e5f8] transition hover:text-[#38b9df]" href={href} key={label}>
-                  {label}
-                </a>
+            <h4 className="text-[15px] font-bold text-white">Services</h4>
+            <ul className="mt-4 grid gap-3">
+              {services.map((s) => (
+                <li key={s.href}>
+                  <a href={s.href} className="text-[14px] text-white/70 transition hover:text-white">
+                    {s.label}
+                  </a>
+                </li>
               ))}
-            </nav>
+            </ul>
           </div>
 
+          {/* Contact Us */}
           <div>
-            <h2 className="mb-6 text-base font-black text-white">Contact Us</h2>
-            <div className="grid gap-5">
-              <a className="grid grid-cols-[24px_1fr] gap-3 text-[#c7e5f8]" href="mailto:info@delveflow.co">
-                <span className="text-[#38b9df]" aria-hidden="true">{icons.mail}</span>
-                <span>info@delveflow.co</span>
-              </a>
-              <a className="grid grid-cols-[24px_1fr] gap-3 text-[#c7e5f8]" href="tel:+92 3469127976">
-                <span className="text-[#38b9df]" aria-hidden="true">{icons.phone}</span>
-                <span>+92 3469127976</span>
-              </a>
-              <p className="grid grid-cols-[24px_1fr] gap-3 text-[#c7e5f8]">
-                <span className="text-[#38b9df]" aria-hidden="true">{icons.pin}</span>
-                <span>Peshawar, Pakistan</span>
-              </p>
-            </div>
+            <h4 className="text-[15px] font-bold text-white">Contact Us</h4>
+            <ul className="mt-4 grid gap-4">
+              {contactInfo.map((c) => (
+                <li key={c.label} className="flex items-center gap-3">
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#38B9DF] text-white">
+                    {c.icon}
+                  </span>
+                  <a href={c.href} className="text-[14px] text-white/80 transition hover:text-white">
+                    {c.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
+      </div>
 
-        <div className="mt-10 flex flex-col justify-between gap-5 border-t border-white/15 pt-7 text-sm text-[#c7e5f8] md:flex-row">
-          <span>© {currentYear} Encova Solutions. All rights reserved.</span>
-          <div className="flex flex-wrap gap-6">
-            <a className="hover:text-[#38b9df]" href="#/terms">Terms of Service</a>
-            <a className="hover:text-[#38b9df]" href="#/privacy">Privacy Policy</a>
-            <a className="hover:text-[#38b9df]" href="#/cookies">Cookie Policy</a>
+      {/* Footer Bottom */}
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex w-[min(1180px,calc(100%-36px))] flex-col items-center justify-between gap-3 py-6 text-[13px] text-white/50 sm:flex-row">
+          <p>© {currentYear} Encova Solutions. All rights reserved.</p>
+          <div className="flex items-center gap-5">
+            <a href="#/terms" className="transition hover:text-white/80">Terms of Service</a>
+            <a href="#/privacy" className="transition hover:text-white/80">Privacy Policy</a>
+            <a href="#/cookies" className="transition hover:text-white/80">Cookie Policy</a>
           </div>
         </div>
       </div>
