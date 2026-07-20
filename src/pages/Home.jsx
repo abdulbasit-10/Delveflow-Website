@@ -10,6 +10,8 @@ import Quality_icon from "../assets/quality.png"
 import Support_icon from "../assets/support.png"
 import Discovery_icon from "../assets/discovery.png"
 import Planning_icon from "../assets/planning.png"
+import Agile_icon from "../assets/agile.png"
+import Growth_icon from "../assets/growth.png"
 
 
 // ===== REASONS DATA (for Why Choose Us) =====
@@ -349,18 +351,18 @@ const howWeWorkIcons = {
 />
   ),
   code: (
-    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-      <path d="M8.5 8L4 12l4.5 4M15.5 8L20 12l-4.5 4M13.5 5l-3 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
+     <img 
+  src= {Agile_icon} 
+  alt="icon description" 
+  className="h-15 w-15 object-contain"
+/>
   ),
   rocket: (
-    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-      <path
-        d="M13.5 3.5c2.5 1 4 3.6 4 6.8 0 2-1 4.3-2.6 5.9l-2 2-2-2c-1.6-1.6-2.6-3.9-2.6-5.9 0-3.2 1.5-5.8 4-6.8l.6-.2.6.2z"
-        stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"
-      />
-      <circle cx="13.4" cy="9.6" r="1.3" stroke="currentColor" strokeWidth="1.4" />
-    </svg>
+    <img 
+  src= {Growth_icon} 
+  alt="icon description" 
+  className="h-15 w-15 object-contain"
+/>
   ),
 }
 
@@ -386,7 +388,7 @@ const StepCard = ({ step }) => (
       ))}
     </ul>
     <span
-      className="pointer-events-none absolute -bottom-2 right-4 select-none bg-gradient-to-b from-[#d9c24a] to-[#8a9440] bg-clip-text font-serif text-5xl font-black leading-none text-transparent opacity-90"
+      className="pointer-events-none absolute -bottom-0 right-4 select-none bg-gradient-to-b from-[#d9c24a] to-[#8a9440] bg-clip-text font-serif text-5xl font-black leading-none text-transparent opacity-90"
       aria-hidden="true"
     >
       {step.number}
@@ -852,7 +854,8 @@ const Home = ({ services }) => {
           </div>
 
           <div className="relative mt-16">
-            <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-[#38B9DF] via-[#38B9DF]/40 to-[#38B9DF] md:block" />
+            <div className="absolute left-1/2 top-0 hidden w-px -translate-x-1/2 bg-gradient-to-b from-[#38B9DF] via-[#38B9DF]/40 to-[#38B9DF] md:block" 
+     style={{ height: '100%', bottom: '100%' }} />
 
             <div className="flex flex-col gap-8">
               {steps.map((step) => (
