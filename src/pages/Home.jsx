@@ -1,12 +1,23 @@
 // ===== IMPORTS =====
 import React, { useState } from 'react'
+import web_icon from '../assets/webdevelopment.png'
+import AI_icon from '../assets/AI_icon.png'
+import UI_icon from '../assets/uiux.svg'
+import SAAS_icon from '../assets/saas.png'
+import Team_icon from "../assets/team_icon.png"
+import Delivery_icon from "../assets/delivery.png"
+import Quality_icon from "../assets/quality.png"
+import Support_icon from "../assets/support.png"
+import Discovery_icon from "../assets/discovery.png"
+import Planning_icon from "../assets/planning.png"
+
 
 // ===== REASONS DATA (for Why Choose Us) =====
 const whyChooseReasons = [
-  ['shield', 'Expert Team', 'Skilled professionals with years of industry experience'],
-  ['bolt', 'Fast Delivery', 'Efficient processes ensure timely project completion'],
-  ['users', 'Quality Assured', 'Rigorous testing and quality control standards'],
-  ['trend', '24/7 Support', 'Dedicated support team always ready to help'],
+  ['shield', 'Expert Development Team', 'Work with battle-tested professionals who bring years of proven industry experience in web development, mobile apps, AI, and modern software architecture.'],
+  ['bolt', 'Lightning-Fast Project Delivery', 'Our agile process ensures fast delivery, helping you launch sooner and stay ahead of the competition.'],
+  ['users', 'Uncompromising Quality Standards', 'Every product is thoroughly tested, secured, and optimized for maximum performance and reliability.'],
+  ['trend', '24/7 Reliable Support', 'Enjoy peace of mind with our dedicated support team available around the clock for maintenance, updates, troubleshooting, and continuous improvements.  '],
 ]
 
 // ===== HERO STATS (for the hero section) =====
@@ -28,24 +39,32 @@ const trackStats = [
 // ===== ICONS (for Why Choose Us) =====
 const whyChooseIcons = {
   shield: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6">
-      <path d="M12 3l7 3v5c0 4.6-2.8 8.7-7 10-4.2-1.3-7-5.4-7-10V6l7-3z" fill="none" stroke="currentColor" strokeWidth="2" />
-    </svg>
+    <img 
+  src= {Team_icon} 
+  alt="icon description" 
+  className="h-11 w-11"
+/>
   ),
   bolt: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6">
-      <path d="M13 2L4 14h8l-1 8 9-13h-8l1-7z" fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="2" />
-    </svg>
+    <img 
+  src= {Delivery_icon} 
+  alt="icon description" 
+  className="h-11 w-11"
+/>
   ),
   users: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6">
-      <path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-7 2-7 5v1h14v-1c0-3-3-5-7-5zm10-1a3 3 0 1 0 0-6m-2 13h5v-1c0-2-1.4-3.5-3.6-4" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
-    </svg>
+    <img 
+  src= {Quality_icon} 
+  alt="icon description" 
+  className="h-11 w-11"
+/>
   ),
   trend: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6">
-      <path d="M4 17l6-6 4 4 7-8m0 0v6m0-6h-6" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-    </svg>
+     <img 
+  src= {Support_icon} 
+  alt="icon description" 
+  className="h-11 w-11"
+/>
   ),
   check: (
     <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6">
@@ -162,29 +181,33 @@ const serviceIcons = {
     </svg>
   ),
   'web-dev': (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8">
-      <rect x="3" y="4" width="18" height="14" rx="2" fill="none" stroke="currentColor" strokeWidth="2" />
-      <path d="M8 21h8M12 18v3M7 9l-2 2 2 2M17 9l2 2-2 2M14 8l-4 6" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-    </svg>
+    
+<img 
+  src={web_icon} 
+  alt="icon description" 
+  className="h-8 w-8"
+/>
   ),
   'ai-solutions': (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8">
-      <rect x="5" y="5" width="14" height="14" rx="3" fill="none" stroke="currentColor" strokeWidth="2" />
-      <path d="M9 9h6v6H9zM2 9h3M2 15h3M19 9h3M19 15h3M9 2v3M15 2v3M9 19v3M15 19v3" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d="M10 15l2-6 2 6M10.8 13h2.4" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.7" />
-    </svg>
+    <img 
+  src={AI_icon} 
+  alt="icon description" 
+  className="h-8 w-8"
+/>
   ),
   'ui-ux': (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8">
-      <rect x="4" y="4" width="16" height="16" rx="3" fill="none" stroke="currentColor" strokeWidth="2" />
-      <path d="M8 8h8M8 12h5M8 16h3M17 13l-2 5 5-2-3-3z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-    </svg>
+    <img 
+  src={UI_icon} 
+  alt="icon description" 
+  className="h-8 w-8"
+/>
   ),
   'saas': (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8">
-      <rect x="3" y="4" width="18" height="14" rx="2" fill="none" stroke="currentColor" strokeWidth="2" />
-      <path d="M7 9h3v3H7zM14 9h3v3h-3zM7 15h10M8 21h8M12 18v3" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-    </svg>
+    <img 
+  src={SAAS_icon} 
+  alt="icon description" 
+  className="h-8 w-8"
+/>
   ),
   'cloud': (
     <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8">
@@ -312,16 +335,18 @@ side: 'right',
 // ===== HOW WE WORK ICONS =====
 const howWeWorkIcons = {
   search: (
-    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-      <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="2" />
-      <path d="M20 20l-4.3-4.3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    </svg>
+    <img 
+  src= {Discovery_icon} 
+  alt="icon description" 
+  className="h-15 w-15 object-contain"
+/>
   ),
   compass: (
-    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-      <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="2" />
-      <path d="M15 9l-2 5-4.5 1.5L10.5 10 15 9z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
-    </svg>
+    <img 
+  src= {Planning_icon} 
+  alt="icon description" 
+  className="h-15 w-15 object-contain"
+/>
   ),
   code: (
     <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
@@ -340,17 +365,19 @@ const howWeWorkIcons = {
 }
 
 // ===== HOW WE WORK COMPONENTS =====
+// UPDATED: Chevron icon on LEFT side (before the text)
 const ChevronBullet = ({ children }) => (
-  <li className="flex items-start justify-between gap-2 border-t border-white/10 py-2.5 text-[13px] text-[#dbe4ee] first:border-t-0">
-    <span>{children}</span>
+  <li className="flex items-start gap-2 border-t border-white/10 py-2.5 text-[13px] text-[#dbe4ee] first:border-t-0">
     <svg viewBox="0 0 24 24" fill="none" className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#38B9DF]">
       <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
+    <span>{children}</span>
   </li>
 )
 
+// UPDATED: Removed overflow-hidden, added hover effects, adjusted number position
 const StepCard = ({ step }) => (
-  <div className="relative w-full max-w-md rounded-xl bg-[#0b3765] px-6 pb-5 pt-6 shadow-[0_20px_45px_rgba(6,23,43,0.25)]">
+  <div className="relative w-full max-w-md rounded-xl bg-[#0b3765] px-6 pb-5 pt-6 shadow-[0_20px_45px_rgba(6,23,43,0.25)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_55px_rgba(6,23,43,0.35)]">
     <h3 className="text-[16px] font-bold text-white">{step.title}</h3>
     <p className="mt-2 text-[13px] leading-6 text-[#c7d5e5]">{step.description}</p>
     <ul className="mt-3">
@@ -359,7 +386,7 @@ const StepCard = ({ step }) => (
       ))}
     </ul>
     <span
-      className="pointer-events-none absolute -bottom-0 right-3 select-none bg-gradient-to-b from-[#d9c24a] to-[#8a9440] bg-clip-text font-serif text-5xl font-black leading-none text-transparent opacity-90"
+      className="pointer-events-none absolute -bottom-2 right-4 select-none bg-gradient-to-b from-[#d9c24a] to-[#8a9440] bg-clip-text font-serif text-5xl font-black leading-none text-transparent opacity-90"
       aria-hidden="true"
     >
       {step.number}
@@ -774,37 +801,45 @@ const Home = ({ services }) => {
             </p>
           </div>
 
-          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {whyChooseReasons.map(([icon, title, description]) => (
-              <div
-                key={title}
-                className="rounded-br-[60px] border border-[#b5e4f3] bg-white px-6 py-8 min-h-[240px]"
-              >
-                <div className="mb-5 grid h-14 w-14 place-items-center rounded-full border border-[#38B9DF] text-[#38B9DF]">
-                  {whyChooseIcons[icon]}
-                </div>
-                <h3 className="text-[17px] font-bold leading-snug text-[#06172b]">
-                  {title}
-                </h3>
-                <p className="mt-3 text-[14px] leading-6 text-[#333333]">
-                  {description}
-                </p>
-              </div>
-            ))}
-          </div>
+           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+  {whyChooseReasons.map(([icon, title, description]) => (
+    <div
+      key={title}
+      className="rounded-br-[140px] bg-gradient-to-r from-[#b5e4f3] via-[#b5e4f3] via-40% to-[#f5e6b8] to-60% p-[2px] min-h-[240px]"
+    >
+      <div className="h-full w-full rounded-br-[140px] bg-white px-6 py-8">
+        <div className="mb-5 grid h-14 w-14 place-items-center  text-[#38B9DF]">
+          {whyChooseIcons[icon]}
+        </div>
+        <h3 className="text-[17px] font-bold leading-snug text-[#06172b]">
+          {title}
+        </h3>
+        <p className="mt-3 text-[14px] leading-6 text-[#333333]">
+          {description}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
         </div>
       </section>
 
       {/* HOW WE WORK SECTION */}
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white py-0">
         <div className="relative mx-auto w-[min(1180px,calc(100%-36px))]">
           <div className="mx-auto max-w-2xl text-center">
             <p className="mx-auto mb-4 inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-bold uppercase tracking-wide text-[#0b3765]">
               How We Work
             </p>
             <h2 className="font-serif text-[clamp(1.6rem,3vw,1.3rem)] font-black leading-snug text-[#0a0a0a]">
-  <span className="text-[#0b3b7b]">Delve</span> Deep into Your Challenges{' '}
-  <span className="text-[#d8ba43]">Flow</span>
+  <span className="text-[#0b3b7b]">D</span>
+<span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">
+  elve
+</span> Deep into Your Challenges{' '}
+  <span className="text-[#0b3b7b]">F</span>
+<span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">
+  low
+</span>
   <br />
   Seamlessly with Powerful Solutions.
 </h2>
@@ -819,11 +854,11 @@ const Home = ({ services }) => {
           <div className="relative mt-16">
             <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-[#38B9DF] via-[#38B9DF]/40 to-[#38B9DF] md:block" />
 
-            <div className="flex flex-col gap-14">
+            <div className="flex flex-col gap-8">
               {steps.map((step) => (
                 <div
                   key={step.number}
-                  className={`flex items-center gap-6 ${
+                  className={`flex items-start gap-16 ${
                     step.side === 'right' ? 'md:flex-row' : 'md:flex-row-reverse'
                   }`}
                 >
@@ -832,7 +867,7 @@ const Home = ({ services }) => {
                   </div>
 
                   <div className="relative z-10 hidden shrink-0 md:block">
-                    <div className="grid h-11 w-11 place-items-center rounded-full border-2 border-[#38B9DF] bg-white text-[#38B9DF] shadow-[0_0_0_6px_rgba(56,185,223,0.12)]">
+                    <div className="grid h-21 w-21 place-items-center  ">
                       {howWeWorkIcons[step.icon]}
                     </div>
                   </div>
