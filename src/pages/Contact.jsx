@@ -53,6 +53,9 @@ const ContactHero = () => {
   )
 }
 
+// ===== SERVICES LIST =====
+
+
 // ============================================================
 // SECTION 2: CONTACT FORM & INFO
 // ============================================================
@@ -139,10 +142,6 @@ const socialIcons = {
   ),
 }
 
-// ===== INPUT CLASSES =====
-const inputClasses =
-  'w-full rounded-lg bg-[#F7F8FA] px-4 py-3 text-[14px] text-[#06172b] placeholder:text-[#8b97a5] outline-none transition focus:ring-2 focus:ring-[#0b3765]/30'
-
 // ===== CONTACT SECTION =====
 const ContactSection = () => {
   // ===== FORM STATE =====
@@ -167,55 +166,52 @@ const ContactSection = () => {
   }
 
   return (
-    <section className="relative overflow-hidden bg-white py-20">
+    <section className="relative overflow-hidden bg-white py-12">
       {/* Background gradient */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(56,107,223,0.06),transparent_45%),radial-gradient(circle_at_85%_90%,rgba(255,197,92,0.08),transparent_45%)]" />
 
-      <div className="relative mx-auto w-[min(1180px,calc(100%-36px))]">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.15fr_1fr]">
+      <div className="relative mx-auto w-[min(1000px,calc(100%-36px))]">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1fr]">
           
           {/* ===== LEFT COLUMN - CONTACT FORM ===== */}
           <div className="overflow-hidden rounded-2xl border border-[#e3e7ee] bg-white shadow-[0_14px_34px_rgba(6,23,43,0.06)]">
-            {/* Form Header with Clip Path */}
-            <div
-              className="bg-[#0b3765] px-2 py-2"
-              // style={{ clipPath: 'polygon(0 0, 100% 0, 100% 70%, 88% 100%, 0 100%)' }}
-            >
-              <h2 className="font-serif text-[clamp(1.8rem,1.5vw,2.4rem)] font-black text-white">
+            {/* Form Header */}
+            <div className="bg-[#0b3765] px-5 py-3.5">
+              <h2 className="font-serif text-[clamp(1.2rem,1.5vw,1.6rem)] font-black text-white">
                 Send us a message
               </h2>
-              <p className="mt-2 text-[12px] text-white/70">
+              <p className="mt-0.5 text-[11px] text-white/70">
                 Fill out the form below, and our team will get back to you
                 within one business day.
               </p>
             </div>
 
             {/* Form Fields */}
-            <form onSubmit={handleSubmit} className="grid gap-4 px-3 py-3">
+            <form onSubmit={handleSubmit} className="grid gap-2.5 px-9 py-6">
               {/* Row 1: Full Name & Email */}
-              <div className="grid grid-cols-1 gap- sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                 <div>
-                  <label className="mb-1 block text-[10px] font-semibold text-[#0b3765]">
+                  <label className="mb-0.5 block text-[10px] font-semibold text-[#0b3765]">
                     Full Name<span className="text-[#0b3765]">*</span>
                   </label>
                   <input
                     type="text"
                     required
                     placeholder="Ali Hassan"
-                    className={inputClasses}
+                    className="w-full rounded-lg bg-[#F7F8FA] px-3 py-1.5 text-[12px] text-[#06172b] placeholder:text-[#8b97a5] outline-none transition focus:ring-2 focus:ring-[#0b3765]/30"
                     value={formData.fullName}
                     onChange={handleChange('fullName')}
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block text-[10px] font-semibold text-[#0b3765]">
+                  <label className="mb-0.5 block text-[10px] font-semibold text-[#0b3765]">
                     Email<span className="text-[#0b3765]">*</span>
                   </label>
                   <input
                     type="email"
                     required
                     placeholder="@james.com"
-                    className={inputClasses}
+                    className="w-full rounded-lg bg-[#F7F8FA] px-3 py-1.5 text-[12px] text-[#06172b] placeholder:text-[#8b97a5] outline-none transition focus:ring-2 focus:ring-[#0b3765]/30"
                     value={formData.email}
                     onChange={handleChange('email')}
                   />
@@ -224,14 +220,14 @@ const ContactSection = () => {
 
               {/* Row 2: Phone Number */}
               <div>
-                <label className="mb-1 block text-[10px] font-semibold text-[#0b3765]">
+                <label className="mb-0.5 block text-[10px] font-semibold text-[#0b3765]">
                   Phone Number<span className="text-[#0b3765]">*</span>
                 </label>
                 <input
                   type="tel"
                   required
                   placeholder="+1 123 456 7890"
-                  className={inputClasses}
+                  className="w-full rounded-lg bg-[#F7F8FA] px-3 py-1.5 text-[12px] text-[#06172b] placeholder:text-[#8b97a5] outline-none transition focus:ring-2 focus:ring-[#0b3765]/30"
                   value={formData.phone}
                   onChange={handleChange('phone')}
                 />
@@ -239,12 +235,12 @@ const ContactSection = () => {
 
               {/* Row 3: Service Selection with Chevron */}
               <div className="relative">
-                <label className="mb-1 block text-[10px] font-semibold text-[#0b3765]">
+                <label className="mb-0.5 block text-[10px] font-semibold text-[#0b3765]">
                   Choose a service
                 </label>
                 <div className="relative">
                   <select
-                    className={`${inputClasses} appearance-none cursor-pointer`}
+                    className="w-full cursor-pointer appearance-none rounded-lg bg-[#F7F8FA] px-3 py-1.5 text-[12px] text-[#06172b] placeholder:text-[#8b97a5] outline-none transition focus:ring-2 focus:ring-[#0b3765]/30"
                     value={formData.service}
                     onChange={handleChange('service')}
                   >
@@ -256,8 +252,8 @@ const ContactSection = () => {
                     ))}
                   </select>
                   {/* Chevron Icon */}
-                  <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#8b97a5]">
-                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#8b97a5]">
+                    <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
@@ -266,14 +262,14 @@ const ContactSection = () => {
 
               {/* Row 4: Message */}
               <div>
-                <label className="mb-1 block text-[10px] font-semibold text-[#0b3765]">
+                <label className="mb-0.5 block text-[10px] font-semibold text-[#0b3765]">
                   Message<span className="text-[#0b3765]">*</span>
                 </label>
                 <textarea
                   required
-                  rows={4}
+                  rows={2.5}
                   placeholder="Tell us about your project..."
-                  className={`${inputClasses} resize-none`}
+                  className="w-full resize-none rounded-lg bg-[#F7F8FA] px-3 py-1.5 text-[12px] text-[#06172b] placeholder:text-[#8b97a5] outline-none transition focus:ring-2 focus:ring-[#0b3765]/30"
                   value={formData.message}
                   onChange={handleChange('message')}
                 />
@@ -282,11 +278,11 @@ const ContactSection = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="inline-flex w-fit cursor-pointer items-center gap-3 rounded-full bg-[#001530] py-1.5 pl-6 pr-1.5 text-[15px] font-bold text-white transition hover:bg-[#062142]"
+                className="inline-flex w-fit cursor-pointer items-center gap-2 rounded-full bg-[#001530] py-1 pl-4 pr-1 text-[12px] font-bold text-white transition hover:bg-[#062142]"
               >
                 Send Message
-                <span className="grid h-4 w-4 shrink-0 place-items-center rounded-full bg-[#FFE459]">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#FFE459]">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M7 17L17 7M17 7H8M17 7V16"
                       stroke="#001530"
@@ -302,36 +298,36 @@ const ContactSection = () => {
 
           {/* ===== RIGHT COLUMN - CONTACT INFO ===== */}
           <div
-            className="rounded-2xl bg-[#0b3765] px-4 py-4 text-white"
+            className="rounded-2xl bg-[#0b3765] px-5 py-5 text-white"
             style={{ clipPath: 'polygon(0 0, 88% 0, 100% 12%, 100% 100%, 0 100%)' }}
           >
-            <h2 className="font-serif text-[clamp(1.8rem,1.5vw,2.4rem)] font-black">
+            <h2 className="font-serif text-[clamp(1.2rem,1.5vw,1.6rem)] font-black">
               Get in touch
             </h2>
-            <p className="mt-2 text-[12px] leading-6 text-white/70">
+            <p className="mt-1 text-[11px] leading-5 text-white/70">
               Have a question or need guidance before starting your project?
               Reach out through any of the channels below, we're here to
               help.
             </p>
 
             {/* Contact Info Items */}
-            <ul className="mt-8 grid gap-6">
+            <ul className="mt-4 grid gap-3.5">
               {contactInfo.map((item) => (
-                <li key={item.label} className="flex items-start gap-4">
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-[#FFE459]">
+                <li key={item.label} className="flex items-start gap-3">
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-[#FFE459]">
                     {infoIcons[item.icon]}
                   </span>
                   <div>
-                    <p className="text-[15px] font-bold text-white">{item.label}</p>
+                    <p className="text-[12px] font-bold text-white">{item.label}</p>
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-[14px] text-white/70 transition hover:text-white"
+                        className="text-[11px] text-white/70 transition hover:text-white"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <p className="text-[14px] text-white/70">{item.value}</p>
+                      <p className="text-[11px] text-white/70">{item.value}</p>
                     )}
                   </div>
                 </li>
@@ -339,33 +335,31 @@ const ContactSection = () => {
             </ul>
 
             {/* Social Links */}
-            <div className="mt-6 border-t border-white/15 pt-4">
-  <p className="text-[14px] font-bold text-white">Follow Us</p>
-  <div className="mt-2 flex gap-3">
-    {socialLinks.map((s) => (
-      <a
-        key={s.label}
-        href={s.href}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={s.label}
-        className="grid h-9 w-9 cursor-pointer place-items-center rounded-lg bg-[#FFE459] transition hover:bg-[#f5d63f]"
-      >
-        {/* Replace socialIcons[s.icon] with your custom imported icons */}
-        {s.icon === 'facebook' && <img src={Facebook_icon} alt="Facebook" className="h-4 w-4 object-contain" />}
-        {s.icon === 'linkedin' && <img src={Linkedin_icon} alt="LinkedIn" className="h-4 w-4 object-contain" />}
-        {s.icon === 'instagram' && <img src={Insta_icon} alt="Instagram" className="h-4 w-4 object-contain" />}
-      </a>
-    ))}
-  </div>
-</div>
+            <div className="mt-4 border-t border-white/15 pt-3.5">
+              <p className="text-[12px] font-bold text-white">Follow Us</p>
+              <div className="mt-1.5 flex gap-2">
+                {socialLinks.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={s.label}
+                    className="grid h-7 w-7 cursor-pointer place-items-center rounded-lg bg-[#FFE459] transition hover:bg-[#f5d63f]"
+                  >
+                    {s.icon === 'facebook' && <img src={Facebook_icon} alt="Facebook" className="h-3 w-3 object-contain" />}
+                    {s.icon === 'linkedin' && <img src={Linkedin_icon} alt="LinkedIn" className="h-3 w-3 object-contain" />}
+                    {s.icon === 'instagram' && <img src={Insta_icon} alt="Instagram" className="h-3 w-3 object-contain" />}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   )
 }
-
 // ============================================================
 // MAIN CONTACT PAGE (Combines both sections)
 // ============================================================
