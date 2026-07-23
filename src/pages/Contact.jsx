@@ -1,149 +1,382 @@
-import { useState } from 'react'
+// ===== CONTACT PAGE =====
+// File: src/pages/Contact.jsx
 
-const contactItems = [
-  ['mail', 'Email', 'info@delveflow.co', 'mailto:info@delveflow.co'],
-  ['phone', 'Phone', '+92 3469127976', 'tel:+92 3469127976'],
-  ['pin', 'Address', 'Peshawar, Pakistan', '#/contact'],
+import React, { useState } from 'react'
+import Facebook_icon from "../assets/facebook_icon.png"
+import Insta_icon from "../assets/instagram_icon.png"
+import Linkedin_icon from "../assets/linkedin_icon.png"
+
+// ============================================================
+// SECTION 1: CONTACT HERO
+// ============================================================
+// ===== CONTACT HERO SECTION =====
+const ContactHero = () => {
+  return (
+    <section className="relative overflow-hidden bg-white">
+      {/* Gradient background */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_35%,rgba(56,107,223,0.14),transparent_50%),radial-gradient(circle_at_80%_65%,rgba(255,197,92,0.14),transparent_50%)]" />
+      
+      {/* Dotted grid */}
+      <div
+        className="pointer-events-none absolute -left-4 -bottom-4 h-36 w-36 opacity-50"
+        style={{
+          backgroundImage: 'radial-gradient(#b9c6d6 1.4px, transparent 1.4px)',
+          backgroundSize: '14px 14px',
+        }}
+      />
+
+      <div className="relative mx-auto w-[min(1180px,calc(100%-36px))] py-20 text-center">
+        {/* Badge */}
+        <span className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-[#0b3765] px-4 py-1.5 text-[13px] font-bold text-[#0b3765]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#0b3765]" />
+          Contact Us
+        </span>
+
+        {/* Heading with gradient */}
+        <h1 className="mx-auto max-w-3xl font-serif text-[clamp(2rem,3vw,3.4rem)] font-black leading-[1.15] text-[#0a0a0a]">
+          Let's Turn Your Ideas
+          <br />
+          <span className="bg-gradient-to-r from-[#0b3b7b] to-[#d4bb15] bg-clip-text text-transparent">
+            Into Reality.
+          </span>
+        </h1>
+
+        {/* Description */}
+        <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-[#333333]">
+          Whether you're planning a new website, building a custom
+          application, or looking to scale your business with modern
+          technology, our team is here to help. Tell us about your project,
+          and we'll get back to you with the right solution.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================
+// SECTION 2: CONTACT FORM & INFO
+// ============================================================
+
+// ===== CONTACT INFO DATA =====
+const contactInfo = [
+  {
+    icon: 'location',
+    label: 'Address',
+    value: 'Peshawar, Khyber Pakhtunkhwa, Pakistan',
+  },
+  {
+    icon: 'email',
+    label: 'Email',
+    value: 'info@delveflow.co',
+    href: 'mailto:info@delveflow.co',
+  },
+  {
+    icon: 'phone',
+    label: 'Phone',
+    value: '+92 346 9127976',
+    href: 'tel:+923469127976',
+  },
 ]
 
+// ===== SOCIAL LINKS DATA =====
 const socialLinks = [
-  ['instagram', 'Instagram', 'https://www.instagram.com/delveflow?igsh=MXh0bGtibTJqcDZucg=='],
-  ['linkedin', 'LinkedIn', 'https://www.linkedin.com/company/delveflow/'],
-  ['facebook', 'Facebook', 'https://www.facebook.com/share/1AMUv5tXQB/'],
+  { label: 'Facebook', href: 'https://www.facebook.com/share/1AMUv5tXQB/', icon: 'facebook' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/delveflow/', icon: 'linkedin' },
+  { label: 'Instagram', href: 'https://www.instagram.com/delveflow?igsh=MXh0bGtibTJqcDZucg==', icon: 'instagram' },
 ]
 
-const icons = {
-  mail: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-      <path d="M4 6h16v12H4z" fill="none" stroke="currentColor" strokeWidth="2" />
-      <path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+// ===== SERVICES LIST =====
+const services = [
+  'Web Development',
+  'App Development',
+  'UI/UX Design',
+  'AI Solutions',
+  'SaaS Development',
+  'Cloud & DevOps',
+]
+
+// ===== CONTACT INFO ICONS =====
+const infoIcons = {
+  location: (
+    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+      <path d="M12 21s7-6.5 7-11.5A7 7 0 105 9.5C5 14.5 12 21 12 21z" stroke="#001530" strokeWidth="1.8" strokeLinejoin="round" />
+      <circle cx="12" cy="9.5" r="2.3" stroke="#001530" strokeWidth="1.8" />
+    </svg>
+  ),
+  email: (
+    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+      <rect x="3" y="5.5" width="18" height="13" rx="2" stroke="#001530" strokeWidth="1.8" />
+      <path d="M4 7l8 6 8-6" stroke="#001530" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
   phone: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-      <path d="M8 5l2 4-2.5 1.5c1.1 2.2 2.8 3.9 5 5L14 13l4 2-1 4c-7.5-.2-13.8-6.5-14-14l5-1z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-    </svg>
-  ),
-  pin: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-      <path d="M12 21s7-5.3 7-12a7 7 0 0 0-14 0c0 6.7 7 12 7 12z" fill="none" stroke="currentColor" strokeWidth="2" />
-      <circle cx="12" cy="9" r="2.5" fill="none" stroke="currentColor" strokeWidth="2" />
-    </svg>
-  ),
-  linkedin: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-      <path d="M6.5 9.5V18M10.5 18v-8.5M10.5 13.2c0-2.4 5-2.9 5 1.1V18M6.5 6.4v.1" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" />
-    </svg>
-  ),
-  instagram: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-      <rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="currentColor" strokeWidth="2" />
-      <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" strokeWidth="2" />
-      <circle cx="16.4" cy="7.7" r="0.8" fill="currentColor" />
-    </svg>
-  ),
-  facebook: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-      <path d="M14.5 8.2h-1.6c-1 0-1.4.5-1.4 1.5V12h3l-.5 3h-2.5v5M9 12h5" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+      <path d="M5 4.5h3l1.3 4-2 1.5a12 12 0 006.7 6.7l1.5-2 4 1.3v3a1.5 1.5 0 01-1.6 1.5A16 16 0 015 6.1 1.5 1.5 0 015 4.5z" stroke="#001530" strokeWidth="1.7" strokeLinejoin="round" />
     </svg>
   ),
 }
 
-const Contact = () => {
-  const [sent, setSent] = useState(false)
+// ===== SOCIAL ICONS =====
+const socialIcons = {
+  linkedin: (
+    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="3" stroke="#001530" strokeWidth="1.8" />
+      <circle cx="8" cy="9" r="1" fill="#001530" />
+      <path d="M8 11.5v5M16 16.5v-3a2 2 0 00-4 0v3M12 11.5v5" stroke="#001530" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  ),
+  facebook: (
+    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+      <path d="M14 8.5h2V5.5h-2c-2 0-3.5 1.5-3.5 3.5v2H8.5v3H10.5V19h3v-6h2l.5-3H13.5v-1.5c0-.5.5-1 1-1z" stroke="#001530" strokeWidth="1.6" strokeLinejoin="round" />
+    </svg>
+  ),
+  instagram: (
+    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="#001530" strokeWidth="1.8" />
+      <circle cx="12" cy="12" r="4" stroke="#001530" strokeWidth="1.8" />
+      <circle cx="17.2" cy="6.8" r="1" fill="#001530" />
+    </svg>
+  ),
+}
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    setSent(true)
-    event.currentTarget.reset()
+// ===== INPUT CLASSES =====
+const inputClasses =
+  'w-full rounded-lg bg-[#F7F8FA] px-4 py-3 text-[14px] text-[#06172b] placeholder:text-[#8b97a5] outline-none transition focus:ring-2 focus:ring-[#0b3765]/30'
+
+// ===== CONTACT SECTION =====
+const ContactSection = () => {
+  // ===== FORM STATE =====
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: '',
+  })
+
+  // ===== HANDLE INPUT CHANGE =====
+  const handleChange = (field) => (e) => {
+    setFormData((prev) => ({ ...prev, [field]: e.target.value }))
+  }
+
+  // ===== HANDLE FORM SUBMIT =====
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(formData)
+    // Add your form submission logic here
   }
 
   return (
-    <>
-      <section className="relative overflow-hidden bg-[#06172b] py-20 text-center text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(56,185,223,0.25),transparent_28%),linear-gradient(135deg,#06172b,#0b3765)]" />
-        <div className="relative mx-auto w-[min(980px,calc(100%-36px))]">
-          <p className="mb-4 text-xs font-black uppercase text-[#aee8ff]">Get In Touch</p>
-          <h1 className="mb-5 text-[clamp(2.4rem,4vw,5.5rem)] font-black leading-none">Let's Build Something Great Together</h1>
-          <p className="mx-auto max-w-3xl text-lg leading-8 text-[#c7e5f8]">
-            Ready to start your next digital project? Tell us what you need and the DF team will help you plan the next move.
-          </p>
-        </div>
-      </section>
+    <section className="relative overflow-hidden bg-white py-20">
+      {/* Background gradient */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(56,107,223,0.06),transparent_45%),radial-gradient(circle_at_85%_90%,rgba(255,197,92,0.08),transparent_45%)]" />
 
-      <section className="bg-[radial-gradient(circle_at_18%_12%,rgba(56,185,223,0.12),transparent_28%),linear-gradient(180deg,#eef7ff_0%,#f8fcff_100%)] px-5 py-12 text-[#16253a] lg:px-10">
-        <div className="mx-auto grid w-[min(1100px,100%)] gap-7 lg:grid-cols-[1fr_1fr]">
-          <form className="rounded-xl border border-[#b9d8ed] bg-white p-6 shadow-[0_16px_34px_rgba(6,23,43,0.12)]" onSubmit={handleSubmit}>
-            <h2 className="mb-6 text-2xl font-black text-[#06172b]">Send us a message</h2>
-
-            <div className="grid gap-4">
-              <label className="grid gap-2 text-xs font-bold text-[#16253a]">
-                Full Name *
-                <input className="h-11 rounded-md border border-[#c8d3df] bg-white px-4 text-sm outline-none transition focus:border-[#0b3765] focus:ring-4 focus:ring-[#38b9df]/25" placeholder="John Doe" required />
-              </label>
-              <label className="grid gap-2 text-xs font-bold text-[#16253a]">
-                Email Address *
-                <input className="h-11 rounded-md border border-[#c8d3df] bg-white px-4 text-sm outline-none transition focus:border-[#0b3765] focus:ring-4 focus:ring-[#38b9df]/25" placeholder="john@example.com" required type="email" />
-              </label>
-              <label className="grid gap-2 text-xs font-bold text-[#16253a]">
-                Phone Number *
-                <input className="h-11 rounded-md border border-[#c8d3df] bg-white px-4 text-sm outline-none transition focus:border-[#0b3765] focus:ring-4 focus:ring-[#38b9df]/25" placeholder="+1 (555) 123-4567" required type="tel" />
-              </label>
-              <label className="grid gap-2 text-xs font-bold text-[#16253a]">
-                Your Message *
-                <textarea className="min-h-28 rounded-md border border-[#c8d3df] bg-white px-4 py-3 text-sm outline-none transition focus:border-[#0b3765] focus:ring-4 focus:ring-[#38b9df]/25" placeholder="Tell us about your project..." required />
-              </label>
+      <div className="relative mx-auto w-[min(1180px,calc(100%-36px))]">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.15fr_1fr]">
+          
+          {/* ===== LEFT COLUMN - CONTACT FORM ===== */}
+          <div className="overflow-hidden rounded-2xl border border-[#e3e7ee] bg-white shadow-[0_14px_34px_rgba(6,23,43,0.06)]">
+            {/* Form Header with Clip Path */}
+            <div
+              className="bg-[#0b3765] px-2 py-2"
+              // style={{ clipPath: 'polygon(0 0, 100% 0, 100% 70%, 88% 100%, 0 100%)' }}
+            >
+              <h2 className="font-serif text-[clamp(1.8rem,1.5vw,2.4rem)] font-black text-white">
+                Send us a message
+              </h2>
+              <p className="mt-2 text-[12px] text-white/70">
+                Fill out the form below, and our team will get back to you
+                within one business day.
+              </p>
             </div>
 
-            <button className="mt-6 h-12 w-full rounded-md bg-[#06172b] text-sm font-black text-white shadow-[0_10px_22px_rgba(6,23,43,0.24)] transition hover:bg-[#0b3765]" type="submit">
-              Send Message
-            </button>
-            {sent && <p className="mt-4 text-sm font-black text-[#0d5790]">Thanks. Your message is ready for the DF team.</p>}
-          </form>
+            {/* Form Fields */}
+            <form onSubmit={handleSubmit} className="grid gap-4 px-3 py-3">
+              {/* Row 1: Full Name & Email */}
+              <div className="grid grid-cols-1 gap- sm:grid-cols-2">
+                <div>
+                  <label className="mb-1 block text-[10px] font-semibold text-[#0b3765]">
+                    Full Name<span className="text-[#0b3765]">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Ali Hassan"
+                    className={inputClasses}
+                    value={formData.fullName}
+                    onChange={handleChange('fullName')}
+                  />
+                </div>
+                <div>
+                  <label className="mb-1 block text-[10px] font-semibold text-[#0b3765]">
+                    Email<span className="text-[#0b3765]">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="@james.com"
+                    className={inputClasses}
+                    value={formData.email}
+                    onChange={handleChange('email')}
+                  />
+                </div>
+              </div>
 
-          <div>
-            <h2 className="mb-4 text-2xl font-black text-[#06172b]">Get in touch</h2>
-            <p className="mb-4 max-w-xl leading-7 text-[#27445f]">
-              We're here to answer any questions you may have about our services. Reach out to us and we'll respond as soon
-              as we can.
+              {/* Row 2: Phone Number */}
+              <div>
+                <label className="mb-1 block text-[10px] font-semibold text-[#0b3765]">
+                  Phone Number<span className="text-[#0b3765]">*</span>
+                </label>
+                <input
+                  type="tel"
+                  required
+                  placeholder="+1 123 456 7890"
+                  className={inputClasses}
+                  value={formData.phone}
+                  onChange={handleChange('phone')}
+                />
+              </div>
+
+              {/* Row 3: Service Selection with Chevron */}
+              <div className="relative">
+                <label className="mb-1 block text-[10px] font-semibold text-[#0b3765]">
+                  Choose a service
+                </label>
+                <div className="relative">
+                  <select
+                    className={`${inputClasses} appearance-none cursor-pointer`}
+                    value={formData.service}
+                    onChange={handleChange('service')}
+                  >
+                    <option value="">Select</option>
+                    {services.map((s) => (
+                      <option key={s} value={s}>
+                        {s}
+                      </option>
+                    ))}
+                  </select>
+                  {/* Chevron Icon */}
+                  <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#8b97a5]">
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 4: Message */}
+              <div>
+                <label className="mb-1 block text-[10px] font-semibold text-[#0b3765]">
+                  Message<span className="text-[#0b3765]">*</span>
+                </label>
+                <textarea
+                  required
+                  rows={4}
+                  placeholder="Tell us about your project..."
+                  className={`${inputClasses} resize-none`}
+                  value={formData.message}
+                  onChange={handleChange('message')}
+                />
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="inline-flex w-fit cursor-pointer items-center gap-3 rounded-full bg-[#001530] py-1.5 pl-6 pr-1.5 text-[15px] font-bold text-white transition hover:bg-[#062142]"
+              >
+                Send Message
+                <span className="grid h-4 w-4 shrink-0 place-items-center rounded-full bg-[#FFE459]">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7 17L17 7M17 7H8M17 7V16"
+                      stroke="#001530"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </form>
+          </div>
+
+          {/* ===== RIGHT COLUMN - CONTACT INFO ===== */}
+          <div
+            className="rounded-2xl bg-[#0b3765] px-4 py-4 text-white"
+            style={{ clipPath: 'polygon(0 0, 88% 0, 100% 12%, 100% 100%, 0 100%)' }}
+          >
+            <h2 className="font-serif text-[clamp(1.8rem,1.5vw,2.4rem)] font-black">
+              Get in touch
+            </h2>
+            <p className="mt-2 text-[12px] leading-6 text-white/70">
+              Have a question or need guidance before starting your project?
+              Reach out through any of the channels below, we're here to
+              help.
             </p>
 
-            <div className="grid gap-4">
-              {contactItems.map(([icon, title, value, href]) => (
-                <a className="group grid min-h-[92px] grid-cols-[44px_1fr] items-center gap-4 rounded-xl border border-transparent bg-white p-6 shadow-[0_8px_24px_rgba(6,23,43,0.04)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_14px_34px_rgba(6,23,43,0.10)]" href={href} key={title}>
-                  <span className="grid h-9 w-9 place-items-center rounded-md bg-[#eef7ff] text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]">
-                    {icons[icon]}
+            {/* Contact Info Items */}
+            <ul className="mt-8 grid gap-6">
+              {contactInfo.map((item) => (
+                <li key={item.label} className="flex items-start gap-4">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-[#FFE459]">
+                    {infoIcons[item.icon]}
                   </span>
-                  <span>
-                    <strong className="block text-sm font-black text-[#06172b]">{title}</strong>
-                    <span className="mt-1 block text-sm text-[#0b3765]">{value}</span>
-                  </span>
-                </a>
+                  <div>
+                    <p className="text-[15px] font-bold text-white">{item.label}</p>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="text-[14px] text-white/70 transition hover:text-white"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-[14px] text-white/70">{item.value}</p>
+                    )}
+                  </div>
+                </li>
               ))}
-            </div>
+            </ul>
 
-            <div className="mt-6">
-              <h3 className="mb-3 text-base font-black text-[#06172b]">Follow us</h3>
-              <div className="flex gap-3">
-                {socialLinks.map(([icon, label, href]) => (
-                  <a
-                    className="grid h-10 w-10 place-items-center rounded-lg bg-[#e9edf3] text-[#06172b] transition hover:bg-[#38b9df] hover:text-[#06172b]"
-                    href={href}
-                    key={icon}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`DF ${label}`}
-                  >
-                    {icons[icon]}
-                  </a>
-                ))}
-              </div>
-            </div>
+            {/* Social Links */}
+            <div className="mt-6 border-t border-white/15 pt-4">
+  <p className="text-[14px] font-bold text-white">Follow Us</p>
+  <div className="mt-2 flex gap-3">
+    {socialLinks.map((s) => (
+      <a
+        key={s.label}
+        href={s.href}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={s.label}
+        className="grid h-9 w-9 cursor-pointer place-items-center rounded-lg bg-[#FFE459] transition hover:bg-[#f5d63f]"
+      >
+        {/* Replace socialIcons[s.icon] with your custom imported icons */}
+        {s.icon === 'facebook' && <img src={Facebook_icon} alt="Facebook" className="h-4 w-4 object-contain" />}
+        {s.icon === 'linkedin' && <img src={Linkedin_icon} alt="LinkedIn" className="h-4 w-4 object-contain" />}
+        {s.icon === 'instagram' && <img src={Insta_icon} alt="Instagram" className="h-4 w-4 object-contain" />}
+      </a>
+    ))}
+  </div>
+</div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================
+// MAIN CONTACT PAGE (Combines both sections)
+// ============================================================
+const Contact = () => {
+  return (
+    <>
+      <ContactHero />
+      <ContactSection />
     </>
   )
 }
 
+// ===== EXPORT =====
 export default Contact

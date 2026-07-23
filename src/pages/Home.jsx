@@ -1,5 +1,5 @@
 // ===== IMPORTS =====
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import web_icon from '../assets/webdevelopment.png'
 import AI_icon from '../assets/AI_icon.png'
 import UI_icon from '../assets/uiux.svg'
@@ -12,6 +12,12 @@ import Discovery_icon from "../assets/discovery.png"
 import Planning_icon from "../assets/planning.png"
 import Agile_icon from "../assets/agile.png"
 import Growth_icon from "../assets/growth.png"
+import Bg_icon from "../assets/testibg.png"
+import Client1 from "../assets/client1.png"
+import Client2 from "../assets/client2.png"
+import Client3 from "../assets/client3.png"
+import topRightImage from "../assets/topright.png"
+import topLeftImage from "../assets/left.png"
 
 
 // ===== REASONS DATA (for Why Choose Us) =====
@@ -340,34 +346,33 @@ const howWeWorkIcons = {
     <img 
   src= {Discovery_icon} 
   alt="icon description" 
-  className="h-15 w-15 object-contain"
+  className="h-18 w-18"
 />
   ),
   compass: (
     <img 
   src= {Planning_icon} 
   alt="icon description" 
-  className="h-15 w-15 object-contain"
+  className="h-18 w-18 object-contain"
 />
   ),
   code: (
      <img 
   src= {Agile_icon} 
   alt="icon description" 
-  className="h-15 w-15 object-contain"
+   className="h-18 w-18 object-contain"
 />
   ),
   rocket: (
     <img 
   src= {Growth_icon} 
   alt="icon description" 
-  className="h-15 w-15 object-contain"
+   className="h-18 w-18 object-contain"
 />
   ),
 }
 
 // ===== HOW WE WORK COMPONENTS =====
-// UPDATED: Chevron icon on LEFT side (before the text)
 const ChevronBullet = ({ children }) => (
   <li className="flex items-start gap-2 border-t border-white/10 py-2.5 text-[13px] text-[#dbe4ee] first:border-t-0">
     <svg viewBox="0 0 24 24" fill="none" className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#38B9DF]">
@@ -396,134 +401,147 @@ const StepCard = ({ step }) => (
   </div>
 )
 
+
 // ===== TESTIMONIALS DATA =====
 const testimonials = [
   {
-    id: 1,
-    name: 'Mr. Kamran,',
-    role: 'Founder, Trading App',
+    name: 'Saliha Noor',
+    role: 'Founder, NovaTech Solutions',
+    photo: Client1,
     quote:
-      '"Delve Flow transformed our vision into a high-performance trading app that exceeded all expectations. The real-time features and smooth UI have significantly improved user engagement. Professional team, timely delivery, and outstanding support!"',
+      'Delve Flow transformed our vision into a high-performance trading app that exceeded all expectations. The real-time features and smooth UI have significantly improved user engagement. Professional team, timely delivery, and outstanding support!',
     rating: 5,
-    photo:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80',
   },
   {
-    id: 2,
-    name: 'Sarah Mitchell,',
-    role: 'CEO, RetailPro',
+    name: 'Malaika Javed',
+    role: 'CEO, Profit Pal',
+    photo: Client2,
     quote:
-      '"Working with DelveFlow was seamless from start to finish. They understood our business goals immediately and delivered a platform that our customers genuinely love using every day."',
+      'Working with Delve Flow was seamless from start to finish. They understood our business goals immediately and delivered a product that our users genuinely love. Communication was clear throughout the entire process.',
     rating: 5,
-    photo:
-      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80',
   },
   {
-    id: 3,
-    name: 'Ahmed Raza,',
-    role: 'Founder, LogiTrack',
+    name: 'Bilal Hassan',
+    role: 'Operations Lead, Gym Management System',
+    photo: Client3,
     quote:
-      '"The team went above and beyond to make sure every detail was right. Communication was clear throughout, and the final product exceeded what we imagined possible."',
+      'The team at Delve Flow rebuilt our entire booking and payments workflow. It is faster, more reliable, and our staff finds it far easier to use day to day. Highly recommend them for any serious digital project.',
     rating: 5,
-    photo:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80',
   },
 ]
 
-// ===== TESTIMONIALS COMPONENT =====
-const StarIcon = () => (
-  <svg viewBox="0 0 20 20" className="h-4 w-4 fill-[#f2c14e]" aria-hidden="true">
-    <path d="M10 1.5l2.6 5.4 5.9.7-4.4 4.1 1.2 5.8L10 14.6l-5.3 2.9 1.2-5.8L1.5 7.6l5.9-.7L10 1.5z" />
-  </svg>
+
+const AUTO_SLIDE_INTERVAL = 4000
+
+const StarRating = ({ rating }) => (
+  <div className="flex gap-1">
+    {Array.from({ length: 5 }).map((_, i) => (
+      <svg
+        key={i}
+        viewBox="0 0 24 24"
+        className="h-4 w-4"
+        fill={i < rating ? '#FFE459' : 'none'}
+        stroke="#FFE459"
+        strokeWidth="1.5"
+      >
+        <path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.1 6.5L12 17.6l-5.8 3-1.1-6.5-4.8-4.6 6.6-.9L12 2.5z" strokeLinejoin="round" />
+      </svg>
+    ))}
+  </div>
 )
 
 const TestimonialSection = () => {
   const [active, setActive] = useState(0)
+  const intervalRef = useRef(null)
   const current = testimonials[active]
+
+  const goToNext = () => {
+    setActive((prev) => (prev + 1) % testimonials.length)
+  }
+
+  const startTimer = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current)
+    intervalRef.current = setInterval(goToNext, AUTO_SLIDE_INTERVAL)
+  }
+
+  useEffect(() => {
+    startTimer()
+    return () => clearInterval(intervalRef.current)
+  }, [])
+
+  const handleManualSelect = (index) => {
+    setActive(index)
+    startTimer()
+  }
 
   return (
     <section className="relative overflow-hidden bg-white py-20 px-6 md:px-12 lg:px-20">
-      {/* decorative dashed ring, top-left */}
-      <svg
-        className="pointer-events-none absolute -left-16 top-6 h-56 w-56 text-[#0e2547]/10"
-        viewBox="0 0 200 200"
-        fill="none"
-      >
-        <circle cx="100" cy="100" r="99" stroke="currentColor" strokeDasharray="4 6" />
-        <circle cx="100" cy="100" r="70" stroke="currentColor" strokeDasharray="4 6" />
-      </svg>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_15%,rgba(56,107,223,0.07),transparent_45%),radial-gradient(circle_at_90%_85%,rgba(255,197,92,0.10),transparent_45%)]" />
 
-      {/* Header */}
-      <div className="relative z-10 mx-auto max-w-3xl text-center">
-        <div className="mb-5 inline-block border-b-2 border-[#12203f] pb-1 text-[13px] font-bold uppercase tracking-wide text-[#12203f]">
-          Testimonial
-        </div>
-
-        <h2 className="font-serif text-[clamp(1.7rem,3.4vw,2.4rem)] font-extrabold leading-tight text-[#111111]">
-          Real Stories. Real Results.
-          <br />
-          <span className="text-[#374767]">Rea</span>
-          <span className="bg-gradient-to-r from-[#8a9a3c] to-[#f2c14e] bg-clip-text text-transparent">l </span>
-
-          <span className="bg-gradient-to-r from-[#8a9a3c] to-[#f2c14e] bg-clip-text text-transparent">
-            Trust.
-          </span>
-        </h2>
-
-        <p className="mx-auto mt-4 max-w-xl text-[13.5px] leading-relaxed text-[#5b5b5b]">
-          Don't just take our word for it hear from the businesses and founders
-          who have experienced the Delve Flow difference.
-        </p>
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 mx-auto mt-14 flex max-w-4xl items-stretch gap-6">
-        {/* Photo stack */}
-        <div className="flex flex-col gap-4">
-          {testimonials.map((t, i) => (
-            <button
-              key={t.id}
-              onClick={() => setActive(i)}
-              className={`h-[84px] w-[84px] overflow-hidden rounded-xl border-2 transition ${
-                i === active
-                  ? 'border-[#3fc6e0] ring-2 ring-[#3fc6e0]/40'
-                  : 'border-transparent opacity-90 hover:opacity-100'
-              }`}
-              aria-label={`Show testimonial from ${t.name}`}
-            >
-              <img 
-                src={t.photo} 
-                alt={t.name} 
-                className="h-full w-full object-cover"
-                loading="lazy"
-              />
-            </button>
-          ))}
-        </div>
-
-        {/* Quote card */}
-        <div className="relative flex-1 rounded-2xl bg-gradient-to-br from-[#eaf4ff] via-[#eef3fb] to-[#fdf6e3] p-[1.5px]">
-          <div className="relative h-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#eef4fc] to-[#fbf6e6] px-9 py-8">
-            {/* decorative quote mark */}
-            <span className="pointer-events-none absolute right-6 top-2 select-none font-serif text-[110px] leading-none text-[#0e2547]/10">
-              "
+      {/* Fixed height container to prevent layout shift */}
+      <div className="relative mx-auto max-w-5xl min-h-[400px]">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="mx-auto mb-4 inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-bold uppercase tracking-wide text-[#0b3765]">
+            Testimonial
+          </p>
+          <h2 className="font-serif text-[clamp(1.6rem,3vw,2.3rem)] font-black leading-snug text-[#0a0a0a]">
+            Real Stories. Real Results.
+            <br />
+            <span className="text-[#0b3b7b]">Real</span>{' '}
+            <span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">
+              Trust.
             </span>
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-[14px] leading-6 text-[#404040]">
+            Don't just take our word for it, hear from the businesses and
+            founders who have experienced the Delve Flow difference.
+          </p>
+        </div>
 
-            <p className="relative z-10 max-w-[420px] text-[15px] leading-relaxed text-[#33363f]">
-              {current.quote}
-            </p>
+        <div className="mt-14 flex flex-col items-center gap-8 sm:flex-row sm:items-stretch">
+          {/* Photo Stack - Increased sizes */}
+          <div className="flex shrink-0 flex-row gap-4 sm:flex-col sm:justify-center">
+            {testimonials.map((t, index) => {
+              const isActive = index === active
+              return (
+                <button
+                  key={t.name}
+                  type="button"
+                  onClick={() => handleManualSelect(index)}
+                  aria-label={`Show testimonial from ${t.name}`}
+                  className={`shrink-0 overflow-hidden rounded-2xl transition-all duration-300 ${
+                    isActive
+                      ? 'h-28 w-28 border-2 border-transparent bg-gradient-to-br from-[#38B9DF] to-[#d4bb15] p-[3px] shadow-[0_10px_25px_rgba(56,185,223,0.3)]'
+                      : 'h-20 w-20 border border-[#e3e7ee] opacity-70 hover:opacity-100'
+                  }`}
+                >
+                  <img
+                    src={t.photo}
+                    alt={t.name}
+                    className={`h-full w-full object-cover ${isActive ? 'rounded-[11px]' : 'rounded-2xl'}`}
+                  />
+                </button>
+              )
+            })}
+          </div>
 
-            <div className="relative z-10 mt-8 flex items-end justify-between border-t border-dashed border-[#c9cfdb] pt-5">
-              <div>
-                <div className="font-serif text-[15px] font-bold text-[#111111]">
-                  {current.name}
-                </div>
-                <div className="mt-0.5 text-[12.5px] text-[#8a8a8a]">{current.role}</div>
+          {/* Quote Card - Added gradient border */}
+          <div className="relative flex-1 overflow-hidden rounded-2xl bg-gradient-to-br from-[#38B9DF] via-[#38B9DF]/30 to-[#d4bb15] p-[2px]">
+            <div className="h-full w-full rounded-2xl bg-gradient-to-br from-[#f8fcf9] to-[#eef4fb] px-7 py-8 sm:px-9 sm:py-10">
+              <div className="pointer-events-none absolute right-6 top-2 select-none font-serif text-[110px] leading-none text-[#0e2547]/10 h-25 w-25">
+                <img src={Bg_icon} alt="" />
               </div>
-              <div className="flex items-center gap-1">
-                {Array.from({ length: current.rating }).map((_, i) => (
-                  <StarIcon key={i} />
-                ))}
+
+              <p className="relative max-w-xl text-[15px] leading-7 text-[#333333] sm:text-[16px]">
+                "{current.quote}"
+              </p>
+
+              <div className="mt-8 flex items-end justify-between gap-4 border-t border-dashed border-[#d7e5f2] pt-5">
+                <div>
+                  <p className="text-[15px] font-bold text-[#06172b]">{current.name}</p>
+                  <p className="text-[13px] text-[#6b7280]">{current.role}</p>
+                </div>
+                <StarRating rating={current.rating} />
               </div>
             </div>
           </div>
@@ -532,7 +550,6 @@ const TestimonialSection = () => {
     </section>
   )
 }
-
 // ===== CTA SECTION =====
 const CtaSection = () => {
   return (
@@ -541,14 +558,21 @@ const CtaSection = () => {
 
       <div className="relative mx-auto w-[min(1000px,calc(100%-36px))]">
         <div className="relative overflow-hidden rounded-[28px] border border-[#0b3765]/25 bg-white px-6 py-14 sm:px-14">
-          <div className="pointer-events-none absolute -left-24 -bottom-24 h-64 w-64 rounded-full bg-[#FFE459] opacity-40 blur-3xl" />
-          <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#38B9DF] opacity-30 blur-3xl" />
-          <div
-            className="pointer-events-none absolute -right-4 -top-4 h-32 w-32 opacity-50"
-            style={{
-              backgroundImage: 'radial-gradient(#b9c6d6 1.4px, transparent 1.4px)',
-              backgroundSize: '14px 14px',
-            }}
+          
+          {/* TOP-RIGHT IMAGE - Use topRightImage */}
+          <img
+            src={topRightImage}  
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-4 -top-4 h-40 w-40 object-contain opacity-299"
+          />
+
+          {/* BOTTOM-LEFT IMAGE - Use topLeftImage */}
+          <img
+            src={topLeftImage}   // ← Changed from topLeft to topLeftImage
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-4 -top-1 h-40 w-40 object-contain opacity-299"
           />
 
           <div className="relative mx-auto max-w-2xl text-center">
@@ -600,7 +624,6 @@ const CtaSection = () => {
     </section>
   )
 }
-
 // ===== HOME COMPONENT =====
 const Home = ({ services }) => {
   return (
@@ -679,10 +702,10 @@ const Home = ({ services }) => {
                 <p className="text-[13px] font-semibold text-[#3f4c58]">
                   {stat.label}
                 </p>
-                <p className="mt-2 font-serif text-4xl font-black text-[#001530]">
-                  {stat.value}
-                  <span style={{ color: stat.suffixColor }}>{stat.suffix}</span>
-                </p>
+                  <p className="mt-2 font-['Inter'] text-4xl font-black text-[#001530]">
+  {stat.value}
+  <span style={{ color: stat.suffixColor }}>{stat.suffix}</span>
+</p>
               </div>
             ))}
           </div>
@@ -700,9 +723,8 @@ const Home = ({ services }) => {
             <h2 className="mx-auto max-w-4xl font-serif text-[clamp(2rem,4vw,3.6rem)] font-medium leading-[1.2] text-[#171717] tracking-wide">
               Custom Digital Solutions That Drive
               <br />
-              <span className="text-[#0d3b66]">Real Business </span>
-<span className="bg-gradient-to-r from-[#8a9a3c] to-[#e2ca26] bg-clip-text text-transparent">
-  Growth
+              <span className="bg-gradient-to-r from-[#0d3b66] via-[#8a9a3c] to-[#e2ca26] bg-clip-text text-transparent">
+  Real Business Growth
 </span>
             </h2>
             <p className="mx-auto max-w-3xl text-lg text-[#5c6f84] leading-relaxed mt-4">
@@ -789,11 +811,10 @@ const Home = ({ services }) => {
         <div className="relative mx-auto w-[min(1180px,calc(100%-36px))] py-20">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-serif text-[clamp(1.8rem,3.4vw,2.6rem)] font-black leading-tight text-[#0a0a0a]">
-              Why Businesses Choose{' '}
-              <span className="text-[#0b3b7b]">Delve</span>{' '}
-              <span className="bg-gradient-to-r from-[#87923c] to-[#d5b914] bg-clip-text text-transparent">
-                Flow
-              </span>
+              Why Businesses Choose{' '}<br></br>
+              <span className="bg-gradient-to-r from-[#0d3b66] via-[#8a9a3c] to-[#e2ca26] bg-clip-text text-transparent font-bold">
+  Real Business Growth
+</span>
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[#333333]">
               Where Technical Mastery Meets Real Business Impact. We don't just

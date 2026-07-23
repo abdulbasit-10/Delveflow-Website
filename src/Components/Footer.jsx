@@ -1,12 +1,18 @@
 
 
-import dfLogoMark from '../assets/delveLogo.png'
+import dfLogoMark from '../assets/footerlogo.png'
+import Email_icon from "../assets/email_icon.png"
+import Phone_icon from "../assets/phone_icon.png"
+import Location_icon from "../assets/location_icon.png"
+import Facebook_icon from '../assets/facebook_icon.png'
+import Linkedin_icon from "../assets/linkedin_icon.png"
+import Instagram_icon from "../assets/instagram_icon.png"
 
 const quickLinks = [
   { label: 'Home', href: '#/home' },
   { label: 'About Us', href: '#/about' },
   { label: 'Services', href: '#/services' },
-  { label: 'How We Work', href: '#/howwework' },
+  { label: 'How We Work', href: '#/homework' },
   { label: 'Projects', href: '#/projects' },
   { label: 'Career', href: '#/career' },
 ]
@@ -21,40 +27,41 @@ const services = [
 ]
 
 const socialLinks = [
+ {
+  label: 'Facebook',
+  href: 'https://www.facebook.com/delveflow?igsh=MXh0bGtibTJqcDZucg==',
+  icon: (
+    <img 
+      src={Facebook_icon} 
+      alt="Instagram" 
+      className="h-4 w-4 object-contain"
+    />
+  ),
+},
+   
   {
-    label: 'Instagram',
-    href: 'https://www.instagram.com/delveflow?igsh=MXh0bGtibTJqcDZucg==',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-        <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" strokeWidth="1.8" />
-        <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
-        <circle cx="17.2" cy="6.8" r="1" fill="currentColor" />
-      </svg>
-    ),
-  },
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/company/delveflow/',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-        <rect x="3.5" y="3.5" width="17" height="17" rx="3" stroke="currentColor" strokeWidth="1.8" />
-        <circle cx="8" cy="9" r="1" fill="currentColor" />
-        <path d="M8 11.5v5M16 16.5v-3a2 2 0 00-4 0v3M12 11.5v5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    label: 'Facebook',
-    href: 'https://www.facebook.com/share/1AMUv5tXQB/',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-        <path
-          d="M14 8.5h2V5.5h-2c-2 0-3.5 1.5-3.5 3.5v2H8.5v3H10.5V19h3v-6h2l.5-3H13.5v-1.5c0-.5.5-1 1-1z"
-          stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
+  label: 'Instagram',
+  href: 'https://www.instagram.com/delveflow?igsh=MXh0bGtibTJqcDZucg==',
+  icon: (
+    <img 
+      src={Instagram_icon} 
+      alt="Instagram" 
+      className="h-4 w-4 object-contain"
+    />
+  ),
+},
+
+{
+  label: 'Linkedin',
+  href: 'https://www.instagram.com/delveflow?igsh=MXh0bGtibTJqcDZucg==',
+  icon: (
+    <img 
+      src={Linkedin_icon} 
+      alt="Linkedin" 
+      className="h-4 w-4 object-contain"
+    />
+  ),
+},
 ]
 
 const contactInfo = [
@@ -62,35 +69,27 @@ const contactInfo = [
     label: 'info@delveflow.co',
     href: 'mailto:info@delveflow.co',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-        <rect x="3" y="5.5" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M4 7l8 6 8-6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
+      <img src={Email_icon} className="h-4 w-4">
+        
+      </img>
     ),
   },
   {
     label: '+92 3469127976',
     href: 'tel:+923469127976',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-        <path
-          d="M5 4.5h3l1.3 4-2 1.5a12 12 0 006.7 6.7l1.5-2 4 1.3v3a1.5 1.5 0 01-1.6 1.5A16 16 0 015 6.1 1.5 1.5 0 015 4.5z"
-          stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"
-        />
-      </svg>
+      <img src={Phone_icon} className="h-4 w-4">
+        
+      </img>
     ),
   },
   {
     label: 'Peshawar, Pakistan',
     href: '#',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-        <path
-          d="M12 21s7-6.5 7-11.5A7 7 0 105 9.5C5 14.5 12 21 12 21z"
-          stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round"
-        />
-        <circle cx="12" cy="9.5" r="2.3" stroke="currentColor" strokeWidth="1.7" />
-      </svg>
+      <img src={Location_icon} className="h-4 w-4">
+        
+      </img>
     ),
   },
 ]
@@ -105,7 +104,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div>
             <a href="#/home" className="inline-flex items-center gap-2" aria-label="Delveflow home">
-              <img src={dfLogoMark} alt="" className="h-10 w-auto object-contain" />
+              <img src={dfLogoMark} alt="" className="h-19 w-auto object-contain" />
             </a>
             <p className="mt-5 max-w-xs text-[14px] leading-6 text-white/70">
               Building scalable digital solutions for modern businesses.
@@ -177,7 +176,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-[min(1180px,calc(100%-36px))] flex-col items-center justify-between gap-3 py-6 text-[13px] text-white/50 sm:flex-row">
-          <p>© {currentYear} Encova Solutions. All rights reserved.</p>
+          <p>© {currentYear} Delve Flow. All rights reserved.</p>
           <div className="flex items-center gap-5">
             <a href="#/terms" className="transition hover:text-white/80">Terms of Service</a>
             <a href="#/privacy" className="transition hover:text-white/80">Privacy Policy</a>

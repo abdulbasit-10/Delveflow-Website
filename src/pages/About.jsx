@@ -5,6 +5,12 @@ import React from 'react'
 import abdulBasitPhoto from '../assets/abdul-basit.jpg'
 import arifaNaveedPhoto from '../assets/arifa-naveed.jpeg'
 import warishaAsadPhoto from '../assets/warisha-asad.jpeg'
+import Hero_Image from '../assets/about_hero.png'
+import Arrow_icon from '../assets/arrow_icon.png'
+import Lense_icon from '../assets/lence_icon.png'
+import ValueIconBg from '../assets/valueiconbg.png'
+
+
 import { CtaSection } from './Home'
 
 // ============================================================
@@ -12,7 +18,7 @@ import { CtaSection } from './Home'
 // ============================================================
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-white via-white via-[#e9ecf7] via-[#eef1fb] via-[#fdf3df] to-[#fdf0da] py-20 px-6 md:px-12 lg:px-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-white via-white via-[#e9ecf7] via-[#eef1fb] via-[#fdf3df] to-[#fdf0da] py-10 px-6 md:px-12 lg:px-20">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-10 lg:flex-row">
         {/* LEFT COLUMN */}
         <div className="flex-1 max-w-[560px] py-10 lg:py-16">
@@ -28,8 +34,9 @@ const HeroSection = () => {
             <br />
             That Turn Ideas Into
             <br />
-            <span className="text-[#1c2a52]">Business </span>
-            <span className="text-[#8a9a3c]">Growth.</span>
+              <span className="bg-gradient-to-r from-[#093B7B] to-[#FFD600] bg-clip-text text-transparent">
+                 Business Growth.
+                </span>
           </h2>
 
           {/* Paragraph */}
@@ -64,20 +71,20 @@ const HeroSection = () => {
         {/* RIGHT COLUMN */}
         <div className="relative flex-1 max-w-[460px] py-10 lg:py-16">
           {/* Decorative yellow circles */}
-          <div className="absolute top-2 right-2 z-0 h-11 w-11 rounded-full bg-[#f2c14e] opacity-90" />
-          <div className="absolute top-7 right-12 z-0 h-4 w-4 rounded-full bg-[#f6d873] opacity-90" />
+          <div className="absolute top-12 right-2 z-0 h-11 w-11 rounded-full bg-[#e2ca0f] opacity-90" />
+          {/* <div className="absolute top-7 right-12 z-0 h-4 w-4 rounded-full bg-[#f6d873] opacity-90" /> */}
 
           {/* Main image */}
           <div className="relative z-10 h-[360px] overflow-hidden rounded-[20px] shadow-[0_20px_50px_rgba(20,20,50,0.12)]">
             <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+              src={Hero_Image}
               alt="Team meeting"
               className="h-full w-full object-cover"
             />
           </div>
 
           {/* Projects Delivered card */}
-          <div className="absolute -top-6 -left-2.5 z-20 min-w-[180px] rounded-[14px] bg-white p-3.5 px-5 shadow-[0_12px_30px_rgba(20,20,50,0.10)]">
+          <div className="absolute -top-1 -left-5.5 z-20 min-w-[180px] rounded-[14px] bg-white p-3.5 px-5 shadow-[0_12px_30px_rgba(20,20,50,0.10)]">
             <div className="mb-1 text-xs text-[#8a8a8a]">Projects Delivered</div>
             <div className="flex items-center gap-2.5">
               <span className="font-serif text-2xl font-extrabold text-[#12203f]">
@@ -90,7 +97,7 @@ const HeroSection = () => {
           </div>
 
           {/* Happy Clients card */}
-          <div className="absolute -bottom-6 -right-4 z-20 min-w-[190px] rounded-[14px] bg-white p-3.5 px-5 shadow-[0_12px_30px_rgba(20,20,50,0.10)]">
+          <div className="absolute -bottom-1 -right-4 z-20 min-w-[190px] rounded-[14px] bg-white p-3.5 px-5 shadow-[0_12px_30px_rgba(20,20,50,0.10)]">
             <div className="mb-1 text-xs text-[#8a8a8a]">Happy Clients</div>
             <div className="flex items-center gap-2.5">
               <span className="font-serif text-2xl font-extrabold text-[#12203f]">
@@ -114,22 +121,19 @@ const HeroSection = () => {
 // ===== ICONS =====
 function TargetIcon() {
   return (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="9" stroke="#2f6fed" strokeWidth="1.6" />
-      <circle cx="12" cy="12" r="5" stroke="#2f6fed" strokeWidth="1.6" />
-      <circle cx="12" cy="12" r="1.6" fill="#2f6fed" />
-      <path d="M17 7l2-2" stroke="#2f6fed" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
+    <img src={Arrow_icon} width="46" height="46"  >
+      
+      
+    </img>
   )
 }
 
 function LensIcon() {
   return (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="9" stroke="#e0a800" strokeWidth="1.6" />
-      <circle cx="12" cy="12" r="5" stroke="#e0a800" strokeWidth="1.6" />
-      <circle cx="12" cy="12" r="1.8" fill="#e0a800" />
-    </svg>
+   <img src={Lense_icon} width="26" height="26"  >
+      
+      
+    </img>
   )
 }
 
@@ -179,9 +183,9 @@ const StorySection = () => {
           <h1 className="font-serif text-3xl md:text-[32px] font-extrabold leading-[1.22] text-[#111111]">
             Turning Business Challenges
             <br />
-            Into <span className="text-[#1c2a52]">Digital</span>{" "}
-            <span className="text-[#8a9a3c]">Success</span>{" "}
-            <span className="text-[#111111]">Stories.</span>
+            Into <span className="bg-gradient-to-r from-[#093B7B] via-[#8a9a3c] to-[#FFD600] bg-clip-text text-transparent">
+  Digital Success Stories.
+</span>
           </h1>
 
           {/* Paragraph */}
@@ -311,7 +315,7 @@ const coreValueIcons = {
 
 const ValueCard = ({ number, icon, title, text }) => {
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-[#f7f8fb] px-8 py-8">
+    <div className="relative overflow-hidden rounded-20xl bg-[#f7f8fb] px-8 py-8">
       <h3 className="font-serif text-xl font-extrabold text-[#111111]">{title}</h3>
       <p className="mt-3 max-w-[280px] text-[13.5px] leading-relaxed text-[#5b5b5b]">
         {text}
@@ -319,11 +323,14 @@ const ValueCard = ({ number, icon, title, text }) => {
       <div className="mt-8 text-2xl font-black text-[#c9cfdb]">{number}</div>
 
       {/* navy quarter-circle icon badge */}
-      <div className="absolute bottom-0 right-0 flex h-[92px] w-[92px] items-end justify-end rounded-tl-[60px] bg-[#0e2547]">
-        <span className="mb-5 mr-5 flex h-9 w-9 items-center justify-center">
-          {coreValueIcons[icon]}
-        </span>
-      </div>
+      <div 
+  className="absolute bottom-0 right-0 flex h-[92px] w-[92px] items-end justify-end rounded-none"
+  style={{ backgroundImage: `url(${ValueIconBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+>
+  <span className="mb-5 mr-5 flex h-9 w-9 items-center justify-center">
+    {coreValueIcons[icon]}
+  </span>
+</div>
     </div>
   )
 }
@@ -357,13 +364,13 @@ const ValuesSection = () => {
         </div>
 
         {/* Heading */}
-        <h2 className="font-serif text-[clamp(1.8rem,3.6vw,2.6rem)] font-extrabold leading-tight text-[#111111]">
+        <h3 className="font-serif text-[clamp(1.8rem,1.6vw,2.6rem)] font-extrabold leading-tight text-[#111111]">
           The Values That Shape
           <br />
-          <span className="bg-gradient-to-r from-[#3fc6c6] to-[#c7cf3f] bg-clip-text text-transparent">
-            Every Solution We Build.
-          </span>
-        </h2>
+           <span className="bg-gradient-to-r from-[#093B7B] to-[#FFD600] bg-clip-text text-transparent">
+  Every Solution We Build.
+</span>
+        </h3>
 
         {/* Paragraph */}
         <p className="mx-auto mt-5 max-w-2xl text-[13.5px] leading-relaxed text-[#5b5b5b]">
@@ -389,53 +396,84 @@ const ValuesSection = () => {
 // ============================================================
 const experts = [
   ['WA', 'Warisha Asad', 'CEO & Founder', 'Visionary leader with 3+ years in Tech Industry', 'https://www.linkedin.com/in/warisha-asad-6259203b0/', warishaAsadPhoto, 'center'],
-  ['AB', 'Abdul Basit', 'Co-Founder', 'Shaping businesses with executive foresight.', 'https://www.linkedin.com/in/abdul-basit-1039b522b/', abdulBasitPhoto, 'center'],
-  ['AN', 'Arifa Naveed', 'Chief Operation Officer', 'Building reliable systems requires both technical depth and strategic vision.', 'https://www.linkedin.com/in/arifa-naveed-2a79773a5/', arifaNaveedPhoto, 'center'],
+  ['AB', 'Abdul Basit', 'Cofounder', 'Shaping businesses with executive foresight.', 'https://www.linkedin.com/in/abdul-basit-1039b522b/', abdulBasitPhoto, 'center'],
+  ['AN', 'Arifa Naveed', 'Chief Operation Officer', 'Shaping businesses with executive foresight.', 'https://www.linkedin.com/in/arifa-naveed-2a79773a5/', arifaNaveedPhoto, 'center'],
 ]
 
 const ExpertsSection = () => {
   return (
-    <section className="mx-auto w-[min(1180px,calc(100%-36px))] py-16">
-      <div className="mb-10 text-center">
-        <h2 className="text-[clamp(2rem,4vw,3.4rem)] font-black text-[#06172b]">Meet The Experts</h2>
-        <p className="mt-3 text-sm font-black uppercase text-[#0d5790]">Our Team</p>
-      </div>
-      <div className="mx-auto grid max-w-[900px] gap-4 md:grid-cols-3">
-        {experts.map(([initials, name, role, text, linkedinUrl, photo, photoPosition]) => (
-          <article 
-            className="group flex h-full flex-col rounded-xl border-2 border-[#d7e5f2] bg-white px-7 py-8 text-center shadow-[0_14px_34px_rgba(6,23,43,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_20px_48px_rgba(8,36,67,0.16)]" 
-            key={name}
-          >
-            <div className="mx-auto mb-6 grid h-28 w-28 place-items-center overflow-hidden rounded-full bg-[radial-gradient(circle_at_35%_25%,#38b9df,#0b3765_62%,#06172b)] text-3xl font-black text-white">
-              {photo ? (
-                <img
-                  className="h-full w-full object-cover"
-                  src={photo}
-                  alt={name}
-                  style={{ objectPosition: photoPosition }}
-                />
-              ) : (
-                initials
-              )}
-            </div>
-            <h3 className="text-xl font-black text-[#06172b]">{name}</h3>
-            <p className="mt-2 min-h-10 text-sm text-[#0d5790]">{role}</p>
-            <p className="mt-4 flex-1 leading-7 text-[#5c6f84]">{text}</p>
-            <a
-              className="mx-auto mt-4 grid h-8 w-8 place-items-center rounded-md bg-[#f7fbff] text-sm font-black text-[#0b3765] transition duration-300 group-hover:bg-[#082443] group-hover:text-[#38b9df]"
-              href={linkedinUrl}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`${name} LinkedIn`}
+    <section className="relative overflow-hidden bg-white">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(56,107,223,0.06),transparent_45%),radial-gradient(circle_at_85%_90%,rgba(255,197,92,0.08),transparent_45%)]" />
+
+      <div className="relative mx-auto w-[min(1180px,calc(100%-36px))] py-16">
+        <div className="mx-auto mb-12 max-w-2xl text-center">
+          <p className="mx-auto mb-3 inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-black uppercase tracking-wide text-[#0d5790]">
+            Our Team
+          </p>
+          <h2 className="font-serif text-[clamp(2rem,4vw,3.4rem)] font-black leading-tight text-[#06172b]">
+            Meet Our Experts{' '}
+            <span className="text-[#0b3b7b]">T</span>
+            <span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">
+              eam
+            </span>
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-[14px] leading-6 text-[#5b6f84]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi
+          </p>
+        </div>
+
+        <div className="mx-auto grid max-w-[900px] gap-6 md:grid-cols-3">
+          {experts.map(([initials, name, role, text, linkedinUrl, photo, photoPosition]) => (
+            <article
+              className="group overflow-hidden rounded-xl border-2 border-[#d7e5f2] bg-white transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_20px_48px_rgba(8,36,67,0.16)]"
+              key={name}
             >
-              in
-            </a>
-          </article>
-        ))}
+              {/* Photo Section - Full width with gradient background */}
+              <div className="h-56 w-full overflow-hidden bg-[radial-gradient(circle_at_35%_25%,#38b9df,#0b3765_62%,#06172b)]">
+                {photo ? (
+                  <img
+                    className="h-full w-full object-cover"
+                    src={photo}
+                    alt={name}
+                    style={{ objectPosition: photoPosition }}
+                  />
+                ) : (
+                  <div className="grid h-full w-full place-items-center text-3xl font-black text-white">
+                    {initials}
+                  </div>
+                )}
+              </div>
+
+              {/* Info Card - Half outside the photo */}
+              <div className="relative -mt-12 mx-4 rounded-xl bg-white px-5 py-4 shadow-[0_14px_34px_rgba(6,23,43,0.12)]">
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <h3 className="text-[15px] font-black text-[#06172b]">{name}</h3>
+                    <p className="mt-1 text-[13px] font-semibold text-[#0d5790]">{role}</p>
+                  </div>
+                  <a
+                    className="mt-1 grid h-7 w-7 shrink-0 place-items-center rounded-md bg-[#0b3765] text-[13px] font-black text-white transition duration-300 hover:bg-[#082443]"
+                    href={linkedinUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${name} LinkedIn`}
+                  >
+                    in
+                  </a>
+                </div>
+                <p className="mt-2 text-[13px] leading-6 text-[#595959]">{text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )
 }
+
 
 // ============================================================
 // MAIN ABOUT COMPONENT
@@ -446,6 +484,7 @@ const About = () => {
       <HeroSection />
       <StorySection />
       <ValuesSection />
+      <ExpertsSection />
       <CtaSection />
       
     </>
