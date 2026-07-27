@@ -2,8 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import Header from './Components/Header.jsx'
 import Footer from './Components/Footer.jsx'
 import Home from './pages/Home.jsx'
-import Services from './pages/Services.jsx'
-import ServiceDetail from './pages/ServiceDetail.jsx'
+// import Services from './pages/Services.jsx'
+// import ServiceDetail from './pages/ServiceDetail.jsx'
 import About from './pages/About.jsx'
 import Portfolio from './pages/Portfolio.jsx'
 import Contact from './pages/Contact.jsx'
@@ -12,6 +12,9 @@ import Career from './pages/Career.jsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
 import TermsOfService from './pages/TermsOfService.jsx'
 import CookiePolicy from './pages/CookiePolicy.jsx'
+import ServiceUIUX from './pages/ServiceUIUX.jsx'
+import ServiceWeb from './pages/ServiceWeb.jsx'
+
 
 const services = [
   {
@@ -70,9 +73,9 @@ const services = [
   },
 ]
 
+// ✅ UPDATE THE pages OBJECT - Map service slugs to components
 const pages = {
   home: Home,
-  services: Services,
   about: About,
   howwework: HowWeWork,
   projects: Portfolio,
@@ -82,6 +85,16 @@ const pages = {
   privacy: PrivacyPolicy,
   terms: TermsOfService,
   cookies: CookiePolicy,
+}
+
+// ✅ ADD SERVICE PAGE MAPPING
+const servicePages = {
+  'ui-ux-design': ServiceUIUX,
+  'web-development': ServiceWeb,  
+  // 'app-development': ServiceApp,     // Add when created
+  // 'ai-solutions': ServiceAI,         // Add when created
+  // 'saas-development': ServiceSaaS,   // Add when created
+  // 'cloud-devops': ServiceCloud,      // Add when created
 }
 
 function readRoute() {
@@ -103,17 +116,32 @@ const App = () => {
     return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
 
-  const Page = useMemo(() => pages[route.page] || Home, [route.page])
+  // ✅ Determine which component to render
+  const getPageComponent = () => {
+  if (route.page === 'services' && route.slug) {
+    return servicePages[route.slug] || null
+  }
+  return pages[route.page] || Home
+}
+
+  const Page = getPageComponent()
   const currentService = services.find((service) => service.slug === route.slug)
 
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_15%_12%,rgba(56,185,223,0.13),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f2f8ff_45%,#ffffff_100%)] text-[#0a1b2f]">
       <Header currentPage={route.page} services={services} />
       <main>
-        {route.page === 'services' && route.slug ? (
-          <ServiceDetail service={currentService} services={services} />
-        ) : (
+        {Page ? (
           <Page services={services} />
+        ) : (
+          // Fallback if service page not found
+          <div className="py-20 text-center">
+            <h1 className="text-4xl font-black text-[#06172b]">Service not found</h1>
+            <p className="mt-4 text-[#5b6f84]">The service page you're looking for doesn't exist.</p>
+            <a href="#/" className="mt-6 inline-block text-[#0b3765] font-bold hover:underline">
+              Go Home
+            </a>
+          </div>
         )}
       </main>
       <Footer services={services} />
