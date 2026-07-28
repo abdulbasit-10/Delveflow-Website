@@ -107,11 +107,13 @@ const ServiceProjects = ({
             <span className="text-[#093b7a]">{boldPrefix}</span>{' '}
             {title}{' '}
             <span className="text-[#093b7a]">{gradientWord[0]}</span>
-            <span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#093B7B] to-[#FFD600] bg-clip-text text-transparent">
               {gradientWord.slice(1)}
             </span>
             <br />
+            <span className="bg-gradient-to-r from-[#093B7B] to-[#FFD600] bg-clip-text text-transparent">
             {subtitleEnd}
+            </span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-[14px] leading-6 text-[#717272]">
             {description}

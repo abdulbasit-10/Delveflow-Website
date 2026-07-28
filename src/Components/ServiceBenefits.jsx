@@ -73,11 +73,11 @@ const ServiceBenefits = ({
           <p className="mx-auto mb-4 inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-bold uppercase tracking-wide text-[#0b3765]">
             {badge}
           </p>
-          <h2 className="font-serif text-[clamp(1.8rem,3.4vw,2.6rem)] font-black leading-tight text-[#0a0a0a]">
+          <h2 className="font-serif text-[clamp(1.8rem,2.4vw,2.6rem)] font-black leading-tight text-[#0a0a0a]">
             {title}
             <br />
             <span className="text-[#0b3b7b]">{boldPrefix}</span>{' '}
-            <span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#093B7B] to-[#FFD600] bg-clip-text text-transparent">
               {gradientTitle}
             </span>
           </h2>
@@ -90,7 +90,7 @@ const ServiceBenefits = ({
           {benefits.map((benefit) => (
             <div
               key={benefit.title}
-              className="rounded-tl-lg rounded-tr-lg rounded-br-lg rounded-bl-[40px] border border-[#b5e4f3] bg-white px-6 py-7"
+              className="rounded-[20px] border border-[#b5e4f3] border-r-[#093B7B] bg-white px-6 py-7 border-r-[3px]"
             >
               <span className="mb-4 grid h-11 w-11 place-items-center rounded-lg bg-[#e7f0f8]">
                 {icons[benefit.icon]}

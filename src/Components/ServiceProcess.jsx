@@ -1,3 +1,5 @@
+import React from 'react'
+
 const processSteps = [
   {
     number: '01',
@@ -29,33 +31,33 @@ const processSteps = [
   },
 ]
 
-// const icons = {
-//   search: (
-//     <svg viewBox="0 0 24 24" fill="none" className="h-3.5 w-3.5">
-//       <circle cx="11" cy="11" r="6.5" stroke="white" strokeWidth="2" />
-//       <path d="M20 20l-4.3-4.3" stroke="white" strokeWidth="2" strokeLinecap="round" />
-//     </svg>
-//   ),
-//   clipboard: (
-//     <svg viewBox="0 0 24 24" fill="none" className="h-3.5 w-3.5">
-//       <rect x="6" y="4" width="12" height="17" rx="1.5" stroke="white" strokeWidth="1.7" />
-//       <rect x="9" y="2.5" width="6" height="3" rx="1" stroke="white" strokeWidth="1.7" />
-//       <path d="M9 11h6M9 15h6" stroke="white" strokeWidth="1.7" strokeLinecap="round" />
-//     </svg>
-//   ),
-//   pen: (
-//     <svg viewBox="0 0 24 24" fill="none" className="h-3.5 w-3.5">
-//       <path d="M4 20l1-4.5L15.5 5 19 8.5 8.5 19 4 20z" stroke="white" strokeWidth="1.6" strokeLinejoin="round" />
-//       <path d="M13.5 6.5l3.5 3.5" stroke="white" strokeWidth="1.6" />
-//     </svg>
-//   ),
-//   check: (
-//     <svg viewBox="0 0 24 24" fill="none" className="h-3.5 w-3.5">
-//       <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="1.8" />
-//       <path d="M8 12l3 3 5-6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-//     </svg>
-//   ),
-// }
+const icons = {
+  search: (
+    <svg viewBox="0 0 24 24" fill="none" className="h-3.5 w-3.5">
+      <circle cx="11" cy="11" r="6.5" stroke="#0b3765" strokeWidth="2" />
+      <path d="M20 20l-4.3-4.3" stroke="#0b3765" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  ),
+  clipboard: (
+    <svg viewBox="0 0 24 24" fill="none" className="h-3.5 w-3.5">
+      <rect x="6" y="4" width="12" height="17" rx="1.5" stroke="#0b3765" strokeWidth="1.7" />
+      <rect x="9" y="2.5" width="6" height="3" rx="1" stroke="#0b3765" strokeWidth="1.7" />
+      <path d="M9 11h6M9 15h6" stroke="#0b3765" strokeWidth="1.7" strokeLinecap="round" />
+    </svg>
+  ),
+  pen: (
+    <svg viewBox="0 0 24 24" fill="none" className="h-3.5 w-3.5">
+      <path d="M4 20l1-4.5L15.5 5 19 8.5 8.5 19 4 20z" stroke="#0b3765" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M13.5 6.5l3.5 3.5" stroke="#0b3765" strokeWidth="1.6" />
+    </svg>
+  ),
+  check: (
+    <svg viewBox="0 0 24 24" fill="none" className="h-3.5 w-3.5">
+      <circle cx="12" cy="12" r="9" stroke="#0b3765" strokeWidth="1.8" />
+      <path d="M8 12l3 3 5-6" stroke="#0b3765" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+}
 
 const ServiceProcess = ({
   badge = 'Our Process',
@@ -68,6 +70,7 @@ const ServiceProcess = ({
 }) => {
   return (
     <section className="relative overflow-hidden bg-white py-20">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(255,197,92,0.16),transparent_45%),radial-gradient(circle_at_80%_85%,rgba(56,107,223,0.12),transparent_45%)]" />
       <div
         className="pointer-events-none absolute inset-0 opacity-40"
         style={{
@@ -82,15 +85,16 @@ const ServiceProcess = ({
             {badge}
           </p>
           <h2 className="font-serif text-[clamp(1.5rem,2.8vw,2rem)] font-black leading-snug text-[#0a0a0a]">
-            <span className="bg-gradient-to-r from-[#093B7B] to-[#FFD600] bg-clip-text text-transparent">
-             {boldPrefix}
-            </span>{' '}
-             {title}{' '}
-            <span className="bg-gradient-to-r from-[#093b7a] to-[#c7b21c] bg-clip-text text-transparent">
-              {gradientWord}
-            </span>
+            {title}
             <br />
-            {subtitleEnd}
+            <span className="text-[#0b3b7b]">{boldPrefix}</span>{' '}
+            <span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">
+              {gradientWord}
+            </span>{' '}
+            <span className="bg-gradient-to-r from-[#093B7B] to-[#FFD600] bg-clip-text text-transparent">
+             {subtitleEnd}
+            </span>
+           
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-[13px] leading-6 text-[#5b6472]">
             {description}
@@ -98,38 +102,45 @@ const ServiceProcess = ({
         </div>
 
         <div className="relative mt-16">
+          <div className="absolute left-1/2 top-0 z-10 grid h-6 w-6 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-2 border-[#0b3765] bg-white">
+            <div className="h-2.5 w-2.5 rounded-full bg-[#0b3765]" />
+          </div>
 
-            {/* cener vertical line */}
           <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 border-l-2 border-solid border-[#0b3765]" />
 
           <div className="flex flex-col gap-20">
             {steps.map((step, index) => {
               const isRight = index % 2 === 0
+
+              const card = (
+                <div className="w-full max-w-sm rounded-xl border border-[#e3e7ee] bg-white px-5 py-4 shadow-[0_10px_25px_rgba(6,23,43,0.06)]">
+                  <h3 className="flex items-center gap-2 text-[14px] font-bold text-[#0b3765]">
+                    {icons[step.icon]}
+                    <span>
+                      <span className="bg-gradient-to-r from-[#093B7B] to-[#FFD600] bg-clip-text text-transparent">
+                        {step.number}
+                      </span>{' '}
+                      {step.title}
+                    </span>
+                  </h3>
+                  <p className="mt-1.5 text-[12.5px] leading-5 text-[#6b7280]">
+                    {step.description}
+                  </p>
+                </div>
+              )
+
               return (
                 <div
                   key={step.number}
-                  className={`flex items-center gap-6 ${
-                    isRight ? 'flex-row' : 'flex-row-reverse'
-                  }`}
+                  className="grid grid-cols-[1fr_auto_1fr] items-center gap-6"
                 >
-                  <div className={`flex-1 ${isRight ? 'flex justify-end' : 'flex justify-start'}`}>
-                    <div className="w-full max-w-sm rounded-xl border border-[#e3e7ee] bg-white px-5 py-4 shadow-[0_10px_25px_rgba(6,23,43,0.06)]">
-                      <h3 className="text-[14px] font-bold text-[#0b3765]">
-                        <span>{step.number}</span> {step.title}
-                      </h3>
-                      <p className="mt-1.5 text-[12.5px] leading-5 text-[#6b7280]">
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
+                  <div className="flex justify-end">{!isRight && card}</div>
 
                   <div className="relative z-10 shrink-0">
-                    <div className="grid h-5 w-5 rotate-45 place-items-center rounded-md bg-[#0b3765] shadow-[0_0_0_5px_rgba(56,185,223,0.15)]">
-                      {/* <div className="-rotate-45">{icons[step.icon]}</div> */}
-                    </div>
+                    <div className="h-5 w-5 rotate-45 rounded-md bg-[#0b3765] shadow-[0_0_0_5px_rgba(56,185,223,0.15)]" />
                   </div>
 
-                  <div className="flex-1" />
+                  <div className="flex justify-start">{isRight && card}</div>
                 </div>
               )
             })}

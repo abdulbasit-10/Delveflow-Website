@@ -3,6 +3,7 @@
 // ============================================================
 // File: src/components/KeyFeatures.jsx
 
+
 import React from 'react'
 import {
   Search,
@@ -13,10 +14,16 @@ import {
   Layers,
   CheckCircle,
   FileCheck,
-  Code,
-  ShoppingCart,
-  Rocket,
   Shield,
+  Database,
+  Cloud,
+  Users,
+  CreditCard,
+  BarChart,
+  // 👇 ADD THESE NEW IMPORTS 👇
+  Bell,      
+  CloudSync, // (If available in lucide-react, otherwise just use Cloud or similar)
+  Globe,     // (Optional, for something else)
 } from 'lucide-react'
 
 const iconMap = {
@@ -28,8 +35,17 @@ const iconMap = {
   Layers,
   CheckCircle,
   FileCheck,
-}
+  Shield,
+  Database,
+  Cloud,
+  Users,
+  CreditCard,
+  BarChart,
 
+  Bell,
+  CloudSync, 
+  Globe, 
+}
 const defaultFeatures = [
   {
     icon: 'Search',
@@ -85,7 +101,6 @@ const FeatureCard = ({ feature }) => {
     </div>
   )
 }
-
 const KeyFeatures = ({
   badge = 'Key Features',
   title = 'Everything You Need for a Exceptional',

@@ -119,10 +119,10 @@ const uiuxData = {
     description: 'We use industry-leading design and collaboration tools to create pixel-perfect interfaces and seamless workflows.',
     tools: [
       { name: 'Figma', icon: 'figma' },
-      { name: 'Adobe XD', icon: 'adobe' },
-      { name: 'Sketch', icon: 'sketch' },
-      { name: 'InVision', icon: 'invision' },
-      { name: 'Webflow', icon: 'webflow' },
+      { name: 'Figma', icon: 'figma' },
+      { name: 'Figma', icon: 'figma' },
+      { name: 'Figma', icon: 'figma' },
+      { name: 'Figma', icon: 'figma' },
     ],
   },
   projects: {

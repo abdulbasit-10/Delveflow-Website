@@ -14,6 +14,9 @@ import TermsOfService from './pages/TermsOfService.jsx'
 import CookiePolicy from './pages/CookiePolicy.jsx'
 import ServiceUIUX from './pages/ServiceUIUX.jsx'
 import ServiceWeb from './pages/ServiceWeb.jsx'
+import ServiceApp from './pages/ServiceApp.jsx'
+import ServiceSaaS from './pages/ServiceSaaS.jsx'
+
 
 
 const services = [
@@ -91,9 +94,9 @@ const pages = {
 const servicePages = {
   'ui-ux-design': ServiceUIUX,
   'web-development': ServiceWeb,  
-  // 'app-development': ServiceApp,     // Add when created
+  'app-development': ServiceApp,
+  'saas-development': ServiceSaaS,
   // 'ai-solutions': ServiceAI,         // Add when created
-  // 'saas-development': ServiceSaaS,   // Add when created
   // 'cloud-devops': ServiceCloud,      // Add when created
 }
 

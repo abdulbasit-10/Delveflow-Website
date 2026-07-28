@@ -12,7 +12,7 @@ const navItems = [
       { label: 'Web Development', href: '#/services/web-development' },
       { label: 'App Development', href: '#/services/app-development' },
       { label: 'UI/UX Design', href: '#/services/ui-ux-design' },
-      { label: 'Digital Marketing', href: '#/services/digital-marketing' },
+      { label: 'SaaS Ddevelopment', href: '#/services/saas-development' },
     ],
   },
   { label: 'How We Work', href: '#/howwework', page: 'howwework' },

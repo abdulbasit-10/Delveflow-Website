@@ -18,19 +18,19 @@ import { CtaSection } from './Home'
 const webData = {
   hero: {
     badge: 'Web Development',
-    title: 'Build Modern, High-Performing',
-    gradientTitle: 'Web Solutions.',
-    description: 'We build fast, responsive websites and web applications that turn visitors into customers and support business operations.',
-    primaryButtonText: 'Start Your Web Project',
+    title: 'Build Modern Websites',
+    gradientTitle: 'That Drive Results.',
+    description: 'From responsive business websites to powerful custom web applications, we develop high-performing digital solutions that engage users, strengthen your brand, and accelerate business success.',
+    primaryButtonText: 'Start Your Project',
     primaryButtonLink: '#/contact',
-    secondaryButtonText: 'View Our Work',
+    secondaryButtonText: 'View Our portfolio',
     secondaryButtonLink: '#/projects',
   },
   features: {
     badge: 'Key Features',
-    title: 'Everything You Need for Modern',
-    gradientTitle: 'Web Development.',
-    description: 'From custom development to CMS solutions and ecommerce platforms, we build web solutions that are fast, secure, and scalable.',
+    title: 'Everything You Need to Build',
+    gradientTitle: 'Powerful Websites.',
+    description: 'We develop fast, secure, and scalable websites using modern technologies, ensuring exceptional performance, seamless user experiences, and long-term business growth.',
     items: [
       {
         icon: 'Layout',
@@ -76,11 +76,11 @@ const webData = {
   },
   process: {
     badge: 'Our Process',
-    title: 'Deep into Your Challenges',
-    gradientWord: 'Flow',
-    boldPrefix: 'Delve',
-    subtitleEnd: 'Seamlessly with Powerful Solutions.',
-    description: 'Our collaborative web development process transforms ideas into powerful, scalable web solutions that drive business growth.',
+    title: 'From Concept to',
+    gradientWord: '',
+    boldPrefix: '',
+    subtitleEnd: 'High-Performance Websites.',
+    description: 'Our streamlined web development process ensures every website is strategically planned, expertly built, thoroughly tested, and optimized to deliver exceptional performance and long-term business success.',
     steps: [
       {
         number: '01',
@@ -114,10 +114,10 @@ const webData = {
   },
   tools: {
     badge: 'Tools We Use',
-    title: 'Modern Tools Behind Every',
-    boldPrefix: 'Great',
-    gradientTitle: 'Website.',
-    description: 'We use industry-leading development tools and frameworks to build fast, secure, and scalable web solutions.',
+    title: 'Building Websites with',
+    boldPrefix: '',
+    gradientTitle: 'Modern Web Technologies.',
+    description: 'We leverage modern frameworks, programming languages, CMS platforms, and cloud technologies to build fast, secure, scalable, and high-performing websites tailored to your business goals.',
     tools: [
       { name: 'React', icon: 'react' },
       { name: 'Next.js', icon: 'nextjs' },
@@ -128,11 +128,12 @@ const webData = {
   },
   projects: {
     badge: 'Featured Projects',
-    boldPrefix: 'Delve',
-    title: 'into Innovation.',
-    gradientWord: 'Flow',
-    subtitleEnd: 'with Real Results.',
-    description: 'We craft powerful web solutions that solve real problems and deliver measurable success. Here are some of our latest standout projects.',
+    boldPrefix: '',
+    title: 'Web Solutions Built for',
+    
+    gradientWord: '',
+    subtitleEnd: 'Real Businesses.',
+    description: 'Explore a selection of custom web solutions designed to strengthen online presence, improve user engagement, and help businesses achieve sustainable growth.',
     projects: [
       {
         title: 'Ecommerce Platform',
@@ -170,34 +171,34 @@ const webData = {
   },
   benefits: {
     badge: 'Benefits',
-    title: 'Why Businesses Choose',
-    boldPrefix: 'Our',
-    gradientTitle: 'Web Development.',
-    description: 'Our web development process combines technical excellence, creative design, and business strategy to deliver websites that drive real results.',
+    title: 'Why Choose Our',
+    boldPrefix: '',
+    gradientTitle: 'Web Development Services.',
+    description: 'We build fast, secure, and scalable websites that enhance user experiences, strengthen your online presence, and help your business achieve long-term digital success.',
     benefits: [
       {
         icon: 'users',
-        title: 'User-Centric Design',
+        title: 'High Performance',
         description:
-          'We build websites with your users in mind, creating intuitive experiences that convert visitors into customers.',
+          'Optimized websites that load quickly and deliver a seamless browsing experience.',
       },
       {
         icon: 'globe',
-        title: 'Scalable Architecture',
+        title: 'Secure Development',
         description:
-          'Our web solutions are built to scale with your business, handling increased traffic and features effortlessly.',
+          'Built with modern security practices to protect your website and customer data.',
       },
       {
         icon: 'chart',
-        title: 'Measurable Results',
+        title: 'Responsive Design',
         description:
-          'We focus on delivering measurable outcomes, from increased traffic to higher conversion rates.',
+          'Websites that adapt perfectly across desktops, tablets, and mobile devices.',
       },
       {
         icon: 'headset',
-        title: 'Ongoing Support',
+        title: 'Business Growth',
         description:
-          'We provide continuous support and maintenance to keep your website running smoothly and securely.',
+          'Strategic web solutions designed to increase engagement, generate leads, and drive conversions.',
       },
     ],
   },
