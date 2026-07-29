@@ -16,6 +16,9 @@ import ServiceUIUX from './pages/ServiceUIUX.jsx'
 import ServiceWeb from './pages/ServiceWeb.jsx'
 import ServiceApp from './pages/ServiceApp.jsx'
 import ServiceSaaS from './pages/ServiceSaaS.jsx'
+import ServiceAI from './pages/ServiceAI.jsx'
+import ServiceCloud from './pages/ServiceCloud.jsx'
+
 
 
 
@@ -96,8 +99,8 @@ const servicePages = {
   'web-development': ServiceWeb,  
   'app-development': ServiceApp,
   'saas-development': ServiceSaaS,
-  // 'ai-solutions': ServiceAI,         // Add when created
-  // 'cloud-devops': ServiceCloud,      // Add when created
+  'ai-solutions': ServiceAI, 
+  'cloud-and-devops': ServiceCloud,      
 }
 
 function readRoute() {

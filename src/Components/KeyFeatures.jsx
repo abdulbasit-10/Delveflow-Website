@@ -20,10 +20,18 @@ import {
   Users,
   CreditCard,
   BarChart,
-  // 👇 ADD THESE NEW IMPORTS 👇
-  Bell,      
-  CloudSync, // (If available in lucide-react, otherwise just use Cloud or similar)
-  Globe,     // (Optional, for something else)
+  Bell,
+  CloudSync,
+  Globe,
+  MessageSquare,
+  Zap,
+  Brain,
+  TrendingUp,
+  MessageCircle,
+  Link2,
+  GitBranch,    // ← Added
+  Box,          // ← Added
+  Code,         // ← Added
 } from 'lucide-react'
 
 const iconMap = {
@@ -41,10 +49,18 @@ const iconMap = {
   Users,
   CreditCard,
   BarChart,
-
   Bell,
-  CloudSync, 
-  Globe, 
+  CloudSync,
+  Globe,
+  MessageSquare,
+  Zap,
+  Brain,
+  TrendingUp,
+  MessageCircle,
+  Link2,
+  GitBranch,   
+  Box,          
+  Code,       
 }
 const defaultFeatures = [
   {

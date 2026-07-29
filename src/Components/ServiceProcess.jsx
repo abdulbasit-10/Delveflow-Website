@@ -88,7 +88,7 @@ const ServiceProcess = ({
             {title}
             <br />
             <span className="text-[#0b3b7b]">{boldPrefix}</span>{' '}
-            <span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#093B7B] to-[#FFD600] bg-clip-text text-transparent">
               {gradientWord}
             </span>{' '}
             <span className="bg-gradient-to-r from-[#093B7B] to-[#FFD600] bg-clip-text text-transparent">
@@ -117,7 +117,7 @@ const ServiceProcess = ({
                   <h3 className="flex items-center gap-2 text-[14px] font-bold text-[#0b3765]">
                     {icons[step.icon]}
                     <span>
-                      <span className="bg-gradient-to-r from-[#093B7B] to-[#FFD600] bg-clip-text text-transparent">
+                      <span >
                         {step.number}
                       </span>{' '}
                       {step.title}

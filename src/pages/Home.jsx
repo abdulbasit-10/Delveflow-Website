@@ -564,12 +564,12 @@ const CtaSection = () => {
             src={topRightImage}  
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute -right-4 -top-4 h-40 w-40 object-contain opacity-299"
+            className="pointer-events-none absolute -right-4 -top-4 h-40 w-40 object-contain opacity-299 mt-15"
           />
 
           {/* BOTTOM-LEFT IMAGE - Use topLeftImage */}
           <img
-            src={topLeftImage}   // ← Changed from topLeft to topLeftImage
+            src={topLeftImage}   
             alt=""
             aria-hidden="true"
             className="pointer-events-none absolute -left-4 -top-1 h-40 w-40 object-contain opacity-299"
