@@ -33,45 +33,47 @@ const webData = {
     description: 'We develop fast, secure, and scalable websites using modern technologies, ensuring exceptional performance, seamless user experiences, and long-term business growth.',
     items: [
       {
-        icon: 'Layout',
-        title: 'Custom Development',
-        description: 'Build custom web solutions tailored to your specific business needs and requirements.',
-      },
-      {
-        icon: 'Monitor',
+        icon: 'Responsive',
         title: 'Responsive Design',
-        description: 'Websites that work beautifully on desktop, tablet, and mobile devices.',
+        description: 'Create responsive websites optimized for every screen size.',
       },
       {
-        icon: 'Layers',
-        title: 'Ecommerce Solutions',
-        description: 'Powerful online stores with seamless payment integration and inventory management.',
+        icon: 'CustomDev',
+        title: 'Custom Web Development',
+        description: 'Build tailored web solutions for unique business needs.',
       },
-      {
-        icon: 'FileCheck',
+        {
+        icon: 'CMSIcon',
         title: 'CMS Integration',
-        description: 'Easy-to-manage content systems that let you update your website without coding.',
+        description: 'Manage website content easily with flexible CMS platforms.',
       },
       {
-        icon: 'Search',
-        title: 'Performance Optimization',
-        description: 'Lightning-fast loading speeds and optimized performance for better user experience.',
+        icon: 'Ecommerce',
+        title: 'E-commerce Solutions',
+        description: 'Develop secure online stores with seamless checkout.',
       },
       {
-        icon: 'Search',
-        title: 'SEO-Ready Architecture',
-        description: 'Built with search engine optimization in mind to help you rank higher.',
-      },
-      {
-        icon: 'Layers',
+        icon: 'API',
         title: 'API Integrations',
-        description: 'Seamless integration with third-party services and custom APIs.',
+        description: 'Connect your website with third-party services and tools.',
       },
       {
-        icon: 'CheckCircle',
-        title: 'Secure Deployment',
-        description: 'Enterprise-grade security with SSL, authentication, and data protection.',
+        icon: 'Performance',
+        title: 'Performance Optimization',
+        description: 'Improve speed, loading times, and overall performance.',
       },
+      {
+        icon: 'Security',
+        title: 'Website Security',
+        description: 'Protect your website with modern security standards.',
+      },
+      {
+        icon: 'SEO',
+        title: 'SEO-Friendly Development',
+        description: 'Build search-engine-friendly websites for better visibility.',
+      },
+      
+      
     ],
   },
   process: {
@@ -130,7 +132,6 @@ const webData = {
     badge: 'Featured Projects',
     boldPrefix: '',
     title: 'Web Solutions Built for',
-    
     gradientWord: '',
     subtitleEnd: 'Real Businesses.',
     description: 'Explore a selection of custom web solutions designed to strengthen online presence, improve user engagement, and help businesses achieve sustainable growth.',

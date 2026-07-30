@@ -1,67 +1,54 @@
-// ============================================================
-// KEY FEATURES COMPONENT
-// ============================================================
-// File: src/components/KeyFeatures.jsx
-
-
 import React from 'react'
-import {
-  Search,
-  Layout,
-  MousePointerClick,
-  Smartphone,
-  Monitor,
-  Layers,
-  CheckCircle,
-  FileCheck,
-  Shield,
-  Database,
-  Cloud,
-  Users,
-  CreditCard,
-  BarChart,
-  Bell,
-  CloudSync,
-  Globe,
-  MessageSquare,
-  Zap,
-  Brain,
-  TrendingUp,
-  MessageCircle,
-  Link2,
-  GitBranch,    // ← Added
-  Box,          // ← Added
-  Code,         // ← Added
+// Import the custom PNG assets
+import CustomDevIcon from "../assets/custom_development.png"
+import ResponsiveIcon from "../assets/Monitor Icon.png"
+import CMSIcon from "../assets/qlementine-icons.png"
+import EcommerceIcon from "../assets/Shopping Icon.png"
+import APIIcon from "../assets/icon-lightning.png"
+import PerformanceIcon from "../assets/icon-target.png"
+import SecurityIcon from "../assets/icon-shield.png"
+
+import SEOIcon from "../assets/Document search icon.png"
+
+
+
+// Import all the existing Lucide icons
+import { 
+  Search, 
+  Layout, 
+  MousePointerClick, 
+  Smartphone, 
+  Monitor, 
+  Layers, 
+  CheckCircle, 
+  FileCheck 
 } from 'lucide-react'
 
 const iconMap = {
-  Search,
-  Layout,
-  MousePointerClick,
-  Smartphone,
-  Monitor,
-  Layers,
-  CheckCircle,
-  FileCheck,
-  Shield,
-  Database,
-  Cloud,
-  Users,
-  CreditCard,
-  BarChart,
-  Bell,
-  CloudSync,
-  Globe,
-  MessageSquare,
-  Zap,
-  Brain,
-  TrendingUp,
-  MessageCircle,
-  Link2,
-  GitBranch,   
-  Box,          
-  Code,       
+  // Lucide icons mapped directly
+  Search: Search,
+  Layout: Layout,
+  MousePointerClick: MousePointerClick,
+  Smartphone: Smartphone,
+  Monitor: Monitor,
+  Layers: Layers,
+  CheckCircle: CheckCircle,
+  FileCheck: FileCheck,
+  
+  // Custom PNG icons
+  CustomDev: () => <img src={CustomDevIcon} className="h-6 w-6 object-contain" alt="Custom Dev" />,
+  Responsive: () => <img src={ResponsiveIcon} className="h-6 w-6 object-contain" />,
+  CMSIcon: () => <img src={CMSIcon} className="h-6 w-6 object-contain" />,
+  Ecommerce: () => <img src={EcommerceIcon} className="h-6 w-6 object-contain" />,
+   API: () => <img src={APIIcon} className="h-6 w-6 object-contain" />,
+    Performance: () => <img src={PerformanceIcon} className="h-6 w-6 object-contain" />,
+    Security: () => <img src={SecurityIcon} className="h-6 w-6 object-contain" />,
+  SEO: () => <img src={SEOIcon} className="h-6 w-6 object-contain" />,
+ 
+  
+ 
 }
+
 const defaultFeatures = [
   {
     icon: 'Search',
@@ -107,16 +94,19 @@ const defaultFeatures = [
 
 const FeatureCard = ({ feature }) => {
   const Icon = iconMap[feature.icon]
+
   return (
-     <div className="mx-auto max-w-[300px] rounded-3xl border border-[#758196] bg-white px-6 py-5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(10,27,47,0.12)] cursor-pointer">
-          <span className="grid h-11 w-11 place-items-center rounded-lg border border-[#e3e7ee] bg-white">
-        <Icon size={22} color="#0b3765" />
+    <div className="mx-auto max-w-[300px] rounded-3xl border border-[#758196] bg-white px-6 py-5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(10,27,47,0.12)] cursor-pointer">
+      <span className="grid h-11 w-11 place-items-center rounded-lg border border-[#e3e7ee] bg-white">
+        {/* SAFE RENDERING: Only renders if the icon is found. */}
+        {Icon ? <Icon size={22} color="#0b3765" /> : null}
       </span>
       <h3 className="mt-4 text-[17px] font-bold text-[#0a1628]">{feature.title}</h3>
       <p className="mt-2 text-[13px] leading-6 text-[#5b6472]">{feature.description}</p>
     </div>
   )
 }
+
 const KeyFeatures = ({
   badge = 'Key Features',
   title = 'Everything You Need for a Exceptional',
@@ -149,7 +139,7 @@ const KeyFeatures = ({
         </div>
 
         {/* Features Grid - First 6 items */}
-       <div className="mt-10 grid grid-cols-1 gap-x-0 gap-y-5 md:grid-cols-2 lg:grid-cols-3 mx-27.5">
+        <div className="mt-10 grid grid-cols-1 gap-x-0 gap-y-5 md:grid-cols-2 lg:grid-cols-3 mx-27.5">
           {firstRow.map((feature) => (
             <FeatureCard key={feature.title} feature={feature} />
           ))}
@@ -157,13 +147,13 @@ const KeyFeatures = ({
 
         {/* Features Grid - Remaining items (if any) */}
         {lastRow.length > 0 && (
-        <div className="mt-5 flex flex-wrap justify-center gap-x-0 gap-y-5 mx-27.5">
-  {lastRow.map((feature) => (
-    <div key={feature.title} className="w-full sm:w-[calc(50%-0px)] lg:w-[calc(33.333%-0px)]">
-      <FeatureCard feature={feature} />
-    </div>
-  ))}
-</div>
+          <div className="mt-5 flex flex-wrap justify-center gap-x-0 gap-y-5 mx-27.5">
+            {lastRow.map((feature) => (
+              <div key={feature.title} className="w-full sm:w-[calc(50%-0px)] lg:w-[calc(33.333%-0px)]">
+                <FeatureCard feature={feature} />
+              </div>
+            ))}
+          </div>
         )}
       </div>
     </section>

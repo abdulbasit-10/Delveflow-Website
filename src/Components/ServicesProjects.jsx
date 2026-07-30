@@ -7,9 +7,7 @@ import React, { useState } from 'react'
 import ServiceHero from '../Components/ServiceHero'
 import ServiceProjects from '../Components/ServiceProjects'
 import ProjectFilterTabs from '../Components/ProjectFilterTabs'
-import OurImpact from '../Components/OurImpact'  // ← NEW
 import { projectCategories, portfolioProjects } from '../data/portfolioProjects'
-import { CtaSection } from './Home'
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState(projectCategories[0])
@@ -32,7 +30,7 @@ const Portfolio = () => {
         secondaryButtonLink="#/services"
       />
 
-      {/* Featured Projects Header */}
+      {/* Featured Projects Header - ABOVE TABS */}
       <section className="relative bg-white pt-16">
         <div className="mx-auto max-w-2xl px-6 text-center">
           <p className="mx-auto mb-4 inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-bold uppercase tracking-wide text-[#0b3765]">
@@ -55,7 +53,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Tabs Section */}
+      {/* Tabs Section - BELOW Header */}
       <section className="bg-white pb-4 pt-6">
         <div className="mx-auto w-[min(1180px,calc(100%-36px))]">
           <ProjectFilterTabs
@@ -66,12 +64,8 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Projects Section - WITHOUT Header */}
       <ServiceProjects showHeader={false} projects={filteredProjects} />
-
-      {/* Our Impact Section */}
-      <OurImpact />  {/* ← NEW */}
-      <CtaSection />
     </>
   )
 }

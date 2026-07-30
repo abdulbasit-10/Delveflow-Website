@@ -71,7 +71,6 @@ const ProjectCard = ({ project }) => (
       <p className="mt-2 text-[13px] leading-6 text-[#575757]">
         {project.description}
       </p>
-      {/* ✅ Fixed - Added <a> tag */}
       <a
         href={project.link}
         className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-[#0b3765] transition hover:text-[#062142]"
@@ -86,6 +85,7 @@ const ProjectCard = ({ project }) => (
 )
 
 const ServiceProjects = ({
+  showHeader = true,  // ← ADD THIS
   badge = 'Featured Projects',
   boldPrefix = 'Delve',
   title = 'into Innovation.',
@@ -95,30 +95,30 @@ const ServiceProjects = ({
   projects = defaultProjects,
 }) => {
   return (
-    <section className="relative overflow-hidden bg-white py-20">
+    <section className="relative overflow-hidden bg-white py-14">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,197,92,0.14),transparent_45%),radial-gradient(circle_at_100%_100%,rgba(56,107,223,0.10),transparent_40%)]" />
 
       <div className="relative mx-auto w-[min(1000px,calc(100%-36px))]">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="mx-auto mb-4 inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-bold uppercase tracking-wide text-[#0b3765]">
-            {badge}
-          </p>
-          <h2 className="font-serif text-[clamp(1.5rem,2.8vw,2.1rem)] font-black leading-snug text-[#0a0a0a]">
-            <span className="text-[#093b7a]">{boldPrefix}</span>{' '}
-            {title}{' '}
-            <span className="text-[#093b7a]">{gradientWord[0]}</span>
-            <span className="bg-gradient-to-r from-[#093B7B] to-[#FFD600] bg-clip-text text-transparent">
-              {gradientWord.slice(1)}
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-[#093B7B] to-[#FFD600] bg-clip-text text-transparent">
-            {subtitleEnd}
-            </span>
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-[14px] leading-6 text-[#717272]">
-            {description}
-          </p>
-        </div>
+        {/* ONLY SHOW HEADER IF showHeader IS TRUE */}
+        {showHeader && (
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <p className="mx-auto mb-4 inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-bold uppercase tracking-wide text-[#0b3765]">
+              {badge}
+            </p>
+            <h2 className="font-serif text-[clamp(1.5rem,2.8vw,2.1rem)] font-black leading-snug text-[#0a0a0a]">
+              <span className="text-[#093b7a]">{boldPrefix}</span> {title}{' '}
+              <span className="text-[#093b7a]">{gradientWord[0]}</span>
+              <span className="bg-gradient-to-r from-[#093B7B] to-[#FFD600] bg-clip-text text-transparent">
+                {gradientWord.slice(1)}
+              </span>
+              <br />
+              {subtitleEnd}
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-[14px] leading-6 text-[#717272]">
+              {description}
+            </p>
+          </div>
+        )}
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {projects.map((project, index) => (
