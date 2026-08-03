@@ -31,48 +31,16 @@ const appData = {
     title: 'Everything You Need to Build',
     gradientTitle: 'Exceptional Mobile Apps.',
     description: 'From intuitive UI design to secure backend integration, we build high-performance mobile applications that deliver seamless experiences across iOS and Android devices.',
-    items: [
-      {
-        icon: 'Smartphone',
-        title: 'Native App Development',
-        description: 'Build high-performance iOS and Android applications tailored to your business.',
-      },
-      {
-        icon: 'Layers',
-        title: 'Cross-Platform Apps',
-        description: 'Develop once and deploy seamlessly across multiple mobile platforms.',
-      },
-      {
-        icon: 'Monitor',
-        title: 'Modern UI/UX Design',
-        description: 'Create intuitive, engaging interfaces that users love to interact with.',
-      },
-      {
-        icon: 'Shield',
-        title: 'Secure Authentication',
-        description: 'Protect user data with secure login, encryption, and access control.',
-      },
-      {
-        icon: 'Database',
-        title: 'API Integrations',
-        description: 'Connect your app with payment gateways, CRMs, and third-party services.',
-      },
-      {
-        icon: 'Bell',
-        title: 'Push Notifications',
-        description: 'Keep users engaged with real-time alerts and personalized notifications.',
-      },
-      {
-        icon: 'Cloud',
-        title: 'Cloud Data Sync',
-        description: 'Synchronize data securely across devices with cloud-based infrastructure.',
-      },
-      {
-        icon: 'BarChart',
-        title: 'Analytics Integration',
-        description: 'Track user behavior and app performance with detailed analytics.',
-      },
-    ],
+items: [
+  { icon: 'Icon11', title: 'Native App Development', description: 'Build high-performance iOS and Android applications tailored to your business.' },
+  { icon: 'Icon22', title: 'Cross-Platform Apps', description: 'Develop once and deploy seamlessly across multiple mobile platforms.' },
+  { icon: 'Icon33', title: 'Modern UI/UX Design', description: 'Create intuitive, engaging interfaces that users love to interact with.' },
+  { icon: 'Icon44', title: 'Secure Authentication', description: 'Protect user data with secure login, encryption, and access control.' },
+  { icon: 'Icon55', title: 'API Integrations', description: 'Connect your app with payment gateways, CRMs, and third-party services.' },
+  { icon: 'Icon66', title: 'Push Notifications', description: 'Keep users engaged with real-time alerts and personalized notifications.' },
+  { icon: 'Icon77', title: 'Cloud Data Sync', description: 'Synchronize data securely across devices with cloud-based infrastructure.' },
+  { icon: 'Icon88', title: 'Analytics Integration', description: 'Track user behavior and app performance with detailed analytics.' },
+]
   },
   process: {
     badge: 'Our Process',

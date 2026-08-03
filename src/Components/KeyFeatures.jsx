@@ -1,5 +1,6 @@
 import React from 'react'
 // Import the custom PNG assets
+//web icons
 import CustomDevIcon from "../assets/custom_development.png"
 import ResponsiveIcon from "../assets/Monitor Icon.png"
 import CMSIcon from "../assets/qlementine-icons.png"
@@ -7,11 +8,35 @@ import EcommerceIcon from "../assets/Shopping Icon.png"
 import APIIcon from "../assets/icon-lightning.png"
 import PerformanceIcon from "../assets/icon-target.png"
 import SecurityIcon from "../assets/icon-shield.png"
-
 import SEOIcon from "../assets/Document search icon.png"
 
-
-
+//App Icons
+import Icon11 from "../assets/Icon-10.png"
+import Icon22 from "../assets/Icon-16.png"
+import Icon33 from "../assets/Palette.png"
+import Icon44 from "../assets/icon-shield.png"
+import Icon55 from "../assets/icon-lightning.png"
+import Icon66 from "../assets/Icon-19.png"
+import Icon77 from "../assets/Icon-18.png"
+import Icon88 from "../assets/Chart Icon.png"
+//Ui/UX service Icons 
+import Icon111 from "../assets/Search Icon.png"
+import Icon222 from "../assets/SVG Icon.png"
+import Icon333 from "../assets/Icon-12.png"
+import Icon444 from "../assets/Icon-10.png"
+import Icon555 from "../assets/Icon-11.png"
+import Icon666 from "../assets/svg.png"
+import Icon777 from "../assets/Icon-14.png"
+import Icon888 from "../assets/Icon-14.png"
+//SaaS Development
+// import Icon1111 from "../assets/icon1111.png"
+// import Icon2222 from "../assets/icon2222.png"
+// import Icon3333 from "../assets/icon3333.png"
+// import Icon4444 from "../assets/icon4444.png"
+// import Icon5555 from "../assets/icon5555.png"
+// import Icon6666 from "../assets/icon6666.png"
+// import Icon7777 from "../assets/icon7777.png"
+// import Icon8888 from "../assets/icon8888.png"
 // Import all the existing Lucide icons
 import { 
   Search, 
@@ -44,8 +69,33 @@ const iconMap = {
     Performance: () => <img src={PerformanceIcon} className="h-6 w-6 object-contain" />,
     Security: () => <img src={SecurityIcon} className="h-6 w-6 object-contain" />,
   SEO: () => <img src={SEOIcon} className="h-6 w-6 object-contain" />,
- 
-  
+  //App icons
+  Icon11: () => <img src={Icon11} className="h-6 w-6 object-contain" />,
+  Icon22: () => <img src={Icon22} className="h-6 w-6 object-contain" />,
+  Icon33: () => <img src={Icon33} className="h-6 w-6 object-contain" />,
+  Icon44: () => <img src={Icon44} className="h-6 w-6 object-contain" />,
+  Icon55: () => <img src={Icon55} className="h-6 w-6 object-contain" />,
+  Icon66: () => <img src={Icon66} className="h-6 w-6 object-contain" />,
+  Icon77: () => <img src={Icon77} className="h-6 w-6 object-contain" />,
+  Icon88: () => <img src={Icon88} className="h-6 w-6 object-contain" />,
+  //UI/UX Icons
+  Icon111: () => <img src={Icon111} className="h-6 w-6 object-contain" />,
+  Icon222: () => <img src={Icon222} className="h-6 w-6 object-contain" />,
+  Icon333: () => <img src={Icon333} className="h-6 w-6 object-contain" />,
+  Icon444: () => <img src={Icon444} className="h-6 w-6 object-contain" />,
+  Icon555: () => <img src={Icon555} className="h-6 w-6 object-contain" />,
+  Icon666: () => <img src={Icon666} className="h-6 w-6 object-contain" />,
+  Icon777: () => <img src={Icon777} className="h-6 w-6 object-contain" />,
+  Icon888: () => <img src={Icon888} className="h-6 w-6 object-contain" />,
+  //SaaS Development
+  //  Icon1111: () => <img src={Icon1111} className="h-6 w-6 object-contain" />,
+  //  Icon2222:  () => <img src={Icon2222} className="h-6 w-6 object-contain" />,
+  //  Icon3333:  () => <img src={Icon3333} className="h-6 w-6 object-contain" />,
+  //  Icon4444:  () => <img src={Icon4444} className="h-6 w-6 object-contain" />,
+  //  Icon5555:  () => <img src={Icon5555} className="h-6 w-6 object-contain" />,
+  //  Icon6666:  () => <img src={Icon6666} className="h-6 w-6 object-contain" />,
+  //  Icon7777:  () => <img src={Icon7777} className="h-6 w-6 object-contain" />,
+  //  Icon8888:  () => <img src={Icon8888} className="h-6 w-6 object-contain" />,
  
 }
 

@@ -643,7 +643,7 @@ const Home = ({ services }) => {
 
         <div className="relative mx-auto w-[min(1180px,calc(100%-36px))] py-20 text-center">
           {/* heading styling */}
-          <h1 className="mx-auto max-w-3xl font-serif text-[clamp(2.1rem,4.4vw,2.9rem)] font-medium leading-[1.15] text-[#171717] tracking-wide">
+          <h1 className="mx-auto max-w-3xl  text-[clamp(2.1rem,3.4vw,2.9rem)] font-medium leading-[1.15] text-[#171717] tracking-wide">
             <span className="text-[#0d3b66]">D</span>
             <span className="text-[#647c5d]">e</span>
             <span className="text-[#96a263]">l</span>
@@ -720,14 +720,14 @@ const Home = ({ services }) => {
             <p className="text-sm font-bold uppercase tracking-wider text-[#0d5790] mb-3">
               Our Services
             </p>
-            <h2 className="mx-auto max-w-4xl font-serif text-[clamp(2rem,4vw,3.6rem)] font-medium leading-[1.2] text-[#171717] tracking-wide">
+            <h2 className="mx-auto max-w-4xl font-serif text-[clamp(2rem,2.5vw,3.6rem)] font-medium leading-[1.2] text-[#171717] tracking-wide">
               Custom Digital Solutions That Drive
               <br />
               <span className="bg-gradient-to-r from-[#0d3b66] via-[#8a9a3c] to-[#e2ca26] bg-clip-text text-transparent">
   Real Business Growth
 </span>
             </h2>
-            <p className="mx-auto max-w-3xl text-lg text-[#5c6f84] leading-relaxed mt-4">
+            <p className="mx-auto max-w-3xl text-sm text-[#5c6f84] leading-relaxed mt-4">
               At Delve Flow, we deliver powerful, results-driven technology services to help startups and established businesses launch faster, scale smarter, automate operations, and dominate their market.
             </p>
           </div>
@@ -810,13 +810,13 @@ const Home = ({ services }) => {
 
         <div className="relative mx-auto w-[min(1180px,calc(100%-36px))] py-20">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-[clamp(1.8rem,3.4vw,2.6rem)] font-black leading-tight text-[#0a0a0a]">
+            <h2 className="font-serif text-[clamp(1.8rem,2.4vw,2.6rem)] font-black leading-tight text-[#0a0a0a]">
               Why Businesses Choose{' '}<br></br>
               <span className="bg-gradient-to-r from-[#0d3b66] via-[#8a9a3c] to-[#e2ca26] bg-clip-text text-transparent font-bold">
   Real Business Growth
 </span>
             </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[#333333]">
+            <p className="mx-auto mt-5 max-w-2xl text-[14px] leading-7 text-[#333333]">
               Where Technical Mastery Meets Real Business Impact. We don't just
               build technology, we craft smart, scalable digital solutions that
               solve real problems, accelerate growth, and give you a

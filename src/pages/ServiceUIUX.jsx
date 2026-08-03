@@ -30,48 +30,18 @@ const uiuxData = {
     title: 'Everything You Need for a Exceptional',
     gradientTitle: 'UI/UX Design.',
     description: 'From research and wireframing to polished interfaces and developer-ready designs, we create user experiences that are intuitive, engaging, and built for real business growth.',
-    items: [
-      {
-        icon: 'Search',
-        title: 'User Research',
-        description: 'Understand users through interviews, research, and behavioral insights.',
-      },
-      {
-        icon: 'Layout',
-        title: 'Wireframing',
-        description: 'Build clear layouts before visual design begins.',
-      },
-      {
-        icon: 'MousePointerClick',
-        title: 'Interactive Prototypes',
-        description: 'Visualize user flows with clickable prototypes.',
-      },
-      {
-        icon: 'Smartphone',
-        title: 'Mobile UI Design',
-        description: 'Responsive mobile experiences for every device.',
-      },
-      {
-        icon: 'Monitor',
-        title: 'Web UI Design',
-        description: 'Modern web interfaces focused on usability.',
-      },
-      {
-        icon: 'Layers',
-        title: 'Design Systems',
-        description: 'Reusable components for consistency and scalability.',
-      },
-      {
-        icon: 'CheckCircle',
-        title: 'Usability Testing',
-        description: 'Identify issues before development starts.',
-      },
-      {
-        icon: 'FileCheck',
-        title: 'Developer Handoff',
-        description: 'Well-organized design files ready for implementation.',
-      },
-    ],
+     items: [
+              { icon: 'Icon111', title: 'User Research', description: 'Understand users through interviews, research, and behavioral insights.' },
+              { icon: 'Icon222', title: 'Wireframing', description: 'Build clear layouts before visual design begins.' },
+              { icon: 'Icon333', title: 'Interactive Prototypes', description: 'Visualize user flows with clickable prototypes.' },
+              { icon: 'Icon444', title: 'Mobile UI Design', description: 'Responsive mobile experiences for every device.' },
+              { icon: 'Icon555', title: 'Web UI Design', description: 'Modern web interfaces focused on usability.' },
+              { icon: 'Icon666', title: 'Design Systems', description: 'Reusable components for consistency and scalability.' },
+              { icon: 'Icon777', title: 'Usability Testing', description: 'Identify issues before development starts.' },
+              { icon: 'Icon888', title: 'Developer Handoff', description: 'Well-organized design files ready for implementation.' },
+  ]
+     
+    
   },
   process: {
     badge: 'Our Process',

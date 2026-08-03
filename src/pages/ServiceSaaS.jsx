@@ -32,47 +32,17 @@ const saasData = {
     gradientTitle: 'Powerful SaaS Products.',
     description: 'From secure authentication to subscription billing and cloud deployment, we build scalable SaaS solutions designed for performance, growth, and long-term success.',
     items: [
-      {
-        icon: 'Layers',
-        title: 'Multi-Tenant Architecture',
-        description: 'Support multiple customers with a secure and scalable shared platform.',
-      },
-      {
-        icon: 'Shield',
-        title: 'Secure Authentication',
-        description: 'Protect user accounts with secure login, encryption, and access control.',
-      },
-      {
-        icon: 'Users',
-        title: 'Admin Management',
-        description: 'Manage users, settings, permissions, and business operations effortlessly.',
-      },
-      {
-        icon: 'Layout',
-        title: 'Role-Based Dashboards',
-        description: 'Personalized dashboards with custom permissions for every user role.',
-      },
-      {
-        icon: 'Database',
-        title: 'API Integrations',
-        description: 'Connect seamlessly with payment gateways, CRMs, and third-party services.',
-      },
-      {
-        icon: 'Cloud',
-        title: 'Cloud Deployment',
-        description: 'Deploy secure, reliable applications with modern cloud infrastructure.',
-      },
-      {
-        icon: 'CreditCard',
-        title: 'Subscription Billing',
-        description: 'Automate recurring payments, invoices, and subscription management.',
-      },
-      {
-        icon: 'BarChart',
-        title: 'Analytics & Reports',
-        description: 'Monitor business performance through real-time insights and reporting.',
-      },
-    ],
+  { icon: 'Icon1111', title: 'Multi-Tenant Architecture', description: 'Support multiple customers with a secure and scalable shared platform.' },
+  { icon: 'Icon2222', title: 'Secure Authentication', description: 'Protect user accounts with secure login, encryption, and access control.' },
+  { icon: 'Icon3333', title: 'Admin Management', description: 'Manage users, settings, permissions, and business operations effortlessly.' },
+  { icon: 'Icon4444', title: 'Role-Based Dashboards', description: 'Personalized dashboards with custom permissions for every user role.' },
+  { icon: 'Icon5555', title: 'API Integrations', description: 'Connect seamlessly with payment gateways, CRMs, and third-party services.' },
+  { icon: 'Icon6666', title: 'Cloud Deployment', description: 'Deploy secure, reliable applications with modern cloud infrastructure.' },
+  { icon: 'Icon7777', title: 'Subscription Billing', description: 'Automate recurring payments, invoices, and subscription management.' },
+  { icon: 'Icon8888', title: 'Analytics & Reports', description: 'Monitor business performance through real-time insights and reporting.' },
+]
+    
+        
   },
   process: {
     badge: 'Our Process',
