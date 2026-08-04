@@ -29,15 +29,36 @@ import Icon666 from "../assets/svg.png"
 import Icon777 from "../assets/Icon-14.png"
 import Icon888 from "../assets/Icon-14.png"
 //SaaS Development
-// import Icon1111 from "../assets/icon1111.png"
-// import Icon2222 from "../assets/icon2222.png"
-// import Icon3333 from "../assets/icon3333.png"
-// import Icon4444 from "../assets/icon4444.png"
-// import Icon5555 from "../assets/icon5555.png"
-// import Icon6666 from "../assets/icon6666.png"
-// import Icon7777 from "../assets/icon7777.png"
-// import Icon8888 from "../assets/icon8888.png"
-// Import all the existing Lucide icons
+import Icon1111 from "../assets/Building Icon.png"
+import Icon2222 from "../assets/Icon Container-3.png"
+import Icon3333 from "../assets/f7_creditcard.svg"
+import Icon4444 from "../assets/icon-shield.png"
+import Icon5555 from "../assets/icon-lightning.png"
+import Icon6666 from "../assets/Bar Chart.png"
+import Icon7777 from "../assets/icon-settings.png"
+import Icon8888 from "../assets/Cloud Icon.png"
+
+//AI Solutions
+import aaa from "../assets/icon-robot.png"
+import bbb from "../assets/icon-workflow.png"
+import ccc from "../assets/Brain Icon.png"
+import ddd from "../assets/Chart Icon.png"
+import eee from "../assets/icon-chat.png"
+import fff from "../assets/Icon-18.png"
+import ggg from "../assets/icon-shield.png"
+import hhh from "../assets/icon-cpu.png"
+
+//Cloud and Devops
+import ccc1 from "../assets/Cloud Icon.png"
+import ccc2 from "../assets/Container.png"
+import ccc3 from "../assets/icon-cube.png"
+import ccc4 from "../assets/icon-blocks.png"
+import ccc5 from "../assets/custom_development.png"
+import ccc6 from "../assets/Activity Icon.png"
+import ccc7 from "../assets/icon-shield.png"
+import ccc8 from "../assets/Backup Icon.png"
+
+
 import { 
   Search, 
   Layout, 
@@ -88,15 +109,32 @@ const iconMap = {
   Icon777: () => <img src={Icon777} className="h-6 w-6 object-contain" />,
   Icon888: () => <img src={Icon888} className="h-6 w-6 object-contain" />,
   //SaaS Development
-  //  Icon1111: () => <img src={Icon1111} className="h-6 w-6 object-contain" />,
-  //  Icon2222:  () => <img src={Icon2222} className="h-6 w-6 object-contain" />,
-  //  Icon3333:  () => <img src={Icon3333} className="h-6 w-6 object-contain" />,
-  //  Icon4444:  () => <img src={Icon4444} className="h-6 w-6 object-contain" />,
-  //  Icon5555:  () => <img src={Icon5555} className="h-6 w-6 object-contain" />,
-  //  Icon6666:  () => <img src={Icon6666} className="h-6 w-6 object-contain" />,
-  //  Icon7777:  () => <img src={Icon7777} className="h-6 w-6 object-contain" />,
-  //  Icon8888:  () => <img src={Icon8888} className="h-6 w-6 object-contain" />,
- 
+   Icon1111: () => <img src={Icon1111} className="h-6 w-6 object-contain" />,
+   Icon2222:  () => <img src={Icon2222} className="h-6 w-6 object-contain" />,
+   Icon3333:  () => <img src={Icon3333} className="h-6 w-6 object-contain" />,
+   Icon4444:  () => <img src={Icon4444} className="h-6 w-6 object-contain" />,
+   Icon5555:  () => <img src={Icon5555} className="h-6 w-6 object-contain" />,
+   Icon6666:  () => <img src={Icon6666} className="h-6 w-6 object-contain" />,
+   Icon7777:  () => <img src={Icon7777} className="h-6 w-6 object-contain" />,
+   Icon8888:  () => <img src={Icon8888} className="h-6 w-6 object-contain" />,
+   //AI Solutions
+     aaa: () => <img src={aaa} className="h-6 w-6 object-contain" />,
+  bbb: () => <img src={bbb} className="h-6 w-6 object-contain" />,
+  ccc: () => <img src={ccc} className="h-6 w-6 object-contain" />,
+  ddd: () => <img src={ddd} className="h-6 w-6 object-contain" />,
+  eee: () => <img src={eee} className="h-6 w-6 object-contain" />,
+  fff: () => <img src={fff} className="h-6 w-6 object-contain" />,
+  ggg: () => <img src={ggg} className="h-6 w-6 object-contain" />,
+  hhh: () => <img src={hhh} className="h-6 w-6 object-contain" />,
+  //Cloud And Dev0ps
+  ccc1: () => <img src={ccc1} className="h-6 w-6 object-contain" />,
+  ccc2: () => <img src={ccc2} className="h-6 w-6 object-contain" />,
+  ccc3: () => <img src={ccc3} className="h-6 w-6 object-contain" />,
+  ccc4: () => <img src={ccc4} className="h-6 w-6 object-contain" />,
+  ccc5: () => <img src={ccc5} className="h-6 w-6 object-contain" />,
+  ccc6: () => <img src={ccc6} className="h-6 w-6 object-contain" />,
+  ccc7: () => <img src={ccc7} className="h-6 w-6 object-contain" />,
+  ccc8: () => <img src={ccc8} className="h-6 w-6 object-contain" />,
 }
 
 const defaultFeatures = [

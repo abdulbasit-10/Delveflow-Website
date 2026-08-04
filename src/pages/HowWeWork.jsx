@@ -53,22 +53,28 @@ const HowWeWorkHero = ({
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <a
-                href={primaryButtonLink}
-                className="inline-flex items-center gap-3 rounded-full bg-[#001530] py-1.5 pl-6 pr-1.5 text-[15px] font-bold text-white transition hover:bg-[#062142]"
-              >
-                {primaryButtonText}
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#FFE459]">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M7 17L17 7M17 7H8M17 7V16"
-                      stroke="#001530"
-                      strokeWidth="2.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </a>
+  href={primaryButtonLink}
+  className="inline-flex items-center rounded-full bg-[#001530] py-0.5 pl-6 pr-0 text-[16px] font-semibold text-white transition hover:bg-[#062142]"
+>
+  <span className="font-serif pr-2">{primaryButtonText}</span>
+  <span className="-mr-[1px] grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffde59] shadow-sm">
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 17L17 7M17 7H8M17 7V16"
+        stroke="#0b3765"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </span>
+</a>
               
               <a
                 href={secondaryButtonLink}

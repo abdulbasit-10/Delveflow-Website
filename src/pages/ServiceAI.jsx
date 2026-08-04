@@ -32,47 +32,47 @@ const aiData = {
     gradientTitle: 'Intelligent AI Solutions.',
     description: 'We develop fast, secure, and scalable websites using modern technologies, ensuring exceptional performance, seamless user experiences, and long-term business growth.',
     items: [
-      {
-        icon: 'MessageSquare',
-        title: 'AI Chatbots',
-        description: 'Build intelligent chatbots that provide instant support and enhance customer engagement.',
-      },
-      {
-        icon: 'Zap',
-        title: 'Workflow Automation',
-        description: 'Automate repetitive business processes to improve efficiency and reduce manual work.',
-      },
-      {
-        icon: 'Brain',
-        title: 'Machine Learning',
-        description: 'Develop AI models that learn from data and deliver smarter business insights.',
-      },
-      {
-        icon: 'TrendingUp',
-        title: 'Predictive Analytics',
-        description: 'Analyze historical data to forecast trends and support better business decisions.',
-      },
-      {
-        icon: 'MessageCircle',
-        title: 'Natural Language AI',
-        description: 'Enable AI to understand, process, and respond to human language naturally.',
-      },
-      {
-        icon: 'Database',
-        title: 'Data Intelligence',
-        description: 'Transform raw business data into meaningful insights through AI-driven analysis.',
-      },
-      {
-        icon: 'Shield',
-        title: 'Secure AI Solutions',
-        description: 'Build reliable AI systems with secure infrastructure and responsible data handling.',
-      },
-      {
-        icon: 'Link2',
-        title: 'Custom AI Integration',
-        description: 'Integrate AI capabilities into your existing applications and business workflows.',
-      },
-    ],
+  {
+    icon: 'aaa',
+    title: 'AI Chatbots',
+    description: 'Build intelligent chatbots that provide instant support and enhance customer engagement.',
+  },
+  {
+    icon: 'bbb',
+    title: 'Workflow Automation',
+    description: 'Automate repetitive business processes to improve efficiency and reduce manual work.',
+  },
+  {
+    icon: 'ccc',
+    title: 'Machine Learning',
+    description: 'Develop AI models that learn from data and deliver smarter business insights.',
+  },
+  {
+    icon: 'ddd',
+    title: 'Predictive Analytics',
+    description: 'Analyze historical data to forecast trends and support better business decisions.',
+  },
+  {
+    icon: 'eee',
+    title: 'Natural Language AI',
+    description: 'Enable AI to understand, process, and respond to human language naturally.',
+  },
+  {
+    icon: 'fff',
+    title: 'Data Intelligence',
+    description: 'Transform raw business data into meaningful insights through AI-driven analysis.',
+  },
+  {
+    icon: 'ggg',
+    title: 'Secure AI Solutions',
+    description: 'Build reliable AI systems with secure infrastructure and responsible data handling.',
+  },
+  {
+    icon: 'hhh',
+    title: 'Custom AI Integration',
+    description: 'Integrate AI capabilities into your existing applications and business workflows.',
+  },
+]
   },
   process: {
     badge: 'Our Process',

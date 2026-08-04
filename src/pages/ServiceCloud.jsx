@@ -31,48 +31,48 @@ const cloudData = {
     title: 'Everything You Need for Modern',
     gradientTitle: 'Cloud & DevOps.',
     description: 'We build resilient cloud environments and automated deployment pipelines.',
-    items: [
-      {
-        icon: 'Cloud',
-        title: 'Cloud Architecture',
-        description: 'Design secure, scalable cloud infrastructure tailored to your business and application needs.',
-      },
-      {
-        icon: 'GitBranch',
-        title: 'CI/CD Pipelines',
-        description: 'Automate code building, testing, and deployment for faster and more reliable software releases.',
-      },
-      {
-        icon: 'Box',
-        title: 'Docker Containers',
-        description: 'Package applications into portable containers for consistent development and production environments.',
-      },
-      {
-        icon: 'Layers',
-        title: 'Kubernetes Management',
-        description: 'Orchestrate and scale containerized applications efficiently with Kubernetes clusters.',
-      },
-      {
-        icon: 'Code',
-        title: 'Infrastructure as Code',
-        description: 'Provision and manage cloud resources automatically using version-controlled infrastructure code.',
-      },
-      {
-        icon: 'Bell',
-        title: 'Monitoring & Alerts',
-        description: 'Track application performance and receive real-time alerts to ensure maximum uptime.',
-      },
-      {
-        icon: 'Shield',
-        title: 'Security Hardening',
-        description: 'Protect your cloud environment with security best practices, access control, and compliance measures.',
-      },
-      {
-        icon: 'Database',
-        title: 'Backup & Recovery',
-        description: 'Safeguard critical data with automated backups and reliable disaster recovery solutions.',
-      },
-    ],
+  items: [
+  {
+    icon: 'ccc1',
+    title: 'Cloud Architecture',
+    description: 'Design secure, scalable cloud infrastructure tailored to your business and application needs.',
+  },
+  {
+    icon: 'ccc2',
+    title: 'CI/CD Pipelines',
+    description: 'Automate code building, testing, and deployment for faster and more reliable software releases.',
+  },
+  {
+    icon: 'ccc3',
+    title: 'Docker Containers',
+    description: 'Package applications into portable containers for consistent development and production environments.',
+  },
+  {
+    icon: 'ccc4',
+    title: 'Kubernetes Management',
+    description: 'Orchestrate and scale containerized applications efficiently with Kubernetes clusters.',
+  },
+  {
+    icon: 'ccc5',
+    title: 'Infrastructure as Code',
+    description: 'Provision and manage cloud resources automatically using version-controlled infrastructure code.',
+  },
+  {
+    icon: 'ccc6',
+    title: 'Monitoring & Alerts',
+    description: 'Track application performance and receive real-time alerts to ensure maximum uptime.',
+  },
+  {
+    icon: 'ccc7',
+    title: 'Security Hardening',
+    description: 'Protect your cloud environment with security best practices, access control, and compliance measures.',
+  },
+  {
+    icon: 'ccc8',
+    title: 'Backup & Recovery',
+    description: 'Safeguard critical data with automated backups and reliable disaster recovery solutions.',
+  },
+]
   },
   process: {
     badge: 'Our Process',

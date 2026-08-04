@@ -8,16 +8,13 @@ import Team_icon from "../assets/team_icon.png"
 import Delivery_icon from "../assets/delivery.png"
 import Quality_icon from "../assets/quality.png"
 import Support_icon from "../assets/support.png"
-import Discovery_icon from "../assets/discovery.png"
-import Planning_icon from "../assets/planning.png"
-import Agile_icon from "../assets/agile.png"
-import Growth_icon from "../assets/growth.png"
 import Bg_icon from "../assets/testibg.png"
 import Client1 from "../assets/client1.png"
 import Client2 from "../assets/client2.png"
 import Client3 from "../assets/client3.png"
 import topRightImage from "../assets/topright.png"
 import topLeftImage from "../assets/left.png"
+import OurProcess from '../Components/OurProcess'
 
 
 // ===== REASONS DATA (for Why Choose Us) =====
@@ -285,123 +282,6 @@ const ProjectCard = ({ project }) => (
   </div>
 )
 
-// ===== HOW WE WORK DATA =====
-const steps = [
-  {
-    number: '01',
-    title: 'Discovery & Strategy',
-    description:
-      'We dive deep into your world, uncovering hidden challenges, ambitious goals, user needs, and market opportunities before building anything.',
-    bullets: [
-      'Business goals & core challenges',
-      'In-depth user & competitor research',
-      'Technical audit & strategic roadmap',
-    ],
-    icon: 'search',
-    side: 'left',
-  },
-  {
-    number: '02',
-    title: 'Planning & Intelligent Design',
-    description:
-      'We turn insights into crystal-clear plans, crafting intuitive user journeys, robust architecture, and a delivery roadmap that sets you up for success.',
-    bullets: [
-      'User-centric UX flows & wireframes',
-      'Scalable system architecture',
-      'Realistic timelines & agile sprint plans',
-    ],
-    icon: 'compass',
-side: 'right',
-  },
-  {
-    number: '03',
-    title: 'Agile Development & Rigorous Testing',
-    description:
-      'We work fast, iterate smarter, and hold ourselves to the highest standards, including clean code, frequent reviews, and rigorous testing to keep you in the lead every step of the way. Expert Frontend & Backend Development.',
-    bullets: [
-      'Continuous Quality Assurance & Security Testing',
-      'Performance Optimization at every stage',
-    ],
-    icon: 'code',
-    side: 'left',
-  },
-  {
-    number: '04',
-    title: 'Successful Launch & Continuous Growth',
-    description:
-      "We ensure a smooth launch, proactive monitoring, and ongoing optimization so your product doesn't just go live, it thrives, scales, and evolves with your business.",
-    bullets: [
-      'Professional Deployment & Go-Live Support',
-      'Real-time Monitoring & Analytics',
-      'Post-Launch Optimization & Dedicated Support',
-    ],
-    icon: 'rocket',
-    side: 'right',
-  },
-]
-
-// ===== HOW WE WORK ICONS =====
-const howWeWorkIcons = {
-  search: (
-    <img 
-  src= {Discovery_icon} 
-  alt="icon description" 
-  className="h-18 w-18"
-/>
-  ),
-  compass: (
-    <img 
-  src= {Planning_icon} 
-  alt="icon description" 
-  className="h-18 w-18 object-contain"
-/>
-  ),
-  code: (
-     <img 
-  src= {Agile_icon} 
-  alt="icon description" 
-   className="h-18 w-18 object-contain"
-/>
-  ),
-  rocket: (
-    <img 
-  src= {Growth_icon} 
-  alt="icon description" 
-   className="h-18 w-18 object-contain"
-/>
-  ),
-}
-
-// ===== HOW WE WORK COMPONENTS =====
-const ChevronBullet = ({ children }) => (
-  <li className="flex items-start gap-2 border-t border-white/10 py-2.5 text-[13px] text-[#dbe4ee] first:border-t-0">
-    <svg viewBox="0 0 24 24" fill="none" className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#38B9DF]">
-      <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-    <span>{children}</span>
-  </li>
-)
-
-// UPDATED: Removed overflow-hidden, added hover effects, adjusted number position
-const StepCard = ({ step }) => (
-  <div className="relative w-full max-w-md rounded-xl bg-[#0b3765] px-6 pb-5 pt-6 shadow-[0_20px_45px_rgba(6,23,43,0.25)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_55px_rgba(6,23,43,0.35)]">
-    <h3 className="text-[16px] font-bold text-white">{step.title}</h3>
-    <p className="mt-2 text-[13px] leading-6 text-[#c7d5e5]">{step.description}</p>
-    <ul className="mt-3">
-      {step.bullets.map((b) => (
-        <ChevronBullet key={b}>{b}</ChevronBullet>
-      ))}
-    </ul>
-    <span
-      className="pointer-events-none absolute -bottom-0 right-4 select-none bg-gradient-to-b from-[#d9c24a] to-[#8a9440] bg-clip-text font-serif text-5xl font-black leading-none text-transparent opacity-90"
-      aria-hidden="true"
-    >
-      {step.number}
-    </span>
-  </div>
-)
-
-
 // ===== TESTIMONIALS DATA =====
 const testimonials = [
   {
@@ -478,8 +358,8 @@ const TestimonialSection = () => {
     <section className="relative overflow-hidden bg-white py-20 px-6 md:px-12 lg:px-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_15%,rgba(56,107,223,0.07),transparent_45%),radial-gradient(circle_at_90%_85%,rgba(255,197,92,0.10),transparent_45%)]" />
 
-      {/* Fixed height container to prevent layout shift */}
-      <div className="relative mx-auto max-w-5xl min-h-[400px]">
+      {/* Fixed height container - increased min height */}
+      <div className="relative mx-auto max-w-5xl min-h-[500px]">
         <div className="mx-auto max-w-2xl text-center">
           <p className="mx-auto mb-4 inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-bold uppercase tracking-wide text-[#0b3765]">
             Testimonial
@@ -498,9 +378,11 @@ const TestimonialSection = () => {
           </p>
         </div>
 
-        <div className="mt-14 flex flex-col items-center gap-8 sm:flex-row sm:items-stretch">
-          {/* Photo Stack - Increased sizes */}
-          <div className="flex shrink-0 flex-row gap-4 sm:flex-col sm:justify-center">
+        {/* Fixed height row */}
+        <div className="mt-14 flex flex-col items-center gap-8 sm:flex-row sm:items-stretch h-[320px] sm:h-[280px]">
+          
+          {/* Photo Stack - Fixed height */}
+          <div className="flex shrink-0 flex-row gap-4 sm:flex-col sm:justify-center h-[80px] sm:h-[260px]">
             {testimonials.map((t, index) => {
               const isActive = index === active
               return (
@@ -511,8 +393,8 @@ const TestimonialSection = () => {
                   aria-label={`Show testimonial from ${t.name}`}
                   className={`shrink-0 overflow-hidden rounded-2xl transition-all duration-300 ${
                     isActive
-                      ? 'h-28 w-28 border-2 border-transparent bg-gradient-to-br from-[#38B9DF] to-[#d4bb15] p-[3px] shadow-[0_10px_25px_rgba(56,185,223,0.3)]'
-                      : 'h-20 w-20 border border-[#e3e7ee] opacity-70 hover:opacity-100'
+                      ? 'h-20 w-20 sm:h-28 sm:w-28 border-2 border-transparent bg-gradient-to-br from-[#38B9DF] to-[#d4bb15] p-[3px] shadow-[0_10px_25px_rgba(56,185,223,0.3)]'
+                      : 'h-14 w-14 sm:h-20 sm:w-20 border border-[#e3e7ee] opacity-70 hover:opacity-100'
                   }`}
                 >
                   <img
@@ -525,21 +407,21 @@ const TestimonialSection = () => {
             })}
           </div>
 
-          {/* Quote Card - Added gradient border */}
-          <div className="relative flex-1 overflow-hidden rounded-2xl bg-gradient-to-br from-[#38B9DF] via-[#38B9DF]/30 to-[#d4bb15] p-[2px]">
-            <div className="h-full w-full rounded-2xl bg-gradient-to-br from-[#f8fcf9] to-[#eef4fb] px-7 py-8 sm:px-9 sm:py-10">
-              <div className="pointer-events-none absolute right-6 top-2 select-none font-serif text-[110px] leading-none text-[#0e2547]/10 h-25 w-25">
-                <img src={Bg_icon} alt="" />
+          {/* Quote Card - Fixed height with overflow handling */}
+          <div className="relative flex-1 overflow-hidden rounded-2xl bg-gradient-to-br from-[#38B9DF] via-[#38B9DF]/30 to-[#d4bb15] p-[2px] h-[220px] sm:h-[280px]">
+            <div className="h-full w-full overflow-y-auto rounded-2xl bg-gradient-to-br from-[#f8fcf9] to-[#eef4fb] px-5 py-6 sm:px-9 sm:py-8">
+              <div className="pointer-events-none absolute right-6 top-2 select-none font-serif text-[80px] sm:text-[110px] leading-none text-[#0e2547]/10">
+                "
               </div>
 
-              <p className="relative max-w-xl text-[15px] leading-7 text-[#333333] sm:text-[16px]">
+              <p className="relative max-w-xl text-[14px] sm:text-[15px] leading-6 sm:leading-7 text-[#333333] pr-4">
                 "{current.quote}"
               </p>
 
-              <div className="mt-8 flex items-end justify-between gap-4 border-t border-dashed border-[#d7e5f2] pt-5">
+              <div className="mt-4 sm:mt-6 flex items-end justify-between gap-4 border-t border-dashed border-[#d7e5f2] pt-4 sm:pt-5">
                 <div>
-                  <p className="text-[15px] font-bold text-[#06172b]">{current.name}</p>
-                  <p className="text-[13px] text-[#6b7280]">{current.role}</p>
+                  <p className="text-[14px] sm:text-[15px] font-bold text-[#06172b]">{current.name}</p>
+                  <p className="text-[12px] sm:text-[13px] text-[#6b7280]">{current.role}</p>
                 </div>
                 <StarRating rating={current.rating} />
               </div>
@@ -594,22 +476,28 @@ const CtaSection = () => {
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <a
-                href="#/contact"
-                className="inline-flex items-center gap-3 rounded-full bg-[#001530] py-1.5 pl-6 pr-1.5 text-[15px] font-bold text-white transition hover:bg-[#062142]"
-              >
-                Get Started
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#FFE459]">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M7 17L17 7M17 7H8M17 7V16"
-                      stroke="#001530"
-                      strokeWidth="2.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </a>
+  href="#/services"
+  className="inline-flex items-center rounded-full bg-[#001530] py-0.5 pl-5 pr-0 text-[16px] font-semibold text-white transition hover:bg-[#062142]"
+>
+  <span className="font-serif pr-3">Get Started</span>
+  <span className="-mr-[1px] grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffde59] shadow-sm">
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 17L17 7M17 7H8M17 7V16"
+        stroke="#0b3765"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </span>
+</a>
               
               <a
                 href="#/services"
@@ -671,22 +559,28 @@ const Home = ({ services }) => {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <a
-              href="#/contact"
-              className="inline-flex items-center gap-3 rounded-full bg-[#001530] py-1.5 pl-6 pr-1.5 text-[15px] font-bold text-white transition hover:bg-[#062142]"
-            >
-              Get Started
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#FFE459]">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M7 17L17 7M17 7H8M17 7V16"
-                    stroke="#001530"
-                    strokeWidth="2.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </a>
+  href="#/contact"
+  className="inline-flex items-center rounded-full bg-[#001530] py-0.5 pl-3 pr-0 text-[16px] font-semibold text-white transition hover:bg-[#062142]"
+>
+  <span className="font-serif pr-2">Get Started</span> {/* Added pr-2 for spacing */}
+  <span className="-mr-[1px] grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffde59] shadow-sm"> {/* Changed margin */}
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 17L17 7M17 7H8M17 7V16"
+        stroke="#0b3765"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </span>
+</a>
             <a
               href="#/services"
               className="inline-flex h-12 items-center justify-center rounded-full border border-[#d7e5f2] bg-white px-7 text-[15px] font-bold text-[#0a1b2f] transition hover:border-[#0b3765]"
@@ -699,10 +593,10 @@ const Home = ({ services }) => {
           <div className="mx-auto mt-14 grid max-w-20xl grid-cols-2 gap-y-6 rounded-2xl bg-[#EEF1F4] px-6 py-8 sm:grid-cols-4 sm:gap-0 sm:divide-x sm:divide-[#c9dbe6]">
             {heroStats.map((stat) => (
               <div key={stat.label} className="px-4 text-center sm:px-6">
-                <p className="text-[13px] font-semibold text-[#3f4c58]">
+                <p className="text-[13px] font-[DM_Serif_Display] text-black">
                   {stat.label}
                 </p>
-                  <p className="mt-2 font-['Inter'] text-4xl font-black text-[#001530]">
+                  <p className="mt-2 font-[DM_Serif_Display]  text-4xl font-black text-[#001530]">
   {stat.value}
   <span style={{ color: stat.suffixColor }}>{stat.suffix}</span>
 </p>
@@ -782,23 +676,29 @@ const Home = ({ services }) => {
 
           {/* Bottom CTA */}
           <div className="mt-16 text-center">
-            <a
-              href="#/services"
-              className="inline-flex items-center gap-3 rounded-full bg-[#001530] py-1.5 pl-6 pr-1.5 text-[15px] font-bold text-white transition hover:bg-[#062142]"
-            >
-              Explore Our Services
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#FFE459]">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M7 17L17 7M17 7H8M17 7V16"
-                    stroke="#001530"
-                    strokeWidth="2.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </a>
+             <a
+  href="#/services"
+  className="inline-flex items-center rounded-full bg-[#001530] py-0.5 pl-3 pr-0 text-[16px] font-semibold text-white transition hover:bg-[#062142]"
+>
+  <span className="font-serif pr-2">Explore Our Services</span> {/* Added pr-2 for spacing */}
+  <span className="-mr-[1px] grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffde59] shadow-sm"> {/* Changed margin */}
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 17L17 7M17 7H8M17 7V16"
+        stroke="#0b3765"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </span>
+</a>
           </div>
         </div>
       </section>
@@ -847,62 +747,8 @@ const Home = ({ services }) => {
         </div>
       </section>
 
-      {/* HOW WE WORK SECTION */}
-      <section className="relative overflow-hidden bg-white py-0">
-        <div className="relative mx-auto w-[min(1180px,calc(100%-36px))]">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="mx-auto mb-4 inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-bold uppercase tracking-wide text-[#0b3765]">
-              How We Work
-            </p>
-            <h2 className="font-serif text-[clamp(1.6rem,3vw,1.3rem)] font-black leading-snug text-[#0a0a0a]">
-  <span className="text-[#0b3b7b]">D</span>
-<span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">
-  elve
-</span> Deep into Your Challenges{' '}
-  <span className="text-[#0b3b7b]">F</span>
-<span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">
-  low
-</span>
-  <br />
-  Seamlessly with Powerful Solutions.
-</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-[14px] leading-6 text-[#404040]">
-              At Delve Flow, we follow a clear, collaborative, and
-              results-focused process designed to eliminate guesswork and
-              deliver exceptional digital products that drive real business
-              growth.
-            </p>
-          </div>
-
-          <div className="relative mt-16">
-            <div className="absolute left-1/2 top-0 hidden w-px -translate-x-1/2 bg-gradient-to-b from-[#38B9DF] via-[#38B9DF]/40 to-[#38B9DF] md:block" 
-     style={{ height: '100%', bottom: '100%' }} />
-
-            <div className="flex flex-col gap-8">
-              {steps.map((step) => (
-                <div
-                  key={step.number}
-                  className={`flex items-start gap-16 ${
-                    step.side === 'right' ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
-                >
-                  <div className={`flex-1 ${step.side === 'right' ? 'md:flex md:justify-end' : 'md:flex md:justify-start'}`}>
-                    <StepCard step={step} />
-                  </div>
-
-                  <div className="relative z-10 hidden shrink-0 md:block">
-                    <div className="grid h-21 w-21 place-items-center  ">
-                      {howWeWorkIcons[step.icon]}
-                    </div>
-                  </div>
-
-                  <div className="flex-1 md:block" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* OUR PROCESS SECTION - NEW */}
+      <OurProcess />
 
       {/* RECENT PROJECTS SECTION */}
       <section className="relative overflow-hidden bg-white py-20">
@@ -940,22 +786,28 @@ const Home = ({ services }) => {
 
           <div className="mt-12 text-center">
             <a
-              href="#/projects"
-              className="inline-flex items-center gap-3 rounded-full bg-[#001530] py-1.5 pl-6 pr-1.5 text-[15px] font-bold text-white transition hover:bg-[#062142]"
-            >
-              View All Projects
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#FFE459]">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M7 17L17 7M17 7H8M17 7V16"
-                    stroke="#001530"
-                    strokeWidth="2.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </a>
+  href="#/projects"
+  className="inline-flex items-center rounded-full bg-[#001530] py-0.5 pl-3 pr-0 text-[16px] font-semibold text-white transition hover:bg-[#062142]"
+>
+  <span className="font-serif pr-2">View All Projects</span> {/* Added pr-2 for spacing */}
+  <span className="-mr-[1px] grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffde59] shadow-sm"> {/* Changed margin */}
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 17L17 7M17 7H8M17 7V16"
+        stroke="#0b3765"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </span>
+</a>
           </div>
         </div>
       </section>

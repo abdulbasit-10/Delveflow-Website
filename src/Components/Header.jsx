@@ -69,11 +69,11 @@ const Header = ({ currentPage }) => {
 
         {/* Navigation */}
         <nav
-          className={`absolute left-5 right-5 top-[74px] rounded-full border-2 border-[#e2e5ea] bg-white p-2 shadow-[0_10px_30px_rgba(6,23,43,0.08)] lg:static lg:flex lg:w-fit lg:items-center lg:gap-1 lg:p-2 ${
-            open ? 'grid gap-1 !rounded-2xl' : 'hidden lg:flex'
-          }`}
-          aria-label="Primary navigation"
-        >
+  className={`absolute left-5 right-5 top-[74px] rounded-[18px] bg-white shadow-[inset_0_7px_6px_rgba(0,0,0,0.06),0_12px_35px_rgba(0,0,0,0.08)] lg:static lg:flex lg:w-fit lg:items-center lg:gap-1 lg:p-2 ${
+    open ? 'grid gap-1 !rounded-[18px]' : 'hidden lg:flex'
+  }`}
+  aria-label="Primary navigation"
+>
           {navItems.map((item) => {
             const isActive =
               currentPage === item.page ||
@@ -150,29 +150,35 @@ const Header = ({ currentPage }) => {
         </nav>
 
         {/* CTA Button */}
-        <a
-          href="#/projects"
-          className="hidden lg:inline-flex items-center gap-1 rounded-full bg-[#001530] py-1.5 pl-6 pr-0 text-[15px] font-bold text-white transition hover:bg-[#062142]"
-        >
-          See More Projects
-          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#FFE459] ml-2">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 17L17 7M17 7H8M17 7V16"
-                stroke="#001530"
-                strokeWidth="02.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </span>
-        </a>
+        <div>
+          
+        </div>
+       
+       <a
+  href="#/projects"
+  className="relative inline-flex items-center rounded-full bg-[#001530] py-3 pl-7 pr-12 text-[17px] font-bold text-white transition hover:bg-[#062142]"
+>
+  <span className="font-serif tracking-wide">See More Projects</span>
+  <span className="absolute -right-3 top-1/2 grid h-14 w-14 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
+    <svg
+      width="25"
+      height="25"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 17L17 7M17 7H8M17 7V16"
+        stroke="#001530"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </span>
+</a>
+  
+        
       </div>
     </header>
   )

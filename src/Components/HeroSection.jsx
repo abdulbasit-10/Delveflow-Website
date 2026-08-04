@@ -24,13 +24,13 @@ const HeroSection = ({
         {/* LEFT COLUMN */}
         <div className="flex-1 max-w-[560px] py-10 lg:py-16">
           {/* About Us badge */}
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#d7d7d7] bg-white/60 px-5 py-2 text-[13px] font-semibold text-[#1a1a2e]">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#d7d7d7] bg-white/60 px-5 py-2 text-[13px] font-sans font-semibold text-[#1a1a2e]">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#1a1a2e]" />
             {badge}
           </div>
 
-          {/* Headline */}
-          <h2 className="font-serif text-[clamp(2.5rem,4vw,1.6rem)] font-extrabold leading-[1.18] text-[#111111]">
+          {/* Headline - Exact Figma specs */}
+          <h2 className="font-dm-serif text-[clamp(2.8rem,4vw,4rem)] font-normal leading-[1.125] tracking-normal text-[#0a0a0a]">
             {title}
             <br />
             {subtitle}
@@ -40,8 +40,8 @@ const HeroSection = ({
             </span>
           </h2>
 
-          {/* Paragraph */}
-          <p className="mt-6 max-w-[460px] text-[13.5px] leading-relaxed text-[#5b5b5b]">
+          {/* Paragraph - Sans-serif */}
+          <p className="mt-6 max-w-[460px] font-sans text-[13.5px] leading-relaxed text-[#5b5b5b]">
             {description}
           </p>
 
@@ -49,7 +49,7 @@ const HeroSection = ({
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
               href={buttonLink}
-              className="inline-flex items-center gap-3 rounded-full bg-[#12203f] py-1.5 pl-7 pr-1.5 text-[15px] font-semibold text-white transition hover:bg-[#1a2f5a]"
+              className="inline-flex font-sans items-center gap-3 rounded-full bg-[#12203f] py-1.5 pl-7 pr-1.5 text-[15px] font-semibold text-white transition hover:bg-[#1a2f5a]"
             >
               {buttonText}
               <span className="grid h-9 w-9 place-items-center rounded-full bg-[#f2c14e] text-[#12203f] transition hover:scale-105">
@@ -59,7 +59,7 @@ const HeroSection = ({
 
             <a
               href={secondaryButtonLink}
-              className="inline-flex items-center rounded-full border border-[#c9c9c9] px-8 py-3.5 text-[15px] font-semibold text-[#1a1a2e] transition hover:border-[#12203f] hover:bg-[#f8f8f8]"
+              className="inline-flex font-sans items-center rounded-full border border-[#c9c9c9] px-8 py-3.5 text-[15px] font-semibold text-[#1a1a2e] transition hover:border-[#12203f] hover:bg-[#f8f8f8]"
             >
               {secondaryButtonText}
             </a>
@@ -82,12 +82,12 @@ const HeroSection = ({
 
           {/* Projects Delivered card */}
           <div className="absolute -top-1 -left-5.5 z-20 min-w-[180px] rounded-[14px] bg-white p-3.5 px-5 shadow-[0_12px_30px_rgba(20,20,50,0.10)]">
-            <div className="mb-1 text-xs text-[#8a8a8a]">Projects Delivered</div>
+            <div className="mb-1 font-sans text-xs text-[#8a8a8a]">Projects Delivered</div>
             <div className="flex items-center gap-2.5">
-              <span className="font-serif text-2xl font-extrabold text-[#12203f]">
+              <span className="font-dm-serif text-2xl font-normal text-[#12203f]">
                 {projectsCount}
               </span>
-              <span className="flex items-center gap-1 text-[11px] font-medium text-[#3aa0d1]">
+              <span className="flex items-center gap-1 font-sans text-[11px] font-medium text-[#3aa0d1]">
                 ✓ Successfully Completed
               </span>
             </div>
@@ -95,12 +95,12 @@ const HeroSection = ({
 
           {/* Happy Clients card */}
           <div className="absolute -bottom-1 -right-4 z-20 min-w-[190px] rounded-[14px] bg-white p-3.5 px-5 shadow-[0_12px_30px_rgba(20,20,50,0.10)]">
-            <div className="mb-1 text-xs text-[#8a8a8a]">Happy Clients</div>
+            <div className="mb-1 font-sans text-xs text-[#8a8a8a]">Happy Clients</div>
             <div className="flex items-center gap-2.5">
-              <span className="font-serif text-2xl font-extrabold text-[#12203f]">
+              <span className="font-dm-serif text-2xl font-normal text-[#12203f]">
                 {clientsCount}
               </span>
-              <span className="flex items-center gap-1 text-[11px] font-medium text-[#5b5b5b]">
+              <span className="flex items-center gap-1 font-sans text-[11px] font-medium text-[#5b5b5b]">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#3aa0d1]" />
                 Trusted Worldwide
               </span>
