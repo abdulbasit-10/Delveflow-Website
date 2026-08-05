@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import dfLogoMark from '../assets/delveLogo.png'
 
+
 // ===== NAVIGATION DATA =====
 const navItems = [
   { label: 'Home', href: '/', page: 'home' },
@@ -85,7 +86,7 @@ const Header = ({ currentPage }) => {
               <div key={item.href} className="relative" ref={servicesRef}>
                 <button
                   type="button"
-                  className={`flex w-full items-center justify-between gap-1.5 rounded-full px-4 py-2 text-[15px] font-medium transition lg:w-auto ${
+                  className={`flex w-full items-center justify-between gap-1.5 rounded-full px-4 py-2 text-[15px] font-normal transition lg:w-auto ${
                     isActive
                       ? 'bg-[#0b1b2f] text-white'
                       : 'text-[#0a1b2f] hover:bg-[#f2f7fc] hover:text-[#0b3765]'
@@ -120,7 +121,7 @@ const Header = ({ currentPage }) => {
                     <Link
                       key={child.href}
                       to={child.href}
-                      className="rounded-md px-3 py-2 text-[14px] font-medium text-[#0a1b2f] transition hover:bg-[#f2f7fc] hover:text-[#0b3765]"
+                      className="rounded-md px-3 py-2 text-[14px] font-normal text-[#0a1b2f] transition hover:bg-[#f2f7fc] hover:text-[#0b3765]"
                       onClick={() => {
                         setServicesOpen(false)
                         setOpen(false)
@@ -136,7 +137,7 @@ const Header = ({ currentPage }) => {
               <Link
                 key={item.href}
                 to={item.href}
-                className={`rounded-full px-4 py-2 text-[15px] font-medium transition ${
+                className={`rounded-full px-4 py-2 text-[15px] font-normal transition ${
                   isActive
                     ? 'bg-[#0b1b2f] text-white'
                     : 'text-[#0a1b2f] hover:bg-[#f2f7fc] hover:text-[#0b3765]'
@@ -153,13 +154,13 @@ const Header = ({ currentPage }) => {
         {/* CTA Button - Updated to Link */}
         <Link
           to="/projects"
-          className="relative inline-flex items-center rounded-full bg-[#001530] py-3 pl-7 pr-12 text-[17px] font-bold text-white transition hover:bg-[#062142]"
+          className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142]"
         >
-          <span className="font-serif tracking-wide">See More Projects</span>
-          <span className="absolute -right-3 top-1/2 grid h-14 w-14 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
+          <span className="tracking-wide">See More Projects</span>
+          <span className="absolute -right-2.5 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
             <svg
-              width="25"
-              height="25"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

@@ -84,6 +84,17 @@ const servicePages = {
   'cloud-and-devops': ServiceCloud,
 }
 
+const ScrollToTop = () => {
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    document.documentElement.scrollTo(0, 0)
+  }, [location.pathname])
+
+  return null
+}
+
 // Main App Content with routing logic
 const AppContent = () => {
   const location = useLocation()
@@ -149,6 +160,7 @@ const AppContent = () => {
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <AppContent />
     </BrowserRouter>
   )

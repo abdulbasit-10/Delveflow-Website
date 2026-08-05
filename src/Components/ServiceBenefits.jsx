@@ -65,7 +65,7 @@ const ServiceBenefits = ({
   benefits = defaultBenefits,
 }) => {
   return (
-    <section className="relative overflow-hidden bg-white py-20">
+    <section className="relative overflow-hidden bg-white py-16">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,197,92,0.14),transparent_45%),radial-gradient(circle_at_5%_95%,rgba(56,107,223,0.08),transparent_40%)]" />
 
       <div className="relative mx-auto w-[min(1180px,calc(100%-36px))]">
@@ -86,16 +86,16 @@ const ServiceBenefits = ({
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.map((benefit) => (
             <div
               key={benefit.title}
-              className="rounded-[20px] border border-[#b5e4f3] border-r-[#093B7B] bg-white px-6 py-7 border-r-[3px]"
+              className="rounded-[20px] border border-[#dce9f4] bg-white px-5 py-6 shadow-[0_10px_28px_rgba(6,23,43,0.05)]"
             >
-              <span className="mb-4 grid h-11 w-11 place-items-center rounded-lg bg-[#e7f0f8]">
+              <span className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-[#eaf3fb]">
                 {icons[benefit.icon]}
               </span>
-              <h3 className="text-[16px] font-bold text-[#001530]">
+              <h3 className="text-[15px] font-semibold text-[#001530]">
                 {benefit.title}
               </h3>
               <p className="mt-2 text-[13px] leading-6 text-[#333333]">

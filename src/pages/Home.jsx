@@ -435,11 +435,11 @@ const TestimonialSection = () => {
 // ===== CTA SECTION =====
 const CtaSection = () => {
   return (
-    <section className="relative overflow-hidden bg-white py-20">
+    <section className="relative overflow-hidden bg-white py-12">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(56,107,223,0.08),transparent_45%),radial-gradient(circle_at_85%_80%,rgba(255,197,92,0.10),transparent_45%)]" />
 
       <div className="relative mx-auto w-[min(1000px,calc(100%-36px))]">
-        <div className="relative overflow-hidden rounded-[28px] border border-[#0b3765]/25 bg-white px-6 py-14 sm:px-14">
+        <div className="relative overflow-hidden rounded-[28px] border border-[#0b3765]/25 bg-white px-6 py-10 sm:px-14">
           
           {/* TOP-RIGHT IMAGE - Use topRightImage */}
           <img
@@ -458,7 +458,7 @@ const CtaSection = () => {
           />
 
           <div className="relative mx-auto max-w-2xl text-center">
-            <h2 className="font-serif text-[clamp(1.6rem,3.4vw,2.4rem)] font-black leading-snug text-[#06172b]">
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,2rem)] font-black leading-snug text-[#06172b]">
               Ready to Turn Your Ideas Into
               <br />
               <span className="text-[#093B7A]">Powerful</span>{' '}
@@ -467,14 +467,14 @@ const CtaSection = () => {
               </span>
             </h2>
 
-            <p className="mx-auto mt-5 max-w-xl text-[14px] leading-6 text-[#333333]">
+            <p className="mx-auto mt-4 max-w-xl text-[14px] leading-6 text-[#333333]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco
               laboris nisi
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <a
   href="#/services"
   className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-11 text-[16px] font-medium text-white transition hover:bg-[#062142]"
@@ -627,32 +627,32 @@ const Home = ({ services }) => {
           </div>
 
           {/* Services Grid - 3 columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {servicesData.map((service) => (
               <div
                 key={service.id}
-                className="group rounded-2xl border border-[#e8edf2] bg-white p-6 transition-all duration-300 hover:-translate-y-2 hover:bg-[#0b3765] hover:border-[#0b3765] hover:shadow-[0_20px_60px_rgba(8,36,67,0.12)]"
+                className="group rounded-[20px] border border-[#e8edf2] bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:bg-[#0b3765] hover:shadow-[0_18px_40px_rgba(8,36,67,0.10)]"
               >
                 {/* Icon - Changes to white on hover */}
-                <div className="mb-4 inline-block rounded-xl bg-[#f0f7ff] p-3 text-[#0b3765] transition-colors group-hover:bg-white/20 group-hover:text-white">
+                <div className="mb-3 inline-block rounded-xl bg-[#f0f7ff] p-2.5 text-[#0b3765] transition-colors group-hover:bg-white/20 group-hover:text-white">
                   {serviceIcons[service.id]}
                 </div>
 
                 {/* Title - Changes to white on hover */}
-                <h3 className="text-xl font-bold text-[#06172b] mb-3 transition-colors group-hover:text-white">
+                <h3 className="mb-2 text-[18px] font-semibold text-[#06172b] transition-colors group-hover:text-white">
                   {service.title}
                 </h3>
 
                 {/* Description - Changes to white on hover */}
-                <p className="text-[#5c6f84] text-sm leading-relaxed mb-4 transition-colors group-hover:text-white/90">
+                <p className="mb-4 text-[13.5px] leading-6 text-[#5c6f84] transition-colors group-hover:text-white/90">
                   {service.description}
                 </p>
 
                 {/* Features List - Changes to white on hover */}
-                <ul className="space-y-2 mb-5">
+                <ul className="mb-4 space-y-2">
                   {service.features.slice(0, 4).map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-sm text-[#333333] transition-colors group-hover:text-white/90">
-                      <svg className="w-4 h-4 text-[#38B9DF] mt-0.5 flex-shrink-0 transition-colors group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={idx} className="flex items-start gap-2.5 text-[13px] text-[#333333] transition-colors group-hover:text-white/90">
+                      <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#38B9DF] transition-colors group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
                       </svg>
                       {feature}
@@ -663,10 +663,10 @@ const Home = ({ services }) => {
                 {/* CTA Link - Changes to white on hover */}
                 <a
                   href="#/contact"
-                  className="inline-flex items-center gap-2 text-[#0b3765] font-semibold text-sm transition-all group-hover:text-white group-hover:gap-3"
+                  className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0b3765] transition-all group-hover:gap-3 group-hover:text-white"
                 >
                   {service.cta}
-                  <span className="transition-transform duration-300 group-hover:-translate-y-1 inline-block">
+                  <span className="inline-block transition-transform duration-300 group-hover:-translate-y-1">
                     →
                   </span>
                 </a>
@@ -724,20 +724,20 @@ const Home = ({ services }) => {
             </p>
           </div>
 
-           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+           <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
   {whyChooseReasons.map(([icon, title, description]) => (
     <div
       key={title}
-      className="rounded-br-[140px] bg-gradient-to-r from-[#b5e4f3] via-[#b5e4f3] via-40% to-[#f5e6b8] to-60% p-[2px] min-h-[240px]"
+      className="min-h-[205px] rounded-br-[120px] bg-gradient-to-r from-[#b5e4f3] via-[#b5e4f3] via-40% to-[#f5e6b8] to-60% p-[2px]"
     >
-      <div className="h-full w-full rounded-br-[140px] bg-white px-6 py-8">
-        <div className="mb-5 grid h-14 w-14 place-items-center  text-[#38B9DF]">
+      <div className="h-full w-full rounded-br-[120px] bg-white px-5 py-6">
+        <div className="mb-4 grid h-12 w-12 place-items-center text-[#38B9DF]">
           {whyChooseIcons[icon]}
         </div>
-        <h3 className="text-[17px] font-bold leading-snug text-[#06172b]">
+        <h3 className="text-[16px] font-bold leading-snug text-[#06172b]">
           {title}
         </h3>
-        <p className="mt-3 text-[14px] leading-6 text-[#333333]">
+        <p className="mt-2 text-[13.5px] leading-6 text-[#333333]">
           {description}
         </p>
       </div>
