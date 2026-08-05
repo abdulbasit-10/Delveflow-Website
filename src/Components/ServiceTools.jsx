@@ -176,7 +176,7 @@ const ServiceTools = ({
           <p className="mx-auto mb-5 inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-bold uppercase tracking-wide text-[#0b3765]">
             {badge}
           </p>
-          <h2 className="font-serif text-[clamp(1.8rem,2.4vw,2.6rem)] font-black leading-tight text-[#0a0a0a]">
+          <h2 className="font-serif text-[clamp(1.2rem,2.3vw,2.1rem)] font-black leading-tight text-[#0a0a0a] font-medium">
             {title}
             <br />
             <span className="text-[#093165]">{boldPrefix}</span>{' '}

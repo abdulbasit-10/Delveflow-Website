@@ -26,7 +26,7 @@ const OurImpact = () => {
 
         {/* Heading */}
         <h2
-          className="mt-6 text-center font-serif text-4xl font-bold leading-tight sm:text-5xl"
+          className="mt-6 text-center font-serif text-2xl font-bold leading-tight sm:text-3xl font-medium"
           style={{ color: "#141414" }}
         >
           Driving Growth

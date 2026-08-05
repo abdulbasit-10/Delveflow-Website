@@ -33,7 +33,7 @@ const ContactHero = () => {
         </span>
 
         {/* Heading with gradient */}
-        <h1 className="mx-auto max-w-3xl font-serif text-[clamp(2rem,3vw,3.4rem)] font-black leading-[1.15] text-[#0a0a0a]">
+        <h1 className="mx-auto max-w-3xl font-serif text-[clamp(2rem,3vw,3.4rem)] font-black leading-[1.15] text-[#0a0a0a] font-medium">
           Let's Turn Your Ideas
           <br />
           <span className="bg-gradient-to-r from-[#0b3b7b] to-[#d4bb15] bg-clip-text text-transparent">

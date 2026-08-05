@@ -23,7 +23,7 @@ const ServiceHero = ({
           {badge}
         </span>
 
-        <h1 className="font-serif text-[clamp(2rem,3.2vw,3.2rem)] font-black leading-[1.15] text-[#0a0a0a]">
+        <h1 className="font-['DM_Serif_Text']  font-medium text-[clamp(1rem,3.2vw,2.2rem)] font-black leading-[1.15] text-[#0a0a0a]">
           {title}
           <br />
              <span className="bg-gradient-to-r from-[#093B7B] to-[#FFD600] bg-clip-text text-transparent">
@@ -37,22 +37,22 @@ const ServiceHero = ({
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           {/* PRIMARY BUTTON - Fixed */}
-          <a
+         <a
   href={primaryButtonLink}
-  className="inline-flex items-center rounded-full bg-[#001530] py-0.5 pl-6 pr-0 text-[16px] font-semibold text-white transition hover:bg-[#062142]"
+  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-6 pr-12 text-[16px] font-medium text-white transition hover:bg-[#062142]"
 >
-  <span className="font-serif pr-2">{primaryButtonText}</span>
-  <span className="-mr-[1px] grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffde59] shadow-sm">
+  <span className="font-serif tracking-wide">{primaryButtonText}</span>
+  <span className="absolute -right-2 top-1/2 grid h-13 w-13 -translate-y-1/2 place-items-center rounded-full bg-[#ffde59] text-[#001530] shadow-sm">
     <svg
-      width="18"
-      height="18"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M7 17L17 7M17 7H8M17 7V16"
-        stroke="#0b3765"
+        stroke="#001530"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"

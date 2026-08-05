@@ -1,27 +1,28 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import dfLogoMark from '../assets/delveLogo.png'
 
 // ===== NAVIGATION DATA =====
 const navItems = [
-  { label: 'Home', href: '#/home', page: 'home' },
-  { label: 'About Us', href: '#/about', page: 'about' },
+  { label: 'Home', href: '/', page: 'home' },
+  { label: 'About Us', href: '/about', page: 'about' },
   {
     label: 'Services',
-    href: '#/services',
+    href: '/services',
     page: 'services',
     children: [
-      { label: 'Web Development', href: '#/services/web-development' },
-      { label: 'App Development', href: '#/services/app-development' },
-      { label: 'UI/UX Design', href: '#/services/ui-ux-design' },
-      { label: 'SaaS Development', href: '#/services/saas-development' },
-      { label: 'AI Solutions', href: '#/services/ai-solutions' },
-      { label: 'Cloud And DevOps', href: '#/services/cloud-and-devops' },
+      { label: 'Web Development', href: '/services/web-development' },
+      { label: 'App Development', href: '/services/app-development' },
+      { label: 'UI/UX Design', href: '/services/ui-ux-design' },
+      { label: 'SaaS Development', href: '/services/saas-development' },
+      { label: 'AI Solutions', href: '/services/ai-solutions' },
+      { label: 'Cloud And DevOps', href: '/services/cloud-and-devops' },
     ],
   },
-  { label: 'How We Work', href: '#/howwework', page: 'howwework' },
-  { label: 'Projects', href: '#/projects', page: 'projects' },
-  { label: 'Career', href: '#/career', page: 'career' },
-  { label: 'Contact', href: '#/contact', page: 'contact' },
+  { label: 'How We Work', href: '/howwework', page: 'howwework' },
+  { label: 'Projects', href: '/projects', page: 'projects' },
+  { label: 'Career', href: '/career', page: 'career' },
+  { label: 'Contact', href: '/contact', page: 'contact' },
 ]
 
 const Header = ({ currentPage }) => {
@@ -47,10 +48,10 @@ const Header = ({ currentPage }) => {
     <header className="sticky top-0 z-30 border-b border-[#d7e5f2] bg-white/95 font-sans backdrop-blur-xl">
       <div className="mx-auto flex w-[min(1180px,100%)] items-center justify-between gap-5 px-3 py-3">
         
-        {/* Logo */}
-        <a className="inline-flex items-center gap-3 leading-none text-[#082443]" href="#/home" aria-label="DF home">
+        {/* Logo - Updated to Link */}
+        <Link to="/" className="inline-flex items-center gap-3 leading-none text-[#082443]" aria-label="DF home">
           <img className="h-12 w-auto object-contain ml-0" src={dfLogoMark} alt="" aria-hidden="true" />
-        </a>
+        </Link>
 
         {/* Mobile Hamburger Button */}
         <button
@@ -69,11 +70,11 @@ const Header = ({ currentPage }) => {
 
         {/* Navigation */}
         <nav
-  className={`absolute left-5 right-5 top-[74px] rounded-[18px] bg-white shadow-[inset_0_7px_6px_rgba(0,0,0,0.06),0_12px_35px_rgba(0,0,0,0.08)] lg:static lg:flex lg:w-fit lg:items-center lg:gap-1 lg:p-2 ${
-    open ? 'grid gap-1 !rounded-[18px]' : 'hidden lg:flex'
-  }`}
-  aria-label="Primary navigation"
->
+          className={`absolute left-5 right-5 top-[74px] ml-10 rounded-[18px] bg-white shadow-[inset_0_7px_6px_rgba(0,0,0,0.06),0_12px_35px_rgba(0,0,0,0.08),inset_0_-7px_6px_rgba(0,0,0,0.06)] lg:static lg:flex lg:w-fit lg:items-center lg:gap-1 lg:p-2 ${
+            open ? 'grid gap-1 !rounded-[18px]' : 'hidden lg:flex'
+          }`}
+          aria-label="Primary navigation"
+        >
           {navItems.map((item) => {
             const isActive =
               currentPage === item.page ||
@@ -84,7 +85,7 @@ const Header = ({ currentPage }) => {
               <div key={item.href} className="relative" ref={servicesRef}>
                 <button
                   type="button"
-                  className={`flex w-full items-center justify-between gap-1.5 rounded-full px-4 py-2 text-[15px] font-semibold transition lg:w-auto ${
+                  className={`flex w-full items-center justify-between gap-1.5 rounded-full px-4 py-2 text-[15px] font-medium transition lg:w-auto ${
                     isActive
                       ? 'bg-[#0b1b2f] text-white'
                       : 'text-[#0a1b2f] hover:bg-[#f2f7fc] hover:text-[#0b3765]'
@@ -116,26 +117,26 @@ const Header = ({ currentPage }) => {
                   }`}
                 >
                   {item.children.map((child) => (
-                    <a
+                    <Link
                       key={child.href}
-                      href={child.href}
-                      className="rounded-md px-3 py-2 text-[14px] font-semibold text-[#0a1b2f] transition hover:bg-[#f2f7fc] hover:text-[#0b3765]"
+                      to={child.href}
+                      className="rounded-md px-3 py-2 text-[14px] font-medium text-[#0a1b2f] transition hover:bg-[#f2f7fc] hover:text-[#0b3765]"
                       onClick={() => {
                         setServicesOpen(false)
                         setOpen(false)
                       }}
                     >
                       {child.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
             ) : (
-              // Regular nav link
-              <a
+              // Regular nav link - Updated to Link
+              <Link
                 key={item.href}
-                href={item.href}
-                className={`rounded-full px-4 py-2 text-[15px] font-semibold transition ${
+                to={item.href}
+                className={`rounded-full px-4 py-2 text-[15px] font-medium transition ${
                   isActive
                     ? 'bg-[#0b1b2f] text-white'
                     : 'text-[#0a1b2f] hover:bg-[#f2f7fc] hover:text-[#0b3765]'
@@ -144,40 +145,35 @@ const Header = ({ currentPage }) => {
               >
                 {isActive && <span className="mr-1">•</span>}
                 {item.label}
-              </a>
+              </Link>
             )
           })}
         </nav>
 
-        {/* CTA Button */}
-        <div>
-          
-        </div>
-       
-       <a
-  href="#/projects"
-  className="relative inline-flex items-center rounded-full bg-[#001530] py-3 pl-7 pr-12 text-[17px] font-bold text-white transition hover:bg-[#062142]"
->
-  <span className="font-serif tracking-wide">See More Projects</span>
-  <span className="absolute -right-3 top-1/2 grid h-14 w-14 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
-    <svg
-      width="25"
-      height="25"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M7 17L17 7M17 7H8M17 7V16"
-        stroke="#001530"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  </span>
-</a>
-  
+        {/* CTA Button - Updated to Link */}
+        <Link
+          to="/projects"
+          className="relative inline-flex items-center rounded-full bg-[#001530] py-3 pl-7 pr-12 text-[17px] font-bold text-white transition hover:bg-[#062142]"
+        >
+          <span className="font-serif tracking-wide">See More Projects</span>
+          <span className="absolute -right-3 top-1/2 grid h-14 w-14 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 17L17 7M17 7H8M17 7V16"
+                stroke="#001530"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+        </Link>
         
       </div>
     </header>

@@ -27,10 +27,10 @@ const whyChooseReasons = [
 
 // ===== HERO STATS (for the hero section) =====
 const heroStats = [
-  { value: '15', suffix: '+', suffixColor: '#38B9DF', label: 'High-Impact Projects' },
-  { value: '2', suffix: '+', suffixColor: '#38B9DF', label: 'Years of Experience' },
-  { value: '20', suffix: '+', suffixColor: '#38B9DF', label: 'Satisfied Clients worldwide' },
-  { value: '100', suffix: '%', suffixColor: '#828282', label: 'Client Satisfaction Rate' },
+  { value: '15', suffix: ' +', suffixColor: '#38B9DF', label: 'High-Impact Projects' },
+  { value: '2', suffix: ' +', suffixColor: '#38B9DF', label: 'Years of Experience' },
+  { value: '20', suffix: ' +', suffixColor: '#38B9DF', label: 'Satisfied Clients worldwide' },
+  { value: '100', suffix: ' %', suffixColor: '#38B9DF', label: 'Client Satisfaction Rate' },
 ]
 
 // ===== TRACK STATS (for the track record panel) =====
@@ -477,20 +477,20 @@ const CtaSection = () => {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <a
   href="#/services"
-  className="inline-flex items-center rounded-full bg-[#001530] py-0.5 pl-5 pr-0 text-[16px] font-semibold text-white transition hover:bg-[#062142]"
+  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-11 text-[16px] font-medium text-white transition hover:bg-[#062142]"
 >
-  <span className="font-serif pr-3">Get Started</span>
-  <span className="-mr-[1px] grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffde59] shadow-sm">
+  <span className="font-serif tracking-wide">Get Started</span>
+  <span className="absolute -right-2 top-1/2 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-[#ffde59] text-[#001530] shadow-sm">
     <svg
-      width="18"
-      height="18"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M7 17L17 7M17 7H8M17 7V16"
-        stroke="#0b3765"
+        stroke="#001530"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -557,23 +557,23 @@ const Home = ({ services }) => {
             expert team turns complex problems into seamless results.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-9">
             <a
   href="#/contact"
-  className="inline-flex items-center rounded-full bg-[#001530] py-0.5 pl-3 pr-0 text-[16px] font-semibold text-white transition hover:bg-[#062142]"
+  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-4 pr-10 text-[16px] font-semibold text-white transition hover:bg-[#062142]"
 >
-  <span className="font-serif pr-2">Get Started</span> {/* Added pr-2 for spacing */}
-  <span className="-mr-[1px] grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffde59] shadow-sm"> {/* Changed margin */}
+  <span className="font-serif tracking-wide">Get Started</span>
+  <span className="absolute -right-2 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-[#ffde59] text-[#001530] shadow-sm">
     <svg
-      width="18"
-      height="18"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M7 17L17 7M17 7H8M17 7V16"
-        stroke="#0b3765"
+        stroke="#001530"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -611,7 +611,7 @@ const Home = ({ services }) => {
         <div className="mx-auto w-[min(1180px,calc(100%-36px))]">
           {/* Section Header */}
           <div className="mb-16 text-center">
-            <p className="text-sm font-bold uppercase tracking-wider text-[#0d5790] mb-3">
+            <p className="text-sm font-['DM_Serif_Text'] text-5xl font-bold uppercase tracking-wider text-[#0d5790] mb-3">
               Our Services
             </p>
             <h2 className="mx-auto max-w-4xl font-serif text-[clamp(2rem,2.5vw,3.6rem)] font-medium leading-[1.2] text-[#171717] tracking-wide">
@@ -678,20 +678,20 @@ const Home = ({ services }) => {
           <div className="mt-16 text-center">
              <a
   href="#/services"
-  className="inline-flex items-center rounded-full bg-[#001530] py-0.5 pl-3 pr-0 text-[16px] font-semibold text-white transition hover:bg-[#062142]"
+  className="relative inline-flex items-center rounded-full bg-[#001530] py-3.5 pl-4 pr-13 text-[16px] font-medium text-white transition hover:bg-[#062142]"
 >
-  <span className="font-serif pr-2">Explore Our Services</span> {/* Added pr-2 for spacing */}
-  <span className="-mr-[1px] grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffde59] shadow-sm"> {/* Changed margin */}
+  <span className="font-DM Serif Text tracking-wide">Explore Our Services</span>
+  <span className="absolute -right-2 top-1/2 grid h-14 w-14 -translate-y-1/2 place-items-center rounded-full bg-[#ffde59] text-[#001530] shadow-sm">
     <svg
-      width="18"
-      height="18"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M7 17L17 7M17 7H8M17 7V16"
-        stroke="#0b3765"
+        stroke="#001530"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -710,10 +710,10 @@ const Home = ({ services }) => {
 
         <div className="relative mx-auto w-[min(1180px,calc(100%-36px))] py-20">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-[clamp(1.8rem,2.4vw,2.6rem)] font-black leading-tight text-[#0a0a0a]">
-              Why Businesses Choose{' '}<br></br>
-              <span className="bg-gradient-to-r from-[#0d3b66] via-[#8a9a3c] to-[#e2ca26] bg-clip-text text-transparent font-bold">
-  Real Business Growth
+            <h2 className="font-['DM_Serif_Text'] text-[clamp(1.8rem,1.4vw,2.6rem)] font-black leading-tight text-[#0a0a0a]">
+              Why Businesses Choose{' '}
+              <span className="bg-gradient-to-r from-[#0d3b66] via-[#8a9a3c] to-[#e2ca26] bg-clip-text text-transparent font-medium">
+  Delve Flow
 </span>
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-[14px] leading-7 text-[#333333]">
@@ -787,20 +787,20 @@ const Home = ({ services }) => {
           <div className="mt-12 text-center">
             <a
   href="#/projects"
-  className="inline-flex items-center rounded-full bg-[#001530] py-0.5 pl-3 pr-0 text-[16px] font-semibold text-white transition hover:bg-[#062142]"
+  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-4 pr-12 text-[16px] font-medium text-white transition hover:bg-[#062142]"
 >
-  <span className="font-serif pr-2">View All Projects</span> {/* Added pr-2 for spacing */}
-  <span className="-mr-[1px] grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffde59] shadow-sm"> {/* Changed margin */}
+  <span className="font-serif tracking-wide">View All Projects</span>
+  <span className="absolute -right-2 top-1/2 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-[#ffde59] text-[#001530] shadow-sm">
     <svg
-      width="18"
-      height="18"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M7 17L17 7M17 7H8M17 7V16"
-        stroke="#0b3765"
+        stroke="#001530"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"

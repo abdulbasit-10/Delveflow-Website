@@ -97,7 +97,7 @@ const StepCard = ({ step }) => {
         aria-hidden="true"
       />
 
-      <h3 className="font-serif text-[18px] font-semibold text-white">{step.title}</h3>
+      <h3 className="font-serif text-[18px] font-medium text-white">{step.title}</h3>
       <p className="mt-2 text-[12px] leading-relaxed text-[#b4c8de]">{step.description}</p>
 
       {/* Card Content Layout */}
@@ -142,7 +142,7 @@ const OurProcess = () => {
           <p className="mx-auto mb-4 inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-bold uppercase tracking-wide text-[#0b3765]">
             How We Work
           </p>
-          <h2 className="font-serif text-[clamp(1.6rem,3vw,2.3rem)] font-black leading-snug text-[#0a0a0a]">
+          <h2 className="font-['DM_Serif_Text'] text-[clamp(1.6rem,3vw,1.3rem)] font-black leading-snug text-[#0a0a0a]">
             <span className="text-[#0b3b7b]">D</span>
             <span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">
               elve

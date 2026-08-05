@@ -1,9 +1,8 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import Header from './Components/Header.jsx'
 import Footer from './Components/Footer.jsx'
 import Home from './pages/Home.jsx'
-// import Services from './pages/Services.jsx'
-// import ServiceDetail from './pages/ServiceDetail.jsx'
 import About from './pages/About.jsx'
 import Portfolio from './pages/Portfolio.jsx'
 import Contact from './pages/Contact.jsx'
@@ -18,9 +17,6 @@ import ServiceApp from './pages/ServiceApp.jsx'
 import ServiceSaaS from './pages/ServiceSaaS.jsx'
 import ServiceAI from './pages/ServiceAI.jsx'
 import ServiceCloud from './pages/ServiceCloud.jsx'
-
-
-
 
 const services = [
   {
@@ -79,72 +75,67 @@ const services = [
   },
 ]
 
-// ✅ UPDATE THE pages OBJECT - Map service slugs to components
-const pages = {
-  home: Home,
-  about: About,
-  howwework: HowWeWork,
-  projects: Portfolio,
-  portfolio: Portfolio,
-  career: Career,
-  contact: Contact,
-  privacy: PrivacyPolicy,
-  terms: TermsOfService,
-  cookies: CookiePolicy,
-}
-
-// ✅ ADD SERVICE PAGE MAPPING
 const servicePages = {
   'ui-ux-design': ServiceUIUX,
-  'web-development': ServiceWeb,  
+  'web-development': ServiceWeb,
   'app-development': ServiceApp,
   'saas-development': ServiceSaaS,
-  'ai-solutions': ServiceAI, 
-  'cloud-and-devops': ServiceCloud,      
+  'ai-solutions': ServiceAI,
+  'cloud-and-devops': ServiceCloud,
 }
 
-function readRoute() {
-  const route = window.location.hash.replace('#/', '') || 'home'
-  const [page, slug] = route.split('/')
-  return { page, slug }
-}
-
-const App = () => {
-  const [route, setRoute] = useState(readRoute)
+// Main App Content with routing logic
+const AppContent = () => {
+  const location = useLocation()
+  const navigate = useNavigate()
+  const [currentPage, setCurrentPage] = useState('home')
 
   useEffect(() => {
-    const handleHashChange = () => {
-      setRoute(readRoute())
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
+    // Extract page from URL path
+    const path = location.pathname.replace('/', '') || 'home'
+    setCurrentPage(path.split('/')[0])
+  }, [location])
 
-    window.addEventListener('hashchange', handleHashChange)
-    return () => window.removeEventListener('hashchange', handleHashChange)
-  }, [])
-
-  // ✅ Determine which component to render
+  // Get the current page component
   const getPageComponent = () => {
-  if (route.page === 'services' && route.slug) {
-    return servicePages[route.slug] || null
+    const path = location.pathname.replace('/', '') || 'home'
+    const [page, slug] = path.split('/')
+
+    if (page === 'services' && slug) {
+      return servicePages[slug] || null
+    }
+    return pages[page] || Home
   }
-  return pages[route.page] || Home
-}
+
+  const pages = {
+    home: Home,
+    about: About,
+    howwework: HowWeWork,
+    projects: Portfolio,
+    portfolio: Portfolio,
+    career: Career,
+    contact: Contact,
+    privacy: PrivacyPolicy,
+    terms: TermsOfService,
+    cookies: CookiePolicy,
+  }
 
   const Page = getPageComponent()
-  const currentService = services.find((service) => service.slug === route.slug)
+  const path = location.pathname.replace('/', '') || 'home'
+  const [, slug] = path.split('/')
+  const currentService = services.find((service) => service.slug === slug)
 
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_15%_12%,rgba(56,185,223,0.13),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f2f8ff_45%,#ffffff_100%)] text-[#0a1b2f]">
-      <Header currentPage={route.page} services={services} />
+      <Header currentPage={currentPage} services={services} />
       <main>
         {Page ? (
           <Page services={services} />
         ) : (
-          // Fallback if service page not found
           <div className="py-20 text-center">
             <h1 className="text-4xl font-black text-[#06172b]">Service not found</h1>
             <p className="mt-4 text-[#5b6f84]">The service page you're looking for doesn't exist.</p>
-            <a href="#/" className="mt-6 inline-block text-[#0b3765] font-bold hover:underline">
+            <a href="/" className="mt-6 inline-block text-[#0b3765] font-bold hover:underline">
               Go Home
             </a>
           </div>
@@ -152,6 +143,14 @@ const App = () => {
       </main>
       <Footer services={services} />
     </div>
+  )
+}
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   )
 }
 

@@ -38,7 +38,7 @@ const Portfolio = () => {
           <p className="mx-auto mb-4 inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-bold uppercase tracking-wide text-[#0b3765]">
             Featured Projects
           </p>
-          <h2 className="font-serif text-[clamp(1.5rem,2.8vw,2.1rem)] font-black leading-snug text-[#0a0a0a]">
+          <h2 className="font-serif text-[clamp(1.5rem,2.8vw,2.1rem)] font-black leading-snug text-[#0a0a0a] font-medium">
             <span className="text-[#093b7a]">Delve</span> into Innovation.{' '}
             <span className="text-[#093b7a]">F</span>
             <span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">

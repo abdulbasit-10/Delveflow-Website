@@ -50,7 +50,7 @@ const CareerHero = ({
               {badge}
             </span>
 
-            <h1 className="font-serif text-[clamp(2.4rem,2vw,3.6rem)] font-black leading-[1.1] text-[#0a0a0a]">
+            <h1 className="font-serif text-[clamp(2.4rem,2vw,3.6rem)] font-black leading-[1.1] text-[#0a0a0a] font-medium">
               {title}
               <br />
               <span className="text-[#0b3b7b]">{boldPrefix}</span>
@@ -66,20 +66,20 @@ const CareerHero = ({
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <a
   href={primaryButtonLink}
-  className="inline-flex items-center rounded-full bg-[#001530] py-0.5 pl-6 pr-0 text-[16px] font-semibold text-white transition hover:bg-[#062142]"
+  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-6 pr-12 text-[16px] font-medium text-white transition hover:bg-[#062142]"
 >
-  <span className="font-serif pr-2">{primaryButtonText}</span>
-  <span className="-mr-[1px] grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffde59] shadow-sm">
+  <span className="font-['DM_Serif_Text'] text-5 tracking-wide">{primaryButtonText}</span>
+  <span className="absolute -right-2 top-1/2 grid h-13 w-13 -translate-y-1/2 place-items-center rounded-full bg-[#ffde59] text-[#001530] shadow-sm">
     <svg
-      width="18"
-      height="18"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M7 17L17 7M17 7H8M17 7V16"
-        stroke="#0b3765"
+        stroke="#001530"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -332,7 +332,7 @@ const HiringJourney = () => {
 
       <div className="relative mx-auto w-[min(1180px,calc(100%-36px))]">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-serif text-[clamp(1.8rem,3.4vw,2.6rem)] font-black leading-tight text-[#06172b]">
+          <h2 className="font-serif text-[clamp(1.8rem,3.4vw,2.6rem)] font-black leading-tight text-[#06172b] font-medium">
             Ready to Start Your{' '}
             <span className="bg-linear-to-r from-[#093b7a] to-[#d4bb18] bg-clip-text text-transparent">
               Journey
