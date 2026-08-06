@@ -166,7 +166,7 @@ const ContactSection = () => {
   }
 
   return (
-    <section className="relative overflow-hidden bg-white py-12">
+    <section className="relative overflow-hidden bg-white pt-1 pb-23">
       {/* Background gradient */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(56,107,223,0.06),transparent_45%),radial-gradient(circle_at_85%_90%,rgba(255,197,92,0.08),transparent_45%)]" />
 
@@ -277,22 +277,28 @@ const ContactSection = () => {
 
               {/* Submit Button */}
               <button
-                type="submit"
-                className="inline-flex w-fit cursor-pointer items-center gap-2 rounded-full bg-[#001530] py-1 pl-4 pr-1 text-[12px] font-bold text-white transition hover:bg-[#062142]"
-              >
-                Send Message
-                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#FFE459]">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M7 17L17 7M17 7H8M17 7V16"
-                      stroke="#001530"
-                      strokeWidth="2.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </button>
+  type="submit"
+  className="relative inline-flex cursor-pointer items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142] w-fit"
+>
+  <span className="tracking-wide">Send Message</span>
+  <span className="absolute -right-2.5 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 17L17 7M17 7H8M17 7V16"
+        stroke="#001530"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </span>
+</button>
             </form>
           </div>
 

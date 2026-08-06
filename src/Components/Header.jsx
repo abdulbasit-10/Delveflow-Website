@@ -54,9 +54,9 @@ const Header = ({ currentPage }) => {
           <img className="h-12 w-auto object-contain ml-0" src={dfLogoMark} alt="" aria-hidden="true" />
         </Link>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Hamburger Button - MOVED TO RIGHT SIDE */}
         <button
-          className="grid h-11 w-11 place-items-center rounded-lg border border-[#d7e5f2] bg-white lg:hidden"
+          className="grid h-11 w-11 place-items-center rounded-lg border border-[#d7e5f2] bg-white lg:hidden ml-auto"
           type="button"
           aria-label="Toggle navigation"
           aria-expanded={open}
@@ -151,10 +151,10 @@ const Header = ({ currentPage }) => {
           })}
         </nav>
 
-        {/* CTA Button - Updated to Link */}
+        {/* CTA Button - HIDDEN ON MOBILE (stays same on desktop) */}
         <Link
           to="/projects"
-          className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142]"
+          className="relative hidden sm:inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142] lg:inline-flex"
         >
           <span className="tracking-wide">See More Projects</span>
           <span className="absolute -right-2.5 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">

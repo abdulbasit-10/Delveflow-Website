@@ -72,7 +72,6 @@ const processIcons = {
 
 const ChevronBullet = ({ children }) => (
   <li className="flex items-center gap-2.5 py-1.5 text-[12px] text-[#dbe4ee]">
-    {/* Replace old SVG path with your SVG image */}
     <img 
       src={CardBulitsIcon} 
       alt="bullet icon" 
@@ -87,7 +86,6 @@ const StepCard = ({ step }) => {
 
   return (
     <div className="relative w-full max-w-md rounded-xl bg-[#082a4d] border-l-4 border-l-[#38B9DF] px-6 pb-6 pt-5 shadow-[0_20px_45px_rgba(6,23,43,0.3)] transition duration-300 hover:-translate-y-1">
-      {/* Pointer Notch */}
       <span
         className={`absolute top-5 h-0 w-0 border-y-[8px] border-y-transparent ${
           isRight
@@ -100,7 +98,6 @@ const StepCard = ({ step }) => {
       <h3 className="font-serif text-[18px] font-medium text-white">{step.title}</h3>
       <p className="mt-2 text-[12px] leading-relaxed text-[#b4c8de]">{step.description}</p>
 
-      {/* Card Content Layout */}
       {isRight ? (
         <div className="mt-4 flex items-end justify-between">
           <ul className="space-y-1">
@@ -166,7 +163,8 @@ const OurProcess = () => {
         <div className="relative mt-16">
           <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-[#38B9DF] via-[#38B9DF]/40 to-[#38B9DF] md:block" />
 
-          <div className="flex flex-col gap-16">
+          {/* UPDATED: Removed 'even:gap-8' so all gaps are exactly equal on mobile */}
+          <div className="flex flex-col gap-10">
             {steps.map((step) => {
               const isRight = step.side === 'right'
 
@@ -175,17 +173,17 @@ const OurProcess = () => {
                   key={step.number}
                   className="grid grid-cols-1 items-start gap-6 md:grid-cols-[1fr_auto_1fr]"
                 >
-                  <div className="flex justify-end">
+                  <div className="flex w-full justify-end md:justify-end">
                     {!isRight && <StepCard step={step} />}
                   </div>
 
-                  <div className="relative z-10 hidden shrink-0 pt-2 md:block">
+                  <div className="relative z-10 hidden shrink-0 pt-1 md:block">
                     <div className="grid h-16 w-16 place-items-center">
                       {processIcons[step.icon]}
                     </div>
                   </div>
 
-                  <div className="flex justify-start">
+                  <div className="flex w-full justify-start md:justify-start">
                     {isRight && <StepCard step={step} />}
                   </div>
                 </div>

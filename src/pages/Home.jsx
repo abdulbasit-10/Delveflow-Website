@@ -1,7 +1,7 @@
 // ===== IMPORTS =====
 import React, { useState, useEffect, useRef } from 'react'
 import web_icon from '../assets/webdevelopment.png'
-import AI_icon from '../assets/AI_icon.png'
+import AI_icon from '../assets/icon-robot.png'
 import UI_icon from '../assets/uiux.svg'
 import SAAS_icon from '../assets/saas.png'
 import Team_icon from "../assets/team_icon.png"
@@ -15,6 +15,9 @@ import Client3 from "../assets/client3.png"
 import topRightImage from "../assets/topright.png"
 import topLeftImage from "../assets/left.png"
 import OurProcess from '../Components/OurProcess'
+import Phone_Icon from "../assets/smartphone.png"
+import Rebot_Icon from "../assets/AI_icon.png"
+import Cloud_Icon from "../assets/Cloud Icon.png"
 
 
 // ===== REASONS DATA (for Why Choose Us) =====
@@ -179,11 +182,13 @@ const servicesData = [
 // ===== SERVICE ICONS =====
 const serviceIcons = {
   'mobile-app': (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8">
-      <rect x="7" y="2.5" width="10" height="19" rx="2.5" fill="none" stroke="currentColor" strokeWidth="2" />
-      <path d="M10.5 18h3" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
-      <path d="M10 5h4" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
-    </svg>
+    
+    <img 
+  src={Phone_Icon} 
+  alt="icon description" 
+  className="h-8 w-8"
+   
+/>
   ),
   'web-dev': (
     
@@ -191,13 +196,15 @@ const serviceIcons = {
   src={web_icon} 
   alt="icon description" 
   className="h-8 w-8"
+   
 />
   ),
   'ai-solutions': (
-    <img 
-  src={AI_icon} 
+     <img 
+  src={Rebot_Icon} 
   alt="icon description" 
   className="h-8 w-8"
+   
 />
   ),
   'ui-ux': (
@@ -205,6 +212,7 @@ const serviceIcons = {
   src={UI_icon} 
   alt="icon description" 
   className="h-8 w-8"
+   
 />
   ),
   'saas': (
@@ -215,9 +223,12 @@ const serviceIcons = {
 />
   ),
   'cloud': (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8">
-      <path d="M6 16c-2.2 0-4-1.8-4-4s1.8-4 4-4c.3-2.8 2.7-5 5.5-5 2.6 0 4.8 1.7 5.5 4.2C18.2 7.8 20 9.7 20 12c0 2.2-1.8 4-4 4H6z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
+    <img 
+  src={Cloud_Icon} 
+  alt="icon description" 
+  className="h-8 w-8"
+   
+/>  
   )
 }
 
@@ -559,14 +570,14 @@ const Home = ({ services }) => {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-9">
             <a
-  href="#/contact"
-  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-4 pr-10 text-[16px] font-semibold text-white transition hover:bg-[#062142]"
+  href="/contact"
+  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142]"
 >
-  <span className="font-serif tracking-wide">Get Started</span>
-  <span className="absolute -right-2 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-[#ffde59] text-[#001530] shadow-sm">
+  <span className="tracking-wide">Get Started</span>
+  <span className="absolute -right-2.5 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
     <svg
-      width="16"
-      height="16"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -580,7 +591,7 @@ const Home = ({ services }) => {
       />
     </svg>
   </span>
-</a>
+</a>  
             <a
               href="#/services"
               className="inline-flex h-12 items-center justify-center rounded-full border border-[#d7e5f2] bg-white px-7 text-[15px] font-bold text-[#0a1b2f] transition hover:border-[#0b3765]"
@@ -677,14 +688,14 @@ const Home = ({ services }) => {
           {/* Bottom CTA */}
           <div className="mt-16 text-center">
              <a
-  href="#/services"
-  className="relative inline-flex items-center rounded-full bg-[#001530] py-3.5 pl-4 pr-13 text-[16px] font-medium text-white transition hover:bg-[#062142]"
+  href="/services"
+  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142]"
 >
-  <span className="font-DM Serif Text tracking-wide">Explore Our Services</span>
-  <span className="absolute -right-2 top-1/2 grid h-14 w-14 -translate-y-1/2 place-items-center rounded-full bg-[#ffde59] text-[#001530] shadow-sm">
+  <span className="tracking-wide">Explore Our Services</span>
+  <span className="absolute -right-2.5 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
     <svg
-      width="16"
-      height="16"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -786,14 +797,14 @@ const Home = ({ services }) => {
 
           <div className="mt-12 text-center">
             <a
-  href="#/projects"
-  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-4 pr-12 text-[16px] font-medium text-white transition hover:bg-[#062142]"
+  href="/projects"
+  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142]"
 >
-  <span className="font-serif tracking-wide">View All Projects</span>
-  <span className="absolute -right-2 top-1/2 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-[#ffde59] text-[#001530] shadow-sm">
+  <span className="tracking-wide">View All Projects</span>
+  <span className="absolute -right-2.5 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
     <svg
-      width="16"
-      height="16"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

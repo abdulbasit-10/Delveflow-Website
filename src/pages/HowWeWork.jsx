@@ -54,13 +54,13 @@ const HowWeWorkHero = ({
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <a
   href={primaryButtonLink}
-  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-6 pr-12 text-[16px] font-medium text-white transition hover:bg-[#062142]"
+  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142]"
 >
-  <span className="font-serif tracking-wide">{primaryButtonText}</span>
-  <span className="absolute -right-2 top-1/2 grid h-13 w-13 -translate-y-1/2 place-items-center rounded-full bg-[#ffde59] text-[#001530] shadow-sm">
+  <span className="tracking-wide">{primaryButtonText}</span>
+  <span className="absolute -right-2.5 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
     <svg
-      width="16"
-      height="16"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -157,7 +157,7 @@ const DelvePhaseSection = ({
   footerText = 'Turning Insight Into Impact',
 }) => {
   return (
-    <section className="relative overflow-hidden bg-white py-20">
+    <section className="relative overflow-hidden bg-white py-8">
       {/* Decorative dotted circle - top left, echoes hero section */}
       <div
         className="pointer-events-none absolute -left-4 -top-4 h-36 w-36 opacity-50"
@@ -167,10 +167,10 @@ const DelvePhaseSection = ({
         }}
       />
       {/* Decorative gradient blobs - bottom, echoes hero section */}
-      <div className="pointer-events-none absolute -bottom-10 left-0 h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(255,197,92,0.18),transparent_70%)]" />
-      <div className="pointer-events-none absolute -bottom-16 right-0 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(56,107,223,0.12),transparent_70%)]" />
+      <div className="pointer-events-none absolute -bottom-10 left-0 h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(255,197,92,0.18),transparent_70%) ]" />
+      <div className="pointer-events-none absolute -bottom-16 right-0  h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(56,107,223,0.12),transparent_70%)]" />
 
-      <div className="relative mx-auto w-[min(1180px,calc(100%-36px))]">
+      <div className="relative mx-auto w-[min(1180px,calc(100%-36px))]  ">
         {/* Header */}
         <div className="mx-auto max-w-[720px] text-center">
           <span className="inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-black uppercase tracking-wide text-[#0b3765]">
@@ -311,7 +311,7 @@ const FlowPhaseSection = ({
   description = 'In the FLOW phase, we bring strategy to life with precision, agility, and continuous improvement to deliver exceptional results.',
 }) => {
   return (
-    <section className="relative overflow-hidden bg-white py-20">
+    <section className="relative overflow-hidden bg-white py-8">
       {/* Decorative dotted circle - bottom right */}
       <div
         className="pointer-events-none absolute -right-4 -bottom-4 h-36 w-36 opacity-50"

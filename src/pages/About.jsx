@@ -18,7 +18,7 @@ import { CtaSection } from './Home'
 // ============================================================
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-white via-white via-[#e9ecf7] via-[#eef1fb] via-[#fdf3df] to-[#fdf0da] py-10 px-6 md:px-12 lg:px-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-white via-white via-[#e9ecf7] via-[#eef1fb] via-[#fdf3df] to-[#fdf0da] py-0 px-6 md:px-12 lg:px-20">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-10 lg:flex-row">
         {/* LEFT COLUMN */}
         <div className="flex-1 max-w-[560px] py-10 lg:py-16">
@@ -50,21 +50,21 @@ const HeroSection = () => {
           {/* Buttons */}
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
-  href="#/contact"
-  className="relative inline-flex items-center rounded-full bg-[#12203f] py-2.5 pl-7 pr-12 text-[15px] font-medium text-white transition hover:bg-[#1a2f5a]"
+  href="/contact"
+  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142]"
 >
-  <span className="font-['DM_Serif_Text'] text-5 tracking-wide">Let's Work Together</span>
-  <span className="absolute -right-2 top-1/2 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-[#f2c14e] text-[#12203f] shadow-sm transition hover:scale-105">
+  <span className="tracking-wide">Let's Work Together</span>
+  <span className="absolute -right-2.5 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
     <svg
-      width="16"
-      height="16"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M7 17L17 7M17 7H8M17 7V16"
-        stroke="#12203f"
+        stroke="#001530"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -83,22 +83,22 @@ const HeroSection = () => {
         </div>
 
         {/* RIGHT COLUMN */}
-        <div className="relative flex-1 max-w-[460px] py-10 lg:py-16">
+        <div className="relative flex-1 max-w-[460px] py-10 lg:py-16 mt-10">
           {/* Decorative yellow circles */}
           <div className="absolute top-12 right-2 z-0 h-11 w-11 rounded-full bg-[#e2ca0f] opacity-90" />
           {/* <div className="absolute top-7 right-12 z-0 h-4 w-4 rounded-full bg-[#f6d873] opacity-90" /> */}
 
           {/* Main image */}
-          <div className="relative z-10 h-[360px] overflow-hidden rounded-[20px] shadow-[0_20px_50px_rgba(20,20,50,0.12)]">
+          <div className="relative z-10 h-[300px] overflow-hidden rounded-[20px] shadow-[0_20px_50px_rgba(20,20,50,0.12)]">
             <img
               src={Hero_Image}
               alt="Team meeting"
-              className="h-full w-full object-cover"
+              className="h-80 w-150 object-cover"
             />
           </div>
 
           {/* Projects Delivered card */}
-          <div className="absolute -top-1 -left-5.5 z-20 min-w-[180px] rounded-[14px] bg-white p-3.5 px-5 shadow-[0_12px_30px_rgba(20,20,50,0.10)]">
+          <div className="absolute -top-1 mt-11 -left-5.5 z-20 min-w-[180px] rounded-[14px] bg-white p-1 px-5 shadow-[0_12px_30px_rgba(20,20,50,0.10)]">
             <div className="mb-1 text-xs text-[#8a8a8a]">Projects Delivered</div>
             <div className="flex items-center gap-2.5">
               <span className="font-serif text-2xl font-extrabold text-[#12203f]">
@@ -111,7 +111,7 @@ const HeroSection = () => {
           </div>
 
           {/* Happy Clients card */}
-          <div className="absolute -bottom-1 -right-4 z-20 min-w-[190px] rounded-[14px] bg-white p-3.5 px-5 shadow-[0_12px_30px_rgba(20,20,50,0.10)]">
+          <div className="absolute -bottom-1 -right-4 z-20 min-w-[190px] mb-10 rounded-[14px] bg-white p-1.5 px-5 shadow-[0_12px_30px_rgba(20,20,50,0.10)]">
             <div className="mb-1 text-xs text-[#8a8a8a]">Happy Clients</div>
             <div className="flex items-center gap-2.5">
               <span className="font-serif text-2xl font-extrabold text-[#12203f]">
@@ -216,14 +216,14 @@ const StorySection = () => {
           {/* Button */}
           <div className="mt-8">
            <a
-  href="#/about"
-  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-4 pr-13 text-[20px] font-medium text-white transition hover:bg-[#062142]"
+  href="/about"
+  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142]"
 >
-  <span className="font-['DM_Serif_Text'] tracking-wide">Discover Our Journey</span>
-  <span className="absolute -right-2 top-1/2 grid h-14 w-14 -translate-y-1/2 place-items-center rounded-full bg-[#ffde59] text-[#001530] shadow-sm">
+  <span className="tracking-wide">Discover Our Journey</span>
+  <span className="absolute -right-2.5 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
     <svg
-      width="16"
-      height="16"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -345,14 +345,14 @@ const ValueCard = ({ number, icon, title, text }) => {
   return (
     <div className="relative overflow-hidden rounded-20xl bg-[#f7f8fb] px-8 py-8">
       <h3 className="font-serif text-xl font-extrabold text-[#111111]">{title}</h3>
-      <p className="mt-3 max-w-[280px] text-[13.5px] leading-relaxed text-[#5b5b5b]">
+      <p className="mt-3 max-w-[380px] h-1 text-[13.5px] leading-relaxed text-[#5b5b5b]">
         {text}
       </p>
-      <div className="mt-8 text-2xl font-black text-[#c9cfdb]">{number}</div>
+      <div className="mt-10 text-2xl font-black text-[#c9cfdb]">{number}</div>
 
       {/* navy quarter-circle icon badge */}
       <div 
-  className="absolute bottom-0 right-0 flex h-[92px] w-[92px] items-end justify-end rounded-none"
+  className="absolute bottom-0 right-0 flex h-[82px] w-[82px] items-end justify-end rounded-none"
   style={{ backgroundImage: `url(${ValueIconBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
 >
   <span className="mb-5 mr-5 flex h-9 w-9 items-center justify-center">
@@ -365,7 +365,7 @@ const ValueCard = ({ number, icon, title, text }) => {
 
 const ValuesSection = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#fdf6ea] via-white to-[#eaf3fb] py-20 px-6 md:px-12 lg:px-20">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#fdf6ea] via-white to-[#eaf3fb] py-5 px-6 md:px-12 lg:px-20">
       {/* decorative dashed rings */}
       <svg
         className="pointer-events-none absolute -left-16 top-10 h-64 w-64 text-[#0e2547]/10"
@@ -460,7 +460,7 @@ const ExpertsSection = () => {
               key={name}
             >
               {/* Photo Section - Full width with gradient background */}
-              <div className="h-56 w-full overflow-hidden bg-[radial-gradient(circle_at_35%_25%,#38b9df,#0b3765_62%,#06172b)]">
+              <div className="h-80 w-full overflow-hidden bg-[radial-gradient(circle_at_35%_25%,#38b9df,#0b3765_62%,#06172b)]">
                 {photo ? (
                   <img
                     className="h-full w-full object-cover"

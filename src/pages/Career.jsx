@@ -66,13 +66,13 @@ const CareerHero = ({
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <a
   href={primaryButtonLink}
-  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-6 pr-12 text-[16px] font-medium text-white transition hover:bg-[#062142]"
+  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142]"
 >
-  <span className="font-['DM_Serif_Text'] text-5 tracking-wide">{primaryButtonText}</span>
-  <span className="absolute -right-2 top-1/2 grid h-13 w-13 -translate-y-1/2 place-items-center rounded-full bg-[#ffde59] text-[#001530] shadow-sm">
+  <span className="tracking-wide">{primaryButtonText}</span>
+  <span className="absolute -right-2.5 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
     <svg
-      width="16"
-      height="16"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
