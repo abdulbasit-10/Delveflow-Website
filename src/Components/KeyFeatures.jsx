@@ -227,7 +227,7 @@ const KeyFeatures = ({
         </div>
 
         {/* Features Grid - First 6 items */}
-        <div className="mt-10 grid grid-cols-1 gap-x-0 gap-y-5 md:grid-cols-2 lg:grid-cols-3 mx-27.5">
+          <div className="mt-10 grid grid-cols-1 gap-x-0 gap-y-5 px- md:grid-cols-2 lg:grid-cols-3 px-1 sm:mx-27.5">
           {firstRow.map((feature) => (
             <FeatureCard key={feature.title} feature={feature} />
           ))}
@@ -235,7 +235,7 @@ const KeyFeatures = ({
 
         {/* Features Grid - Remaining items (if any) */}
         {lastRow.length > 0 && (
-          <div className="mt-5 flex flex-wrap justify-center gap-x-0 gap-y-5 mx-27.5">
+         <div className="mt-5 flex flex-wrap justify-center gap-x-0 gap-y-5 px-4 sm:px-0 sm:mx-27.5">
             {lastRow.map((feature) => (
               <div key={feature.title} className="w-full sm:w-[calc(50%-0px)] lg:w-[calc(33.333%-0px)]">
                 <FeatureCard feature={feature} />

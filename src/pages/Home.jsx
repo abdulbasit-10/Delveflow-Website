@@ -419,25 +419,25 @@ const TestimonialSection = () => {
           </div>
 
           {/* Quote Card - Fixed height with overflow handling */}
-          <div className="relative flex-1 overflow-hidden rounded-2xl bg-gradient-to-br from-[#38B9DF] via-[#38B9DF]/30 to-[#d4bb15] p-[2px] h-[220px] sm:h-[280px]">
-            <div className="h-full w-full overflow-y-auto rounded-2xl bg-gradient-to-br from-[#f8fcf9] to-[#eef4fb] px-5 py-6 sm:px-9 sm:py-8">
-              <div className="pointer-events-none absolute right-6 top-2 select-none font-serif text-[80px] sm:text-[110px] leading-none text-[#0e2547]/10">
-                "
-              </div>
+            <div className="relative flex-1 rounded-2xl bg-gradient-to-br from-[#38B9DF] via-[#38B9DF]/30 to-[#d4bb15] p-[2px] h-auto sm:h-[280px]">
+  <div className="h-full w-full rounded-2xl bg-gradient-to-br from-[#f8fcf9] to-[#eef4fb] px-5 py-6 sm:px-9 sm:py-8 overflow-visible">
+    <div className="pointer-events-none absolute right-6 top-2 select-none font-serif text-[80px] sm:text-[110px] leading-none text-[#0e2547]/10">
+      "
+    </div>
 
-              <p className="relative max-w-xl text-[14px] sm:text-[15px] leading-6 sm:leading-7 text-[#333333] pr-4">
-                "{current.quote}"
-              </p>
+    <p className="relative max-w-xl text-[14px] sm:text-[15px] leading-6 sm:leading-7 text-[#333333] pr-4">
+      "{current.quote}"
+    </p>
 
-              <div className="mt-4 sm:mt-6 flex items-end justify-between gap-4 border-t border-dashed border-[#d7e5f2] pt-4 sm:pt-5">
-                <div>
-                  <p className="text-[14px] sm:text-[15px] font-bold text-[#06172b]">{current.name}</p>
-                  <p className="text-[12px] sm:text-[13px] text-[#6b7280]">{current.role}</p>
-                </div>
-                <StarRating rating={current.rating} />
-              </div>
-            </div>
-          </div>
+    <div className="mt-4 sm:mt-6 flex items-end justify-between gap-4 border-t border-dashed border-[#d7e5f2] pt-4 sm:pt-5">
+      <div>
+        <p className="text-[14px] sm:text-[15px] font-bold text-[#06172b]">{current.name}</p>
+        <p className="text-[12px] sm:text-[13px] text-[#6b7280]">{current.role}</p>
+      </div>
+      <StarRating rating={current.rating} />
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </section>
@@ -452,21 +452,21 @@ const CtaSection = () => {
       <div className="relative mx-auto w-[min(1000px,calc(100%-36px))]">
         <div className="relative overflow-hidden rounded-[28px] border border-[#0b3765]/25 bg-white px-6 py-10 sm:px-14">
           
-          {/* TOP-RIGHT IMAGE - Use topRightImage */}
-          <img
-            src={topRightImage}  
-            alt=""
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-4 -top-4 h-40 w-40 object-contain opacity-299 mt-15"
-          />
+           {/* TOP-RIGHT IMAGE */}
+                 <img
+                 src={topRightImage}  
+                   alt=""
+                aria-hidden="true"
+              className="pointer-events-none absolute pt-11 -right-3 -top-3 h-28 w-28 object-contain opacity-100 sm:-right-4 sm:-top-4 sm:h-40 sm:w-40"
+               />
 
-          {/* BOTTOM-LEFT IMAGE - Use topLeftImage */}
-          <img
-            src={topLeftImage}   
-            alt=""
-            aria-hidden="true"
-            className="pointer-events-none absolute -left-4 -top-1 h-40 w-40 object-contain opacity-299"
-          />
+              {/* BOTTOM-LEFT IMAGE */}
+                    <img
+                  src={topLeftImage}   
+                      alt=""
+                   aria-hidden="true"
+                      className="pointer-events-none absolute -left-3 -top-1 h-28 w-28 object-contain opacity-100 sm:-left-4 sm:h-40 sm:w-40"
+                   />
 
           <div className="relative mx-auto max-w-2xl text-center">
             <h2 className="font-serif text-[clamp(1.4rem,3vw,2rem)] font-black leading-snug text-[#06172b]">
@@ -486,30 +486,32 @@ const CtaSection = () => {
             </p>
 
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+              {/* PRIMARY BUTTON - Fixed missing <a> tag */}
               <a
-  href="#/services"
-  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-11 text-[16px] font-medium text-white transition hover:bg-[#062142]"
->
-  <span className="font-serif tracking-wide">Get Started</span>
-  <span className="absolute -right-2 top-1/2 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-[#ffde59] text-[#001530] shadow-sm">
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M7 17L17 7M17 7H8M17 7V16"
-        stroke="#001530"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  </span>
-</a>
+                href="#/services"
+                className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-11 text-[16px] font-medium text-white transition hover:bg-[#062142]"
+              >
+                <span className="font-serif tracking-wide">Get Started</span>
+                <span className="absolute -right-2 top-1/2 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-[#ffde59] text-[#001530] shadow-sm">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7 17L17 7M17 7H8M17 7V16"
+                      stroke="#001530"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </a>
               
+              {/* SECONDARY BUTTON - Fixed missing <a> tag */}
               <a
                 href="#/services"
                 className="inline-flex h-12 items-center justify-center rounded-full border border-[#d7e5f2] bg-white px-7 text-[15px] font-bold text-[#0a1b2f] transition hover:border-[#0b3765]"
@@ -763,66 +765,71 @@ const Home = ({ services }) => {
 
       {/* RECENT PROJECTS SECTION */}
       <section className="relative overflow-hidden bg-white py-20">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,197,92,0.16),transparent_45%),radial-gradient(circle_at_100%_100%,rgba(56,107,223,0.10),transparent_40%)]" />
+  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,197,92,0.16),transparent_45%),radial-gradient(circle_at_100%_100%,rgba(56,107,223,0.10),transparent_40%)]" />
 
-        <div className="relative mx-auto w-[min(1000px,calc(100%-36px))]">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="mx-auto mb-4 inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-bold uppercase tracking-wide text-[#0b3765]">
-              Recent Projects
-            </p>
-            <h2 className="font-serif text-[clamp(1.5rem,2.8vw,1.9rem)] px-24 font-black leading-snug text-[#0a0a0a]">
-              <span className="text-[#0b3b7b]">D</span>
-              <span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">
-                elve
-              </span>{' '}
-              into Innovation.{' '}
-              <span className="text-[#0b3b7b]">F</span>
-              <span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">
-                low
-              </span>{' '}
-              with Real Results.
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-[14px] leading-6 text-[#717272]">
-              We craft powerful digital solutions that solve real problems and
-              deliver measurable success. Here are some of our latest
-              standout projects.
-            </p>
-          </div>
+  <div className="relative mx-auto w-[min(1000px,calc(100%-36px))]">
+    <div className="mx-auto max-w-2xl text-center">
+      <p className="mx-auto mb-4 inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-bold uppercase tracking-wide text-[#0b3765]">
+        Recent Projects
+      </p>
+      <h2 className="font-serif text-[clamp(1.5rem,2.8vw,1.9rem)] px-24 font-black leading-snug text-[#0a0a0a]">
+        <span className="text-[#0b3b7b]">D</span>
+        <span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">
+          elve
+        </span>{' '}
+        into Innovation.{' '}
+        <span className="text-[#0b3b7b]">F</span>
+        <span className="bg-gradient-to-r from-[#798143] to-[#d4bb15] bg-clip-text text-transparent">
+          low
+        </span>{' '}
+        with Real Results.
+      </h2>
+      <p className="mx-auto mt-4 max-w-xl text-[14px] leading-6 text-[#717272]">
+        We craft powerful digital solutions that solve real problems and
+        deliver measurable success. Here are some of our latest
+        standout projects.
+      </p>
+    </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {projects.map((project) => (
-              <ProjectCard key={project.title} project={project} />
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <a
-  href="/projects"
-  className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142]"
->
-  <span className="tracking-wide">View All Projects</span>
-  <span className="absolute -right-2.5 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M7 17L17 7M17 7H8M17 7V16"
-        stroke="#001530"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  </span>
-</a>
-          </div>
+    <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
+      {projects.slice(0, 2).map((project) => (
+        <ProjectCard key={project.title} project={project} />
+      ))}
+      {/* Hide last 2 cards on mobile, show on desktop */}
+      {projects.slice(2, 4).map((project) => (
+        <div key={project.title} className="hidden sm:block">
+          <ProjectCard project={project} />
         </div>
-      </section>
+      ))}
+    </div>
 
+    <div className="mt-12 text-center">
+      <a
+        href="/projects"
+        className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142]"
+      >
+        <span className="tracking-wide">View All Projects</span>
+        <span className="absolute -right-2.5 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 17L17 7M17 7H8M17 7V16"
+              stroke="#001530"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
       {/* TESTIMONIALS SECTION */}
       <TestimonialSection />
 
