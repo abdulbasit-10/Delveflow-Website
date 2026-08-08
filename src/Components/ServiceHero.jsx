@@ -9,9 +9,9 @@ const ServiceHero = ({
   gradientTitle,
   description,
   primaryButtonText = 'Start Your Project',
-  primaryButtonLink = '#/contact',
+  primaryButtonLink = '/contact',
   secondaryButtonText = 'View Our Portfolio',
-  secondaryButtonLink = '#/projects',
+  secondaryButtonLink = '/projects',
 }) => {
   return (
     <section className="relative overflow-hidden bg-white py-20">

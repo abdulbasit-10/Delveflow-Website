@@ -3,16 +3,35 @@
 // ============================================================
 // File: src/pages/Portfolio.jsx
 
-import React, { useState } from 'react'
+import React from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import ServiceHero from '../Components/ServiceHero'
 import ServiceProjects from '../Components/ServiceProjects'
 import ProjectFilterTabs from '../Components/ProjectFilterTabs'
-import OurImpact from '../Components/OurImpact'  // ← NEW
+import OurImpact from '../Components/OurImpact'
 import { projectCategories, portfolioProjects } from '../data/portfolioProjects'
 import { CtaSection } from './Home'
 
+// Convert "App Development" → "AppDevelopment"
+const toSlug = (name) => name.replace(/\s+/g, '')
+
+// Convert "AppDevelopment" → "App Development"
+const fromSlug = (slug) =>
+  projectCategories.find((cat) => toSlug(cat) === slug) || projectCategories[0]
+
 const Portfolio = () => {
-  const [activeTab, setActiveTab] = useState(projectCategories[0])
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  // '/projects/AppDevelopment' → ['', 'projects', 'AppDevelopment']
+  const pathParts = location.pathname.split('/')
+  const category = pathParts[2]
+
+  const activeTab = category ? fromSlug(category) : projectCategories[0]
+
+  const handleTabChange = (tab) => {
+    navigate(`/projects/${toSlug(tab)}`)
+  }
 
   const filteredProjects = portfolioProjects.filter(
     (project) => project.tab === activeTab
@@ -27,9 +46,9 @@ const Portfolio = () => {
         gradientTitle="Real Business Challenges."
         description="Every project reflects our commitment to solving real-world problems through thoughtful design, modern technology, and measurable business outcomes."
         primaryButtonText="Start Your Project"
-        primaryButtonLink="#/contact"
+        primaryButtonLink="/contact"
         secondaryButtonText="Explore Services"
-        secondaryButtonLink="#/services"
+        secondaryButtonLink="/services"
       />
 
       {/* Featured Projects Header */}
@@ -61,16 +80,16 @@ const Portfolio = () => {
           <ProjectFilterTabs
             categories={projectCategories}
             activeTab={activeTab}
-            onChange={setActiveTab}
+            onChange={handleTabChange}
           />
         </div>
       </section>
 
       {/* Projects Section */}
-      <ServiceProjects showHeader={false} projects={filteredProjects} />
+      <ServiceProjects showHeader={false} projects={filteredProjects} activeTab={activeTab} />
 
       {/* Our Impact Section */}
-      <OurImpact />  {/* ← NEW */}
+      <OurImpact />
       <CtaSection />
     </>
   )

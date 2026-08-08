@@ -43,24 +43,32 @@ const defaultProjects = [
 const ProjectCard = ({ project }) => (
   <div className="overflow-hidden rounded-xl border border-[#e3e7ee] bg-white shadow-[0_10px_25px_rgba(6,23,43,0.05)]">
     <div className="relative h-40 w-full">
-      <div
-        className="h-full w-full"
-        style={{
-          backgroundColor: '#e9e9e9',
-          backgroundImage:
-            'linear-gradient(45deg, #dcdcdc 25%, transparent 25%), linear-gradient(-45deg, #dcdcdc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #dcdcdc 75%), linear-gradient(-45deg, transparent 75%, #dcdcdc 75%)',
-          backgroundSize: '20px 20px',
-          backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
-        }}
-      >
-        {project.image && (
-          <img
-            src={project.image}
-            alt={project.title}
-            className="h-full w-full object-cover"
-          />
-        )}
-      </div>
+  <div
+    className="flex h-full w-full items-center justify-center"
+    style={
+      project.image
+        ? { backgroundColor: '#f5f6f8' }   // clean bg jab image ho
+        : {
+            backgroundColor: '#e9e9e9',
+            backgroundImage:
+              'linear-gradient(45deg, #dcdcdc 25%, transparent 25%), linear-gradient(-45deg, #dcdcdc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #dcdcdc 75%), linear-gradient(-45deg, transparent 75%, #dcdcdc 75%)',
+            backgroundSize: '20px 20px',
+            backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
+          }
+    }
+  >
+    {project.image && (
+      <img
+        src={project.image}
+        alt={project.title}
+        className={`h-full ${
+          project.imageFit === 'contain'
+            ? 'w-auto object-contain py-3'
+            : 'w-full object-cover'
+        }`}
+      />
+    )}
+  </div>
       <span className="absolute -bottom-3 left-4 rounded-full bg-[#0b3765] px-3 py-1 text-[11px] font-semibold text-white">
         {project.category}
       </span>
@@ -71,7 +79,7 @@ const ProjectCard = ({ project }) => (
       <p className="mt-2 text-[13px] leading-6 text-[#575757]">
         {project.description}
       </p>
-      <a
+      {/* <a
         href={project.link}
         className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-[#0b3765] transition hover:text-[#062142]"
       >
@@ -79,7 +87,7 @@ const ProjectCard = ({ project }) => (
         <svg viewBox="0 0 24 24" fill="none" className="h-3.5 w-3.5">
           <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-      </a>
+      </a> */}
     </div>
   </div>
 )
@@ -93,6 +101,7 @@ const ServiceProjects = ({
   subtitleEnd = 'with Real Results.',
   description = 'We craft powerful digital solutions that solve real problems and deliver measurable success. Here are some of our latest standout projects.',
   projects = defaultProjects,
+  activeTab = '',
 }) => {
   return (
     <section className="relative overflow-hidden bg-white py-14">
@@ -121,9 +130,20 @@ const ServiceProjects = ({
         )}
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {projects.map((project, index) => (
-            <ProjectCard key={`${project.title}-${index}`} project={project} />
-          ))}
+          {projects.length > 0 ? (
+            projects.map((project, index) => (
+              <ProjectCard key={`${project.title}-${index}`} project={project} />
+            ))
+          ) : (
+            <div className="col-span-full py-16 text-center">
+              <p className="text-[15px] font-semibold text-[#0b3765]">
+                New projects coming soon!
+              </p>
+              <p className="mt-2 text-[13px] text-[#717272]">
+                We're currently working on exciting {activeTab} projects. Check back soon.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </section>

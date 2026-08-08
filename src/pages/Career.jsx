@@ -229,21 +229,22 @@ const WhyDelveFlow = () => {
               </span>
             </h2>
             <p className="mt-5 max-w-md text-[12px] leading-7 text-[#333333]">
-              At DelveFlow, we believe great products are created by
-              empowered people. We foster a culture of collaboration,
-              continuous learning, and innovation where every team member
-              has the opportunity to grow, contribute, and make a
-              meaningful impact.
+              At DelveFlow, we believe that great products are built by empowered, passionate, and talented people. We are committed to creating a collaborative and inclusive environment where every team member feels valued, supported, and encouraged to share ideas.
+
+Our culture is built around continuous learning, innovation, teamwork, and personal growth. We give our people the freedom to take ownership, explore new ideas, solve meaningful problems, and contribute to projects that create real impact.
+
+At DelveFlow, everyone has an opportunity to learn, grow, and make a difference. By bringing together diverse perspectives, encouraging creativity, and working as one team, we strive to build not only exceptional products but also a workplace where people can do their best work and reach their full potential.
+
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
             {perks.map((perk) => (
               <div
                 key={perk.title}
-                className="rounded-xl border border-[#e9edf3] bg-white p-4 shadow-sm"
+                className="rounded-xl border border-[#e9edf3] bg-white p-3 shadow-sm"
               >
-                <span className="mb-3 grid h-10 w-10 place-items-center rounded-lg bg-[#0b3765]">
+                <span className="mb-3 grid h-8 w-8 place-items-center rounded-lg bg-[#0b3765]">
                   {icons[perk.icon]}
                 </span>
                 <h3 className="text-[15px] font-bold text-[#0a1628]">

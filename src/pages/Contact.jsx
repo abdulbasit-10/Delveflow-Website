@@ -1,7 +1,8 @@
 // ===== CONTACT PAGE =====
 // File: src/pages/Contact.jsx
 
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Facebook_icon from "../assets/facebook_icon.png"
 import Insta_icon from "../assets/instagram_icon.png"
 import Linkedin_icon from "../assets/linkedin_icon.png"
@@ -159,11 +160,49 @@ const ContactSection = () => {
   }
 
   // ===== HANDLE FORM SUBMIT =====
-  const handleSubmit = (e) => {
+  const [status, setStatus] = useState('idle') // idle | sending | success | error
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(formData)
-    // Add your form submission logic here
+    setStatus('sending')
+
+    try {
+      const response = await fetch('https://formspree.io/f/xbgrdqzg', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+        }),
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setFormData({ fullName: '', email: '', phone: '', service: '', message: '' })
+      } else {
+        setStatus('error')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setStatus('error')
+    }
   }
+    // ===== AUTO-HIDE STATUS MESSAGE AFTER 5 SECONDS =====
+  useEffect(() => {
+    if (status === 'success' || status === 'error') {
+      const timer = setTimeout(() => {
+        setStatus('idle')
+      }, 3000) // 5000ms = 5 seconds
+
+      return () => clearTimeout(timer)
+    }
+  }, [status])
 
   return (
     <section className="relative overflow-hidden bg-white pt-1 pb-23">
@@ -278,9 +317,12 @@ const ContactSection = () => {
               {/* Submit Button */}
               <button
   type="submit"
-  className="relative inline-flex cursor-pointer items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142] w-fit"
+  disabled={status === 'sending'}
+  className="relative inline-flex cursor-pointer items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142] w-fit disabled:opacity-60"
 >
-  <span className="tracking-wide">Send Message</span>
+  <span className="tracking-wide">
+    {status === 'sending' ? 'Sending...' : 'Send Message'}
+  </span>
   <span className="absolute -right-2.5 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#FFE459] text-[#001530] shadow-sm">
     <svg
       width="20"
@@ -299,6 +341,17 @@ const ContactSection = () => {
     </svg>
   </span>
 </button>
+
+{status === 'success' && (
+  <p className="text-[12px] font-semibold text-green-600">
+    ✓ Message sent successfully! We'll get back to you soon.
+  </p>
+)}
+{status === 'error' && (
+  <p className="text-[12px] font-semibold text-red-600">
+    ✕ Something went wrong. Please try again.
+  </p>
+)}
             </form>
           </div>
 

@@ -20,6 +20,10 @@ import Phone_Icon from "../assets/smartphone.png"
 import Rebot_Icon from "../assets/AI_icon.png"
 import Cloud_Icon from "../assets/Cloud Icon.png"
 import Enzon from "../assets/Enzon.jpeg"
+import Handmade from "../assets/Handmade.jpeg"
+
+
+
 // ===== REASONS DATA (for Why Choose Us) =====
 const whyChooseReasons = [
   ['shield', 'Expert Development Team', 'Work with battle-tested professionals who bring years of proven industry experience in web development, mobile apps, AI, and modern software architecture.'],
@@ -249,29 +253,29 @@ const projects = [
       'Ezon Emporium is a modern e-commerce platform offering a smooth shopping experience with organized products, detailed information, competitive pricing, and easy navigation. It helps businesses showcase products, reach customers, and drive online sales.',
     image: Enzon,
   },
-  {
-    title: 'Profit Pal',
-    description:
-      'ProfitPal is a SaaS tool that helps e-commerce sellers calculate true product profits, compare marketplace performance, and make smarter pricing decisions. It provides profit margins, cost breakdowns, break-even prices, and “What If” scenarios to maximize profitability.',
-    image: Profit,
-  },
+  // {
+  //   title: 'Profit Pal',
+  //   description:
+  //     'ProfitPal is a SaaS tool that helps e-commerce sellers calculate true product profits, compare marketplace performance, and make smarter pricing decisions. It provides profit margins, cost breakdowns, break-even prices, and “What If” scenarios to maximize profitability.',
+  //   image: null,
+  // },
   // {
   //   title: 'Gym Management System',
   //   description:
   //     'Complete all-in-one solution for fitness centers. From member management and attendance tracking to payment automation and workout analytics making gym operations effortless and profitable.',
   //   image: null,
   // },
-  // {
-  //   title: 'Study Studio',
-  //   description:
-  //     'Trendy Treasures by Aleena is a modern e-commerce website for affordable, handmade, and custom-made jewelry. It offers an elegant shopping experience where customers can explore collections, discover new drops, and order personalized pieces.',
-  //   image: null,
-  // },
+  {
+    title: 'Trendy Treasures by Aleena',
+    description:
+      'Trendy Treasures by Aleena is a modern e-commerce website for affordable, handmade, and custom-made jewelry. It offers an elegant shopping experience where customers can explore collections, discover new drops, and order personalized pieces.',
+    image: Handmade,
+  },
 ]
 
 // ===== PROJECT CARD COMPONENT =====
 const ProjectCard = ({ project }) => (
-  <div className="rounded-xl border border-[#e3e7ee] bg-[#F5F5F4] p-6">
+  <div className="rounded-xl border border-[#e3e7ee] bg-[#F5F5F4] p-14">
     <h3 className="text-center text-[17px] font-bold text-[#06172b]">
       {project.title}
     </h3>
@@ -365,7 +369,7 @@ const TestimonialSection = () => {
 
   return (
     <section className="relative overflow-hidden bg-white py-20 px-6 md:px-12 lg:px-20">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_15%,rgba(56,107,223,0.07),transparent_45%),radial-gradient(circle_at_90%_85%,rgba(255,197,92,0.10),transparent_45%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_40%,rgba(56,107,223,0.12),transparent_45%),radial-gradient(circle_at_85%_55%,rgba(255,197,92,0.16),transparent_45%)]"/>
 
       {/* Fixed height container - increased min height */}
       <div className="relative mx-auto max-w-5xl min-h-[500px]">

@@ -107,8 +107,7 @@ const Footer = () => {
               <img src={dfLogoMark} alt="" className="h-19 w-auto object-contain" />
             </a>
             <p className="mt-5 max-w-xs text-[14px] leading-6 text-white/70">
-              Building scalable digital solutions for modern businesses.
-              Transform your ideas into reality with our expert team.
+              Delve into Problems. Flow with Powerful Digital Solutions.
             </p>
             <div className="mt-6 flex gap-3">
               {socialLinks.map((s) => (
