@@ -74,8 +74,8 @@ const HeroSection = () => {
 </a>
 
             <a
-              href="#/projects"
-              className="inline-flex items-center rounded-full border border-[#c9c9c9] px-8 py-3.5 text-[15px] font-semibold text-[#1a1a2e] transition hover:border-[#12203f] hover:bg-[#f8f8f8]"
+              href="/projects"
+              className="inline-flex items-center rounded-full border border-[#c9c9c9] px-8 py-2.5 text-[15px] font-semibold text-[#1a1a2e] transition hover:border-[#12203f] hover:bg-[#f8f8f8]"
             >
               View Our Work
             </a>
@@ -204,7 +204,7 @@ const StorySection = () => {
 
           {/* Paragraph */}
           <p className="mt-6 max-w-lg text-[13.5px] leading-7 text-[#5b5b5b]">
-            DelveFlow was founded with a simple mission—to help businesses
+            DelveFlow was founded with a simple mission to help businesses
             overcome complex challenges through innovative digital solutions.
             We take the time to understand your goals, analyze your
             problems, and craft scalable web, mobile, AI, and cloud
@@ -216,7 +216,7 @@ const StorySection = () => {
           {/* Button */}
           <div className="mt-8">
            <a
-  href="/about"
+  href="/howwework"
   className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-10 text-[15px] font-medium text-white transition hover:bg-[#062142]"
 >
   <span className="tracking-wide">Discover Our Journey</span>
@@ -445,12 +445,12 @@ const ExpertsSection = () => {
               eam
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-[14px] leading-6 text-[#5b6f84]">
+          {/* <p className="mx-auto mt-4 max-w-2xl text-[14px] leading-6 text-[#5b6f84]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
             enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi
-          </p>
+          </p> */}
         </div>
 
         <div className="mx-auto grid max-w-[900px] gap-6 md:grid-cols-3">

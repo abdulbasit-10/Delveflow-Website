@@ -100,7 +100,7 @@ const HowWeWorkHero = ({
                 <img
                   src={heroImage}
                   alt="DelveFlow team at work"
-                  className="h-[350px] w-full object-cover z-10"
+                  className="h-[380px] w-full object-cover z-10"
                 />
               )}
             </div>

@@ -1,5 +1,6 @@
 // ===== IMPORTS =====
 import React, { useState, useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import web_icon from '../assets/webdevelopment.png'
 import AI_icon from '../assets/icon-robot.png'
 import UI_icon from '../assets/uiux.svg'
@@ -18,8 +19,7 @@ import OurProcess from '../Components/OurProcess'
 import Phone_Icon from "../assets/smartphone.png"
 import Rebot_Icon from "../assets/AI_icon.png"
 import Cloud_Icon from "../assets/Cloud Icon.png"
-
-
+import Enzon from "../assets/Enzon.jpeg"
 // ===== REASONS DATA (for Why Choose Us) =====
 const whyChooseReasons = [
   ['shield', 'Expert Development Team', 'Work with battle-tested professionals who bring years of proven industry experience in web development, mobile apps, AI, and modern software architecture.'],
@@ -101,6 +101,15 @@ const whyChooseIcons = {
 }
 
 // ===== SERVICE DATA =====
+const serviceRouteMap = {
+  'mobile-app': '/services/app-development',
+  'web-dev': '/services/web-development',
+  'ai-solutions': '/services/ai-solutions',
+  'ui-ux': '/services/ui-ux-design',
+  'saas': '/services/saas-development',
+  'cloud': '/services/cloud-and-devops',
+}
+
 const servicesData = [
   {
     id: 'mobile-app',
@@ -235,29 +244,29 @@ const serviceIcons = {
 // ===== RECENT PROJECTS DATA =====
 const projects = [
   {
-    title: 'Trading App',
+    title: 'Ezon Emporium',
     description:
-      'A sleek, real-time trading platform built for speed and intelligence. Traders get live market data, smart analytics, and seamless execution empowering smarter decisions and higher profits.',
-    image: null,
+      'Ezon Emporium is a modern e-commerce platform offering a smooth shopping experience with organized products, detailed information, competitive pricing, and easy navigation. It helps businesses showcase products, reach customers, and drive online sales.',
+    image: Enzon,
   },
   {
     title: 'Profit Pal',
     description:
-      'An intelligent financial companion that helps businesses and individuals track expenses, forecast profits, and optimize cash flow with AI-powered insights and clean dashboards.',
-    image: null,
+      'ProfitPal is a SaaS tool that helps e-commerce sellers calculate true product profits, compare marketplace performance, and make smarter pricing decisions. It provides profit margins, cost breakdowns, break-even prices, and “What If” scenarios to maximize profitability.',
+    image: Profit,
   },
-  {
-    title: 'Gym Management System',
-    description:
-      'Complete all-in-one solution for fitness centers. From member management and attendance tracking to payment automation and workout analytics making gym operations effortless and profitable.',
-    image: null,
-  },
-  {
-    title: 'Study Studio',
-    description:
-      'A modern learning management platform designed for educational institutes and students. Interactive classes, progress tracking, assignments, and performance analytics all in one beautiful interface.',
-    image: null,
-  },
+  // {
+  //   title: 'Gym Management System',
+  //   description:
+  //     'Complete all-in-one solution for fitness centers. From member management and attendance tracking to payment automation and workout analytics making gym operations effortless and profitable.',
+  //   image: null,
+  // },
+  // {
+  //   title: 'Study Studio',
+  //   description:
+  //     'Trendy Treasures by Aleena is a modern e-commerce website for affordable, handmade, and custom-made jewelry. It offers an elegant shopping experience where customers can explore collections, discover new drops, and order personalized pieces.',
+  //   image: null,
+  // },
 ]
 
 // ===== PROJECT CARD COMPONENT =====
@@ -270,25 +279,14 @@ const ProjectCard = ({ project }) => (
       {project.description}
     </p>
 
-    <div className="mt-5 rounded-lg bg-gradient-to-br from-[#0b3b7b] to-[#d4bb15] p-[2px]">
-      <div
-        className="h-44 w-full rounded-[7px] sm:h-48"
-        style={{
-          backgroundColor: '#e9e9e9',
-          backgroundImage:
-            'linear-gradient(45deg, #dcdcdc 25%, transparent 25%), linear-gradient(-45deg, #dcdcdc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #dcdcdc 75%), linear-gradient(-45deg, transparent 75%, #dcdcdc 75%)',
-          backgroundSize: '20px 20px',
-          backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
-        }}
-      >
-        {project.image && (
-          <img
-            src={project.image}
-            alt={project.title}
-            className="h-full w-full rounded-[7px] object-cover"
-          />
-        )}
-      </div>
+    <div className="mt-5 overflow-hidden rounded-lg border border-[#dfeaf3] bg-white">
+      <img
+        src={project.image || 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80'}
+        alt={project.title}
+        className="block h-44 w-full object-cover sm:h-48"
+        loading="lazy"
+        style={{ objectPosition: 'center' }}
+      />
     </div>
   </div>
 )
@@ -418,26 +416,28 @@ const TestimonialSection = () => {
             })}
           </div>
 
-          {/* Quote Card - Fixed height with overflow handling */}
-            <div className="relative flex-1 rounded-2xl bg-gradient-to-br from-[#38B9DF] via-[#38B9DF]/30 to-[#d4bb15] p-[2px] h-auto sm:h-[280px]">
-  <div className="h-full w-full rounded-2xl bg-gradient-to-br from-[#f8fcf9] to-[#eef4fb] px-5 py-6 sm:px-9 sm:py-8 overflow-visible">
-    <div className="pointer-events-none absolute right-6 top-2 select-none font-serif text-[80px] sm:text-[110px] leading-none text-[#0e2547]/10">
-      "
-    </div>
+          {/* Quote Card - static text block to match the original style */}
+          <div className="relative h-[250px] flex-1 overflow-hidden rounded-2xl bg-gradient-to-br from-[#38B9DF] via-[#38B9DF]/30 to-[#d4bb15] p-[2px] sm:h-[280px]">
+            <div className="flex h-full w-full flex-col justify-between rounded-2xl bg-gradient-to-br from-[#f8fcf9] to-[#eef4fb] px-5 py-6 sm:px-9 sm:py-8">
+              <div className="relative">
+                <div className="pointer-events-none absolute right-6 top-2 select-none font-serif text-[80px] leading-none text-[#0e2547]/10 sm:text-[110px]">
+                  "
+                </div>
 
-    <p className="relative max-w-xl text-[14px] sm:text-[15px] leading-6 sm:leading-7 text-[#333333] pr-4">
-      "{current.quote}"
-    </p>
+                <p className="relative max-w-xl pr-4 text-[14px] leading-6 text-[#333333] sm:text-[15px] sm:leading-7">
+                  "{current.quote}"
+                </p>
+              </div>
 
-    <div className="mt-4 sm:mt-6 flex items-end justify-between gap-4 border-t border-dashed border-[#d7e5f2] pt-4 sm:pt-5">
-      <div>
-        <p className="text-[14px] sm:text-[15px] font-bold text-[#06172b]">{current.name}</p>
-        <p className="text-[12px] sm:text-[13px] text-[#6b7280]">{current.role}</p>
-      </div>
-      <StarRating rating={current.rating} />
-    </div>
-  </div>
-</div>
+              <div className="mt-4 flex items-end justify-between gap-4 border-t border-dashed border-[#d7e5f2] pt-4 sm:mt-6 sm:pt-5">
+                <div>
+                  <p className="text-[14px] font-bold text-[#06172b] sm:text-[15px]">{current.name}</p>
+                  <p className="text-[12px] text-[#6b7280] sm:text-[13px]">{current.role}</p>
+                </div>
+                <StarRating rating={current.rating} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -478,17 +478,17 @@ const CtaSection = () => {
               </span>
             </h2>
 
-            <p className="mx-auto mt-4 max-w-xl text-[14px] leading-6 text-[#333333]">
+            {/* <p className="mx-auto mt-4 max-w-xl text-[14px] leading-6 text-[#333333]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco
               laboris nisi
-            </p>
+            </p> */}
 
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               {/* PRIMARY BUTTON - Fixed missing <a> tag */}
               <a
-                href="#/services"
+                href="/contact"
                 className="relative inline-flex items-center rounded-full bg-[#001530] py-2.5 pl-5 pr-11 text-[16px] font-medium text-white transition hover:bg-[#062142]"
               >
                 <span className="font-serif tracking-wide">Get Started</span>
@@ -513,7 +513,7 @@ const CtaSection = () => {
               
               {/* SECONDARY BUTTON - Fixed missing <a> tag */}
               <a
-                href="#/services"
+                href="/services"
                 className="inline-flex h-12 items-center justify-center rounded-full border border-[#d7e5f2] bg-white px-7 text-[15px] font-bold text-[#0a1b2f] transition hover:border-[#0b3765]"
               >
                 Explore Our Services
@@ -527,12 +527,19 @@ const CtaSection = () => {
 }
 // ===== HOME COMPONENT =====
 const Home = ({ services }) => {
+  const navigate = useNavigate()
+
+  const handleServiceCardClick = (serviceId) => {
+    const route = serviceRouteMap[serviceId]
+    if (route) navigate(route)
+  }
+
   return (
     <>
       {/* HERO SECTION */}
       <section className="relative overflow-hidden bg-white">
         {/* soft color tints */}
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_40%,rgba(56,107,223,0.12),transparent_45%),radial-gradient(circle_at_85%_55%,rgba(255,197,92,0.16),transparent_45%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_40%,rgba(56,107,223,0.30),transparent_50%),radial-gradient(circle_at_85%_55%,rgba(255,197,92,0.40),transparent_50%)] blur-3xl]"/>
         {/* dotted grid, bottom-left corner */}
         <div
           className="pointer-events-none absolute -left-4 -bottom-4 h-36 w-36 opacity-50"
@@ -595,7 +602,7 @@ const Home = ({ services }) => {
   </span>
 </a>  
             <a
-              href="#/services"
+              href="/services"
               className="inline-flex h-12 items-center justify-center rounded-full border border-[#d7e5f2] bg-white px-7 text-[15px] font-bold text-[#0a1b2f] transition hover:border-[#0b3765]"
             >
               Explore Our Services
@@ -644,7 +651,16 @@ const Home = ({ services }) => {
             {servicesData.map((service) => (
               <div
                 key={service.id}
-                className="group rounded-[20px] border border-[#e8edf2] bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:bg-[#0b3765] hover:shadow-[0_18px_40px_rgba(8,36,67,0.10)]"
+                role="button"
+                tabIndex={0}
+                onClick={() => handleServiceCardClick(service.id)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault()
+                    handleServiceCardClick(service.id)
+                  }
+                }}
+                className="group cursor-pointer rounded-[20px] border border-[#e8edf2] bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:bg-[#0b3765] hover:shadow-[0_18px_40px_rgba(8,36,67,0.10)] focus:outline-none focus:ring-2 focus:ring-[#0b3765]/20"
               >
                 {/* Icon - Changes to white on hover */}
                 <div className="mb-3 inline-block rounded-xl bg-[#f0f7ff] p-2.5 text-[#0b3765] transition-colors group-hover:bg-white/20 group-hover:text-white">
@@ -675,7 +691,8 @@ const Home = ({ services }) => {
 
                 {/* CTA Link - Changes to white on hover */}
                 <a
-                  href="#/contact"
+                  href={serviceRouteMap[service.id] || '/services'}
+                  onClick={(event) => event.stopPropagation()}
                   className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0b3765] transition-all group-hover:gap-3 group-hover:text-white"
                 >
                   {service.cta}
@@ -794,12 +811,6 @@ const Home = ({ services }) => {
     <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
       {projects.slice(0, 2).map((project) => (
         <ProjectCard key={project.title} project={project} />
-      ))}
-      {/* Hide last 2 cards on mobile, show on desktop */}
-      {projects.slice(2, 4).map((project) => (
-        <div key={project.title} className="hidden sm:block">
-          <ProjectCard project={project} />
-        </div>
       ))}
     </div>
 

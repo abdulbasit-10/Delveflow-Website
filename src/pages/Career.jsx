@@ -13,8 +13,6 @@ import Jointeam_icon from '../assets/jointeam.png'
 
 
 
-
-
 // ============================================================
 // SECTION 1: CAREER HERO
 // ============================================================
@@ -239,25 +237,21 @@ const WhyDelveFlow = () => {
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-[#e3e7ee] bg-white shadow-[0_14px_34px_rgba(6,23,43,0.06)]">
-            {perks.map((perk, index) => (
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {perks.map((perk) => (
               <div
                 key={perk.title}
-                className={`flex gap-4 px-6 py-5 ${
-                  index !== perks.length - 1 ? 'border-b border-[#eef1f4]' : ''
-                }`}
+                className="rounded-xl border border-[#e9edf3] bg-white p-4 shadow-sm"
               >
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-[#0b3765]">
+                <span className="mb-3 grid h-10 w-10 place-items-center rounded-lg bg-[#0b3765]">
                   {icons[perk.icon]}
                 </span>
-                <div>
-                  <h3 className="text-[15px] font-bold text-[#0a1628]">
-                    {perk.title}
-                  </h3>
-                  <p className="mt-1 text-[13px] leading-6 text-[#76859c]">
-                    {perk.description}
-                  </p>
-                </div>
+                <h3 className="text-[15px] font-bold text-[#0a1628]">
+                  {perk.title}
+                </h3>
+                <p className="mt-2 text-[13px] leading-6 text-[#76859c]">
+                  {perk.description}
+                </p>
               </div>
             ))}
           </div>

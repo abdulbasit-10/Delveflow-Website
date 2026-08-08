@@ -197,7 +197,7 @@ const ContactSection = () => {
                   <input
                     type="text"
                     required
-                    placeholder="Ali Hassan"
+                    placeholder="Enter Your Name"
                     className="w-full rounded-lg bg-[#F7F8FA] px-3 py-1.5 text-[12px] text-[#06172b] placeholder:text-[#8b97a5] outline-none transition focus:ring-2 focus:ring-[#0b3765]/30"
                     value={formData.fullName}
                     onChange={handleChange('fullName')}
@@ -210,7 +210,7 @@ const ContactSection = () => {
                   <input
                     type="email"
                     required
-                    placeholder="@james.com"
+                    placeholder="Enter Your Email"
                     className="w-full rounded-lg bg-[#F7F8FA] px-3 py-1.5 text-[12px] text-[#06172b] placeholder:text-[#8b97a5] outline-none transition focus:ring-2 focus:ring-[#0b3765]/30"
                     value={formData.email}
                     onChange={handleChange('email')}
@@ -226,7 +226,7 @@ const ContactSection = () => {
                 <input
                   type="tel"
                   required
-                  placeholder="+1 123 456 7890"
+                  placeholder="Enter Your Phone Number"
                   className="w-full rounded-lg bg-[#F7F8FA] px-3 py-1.5 text-[12px] text-[#06172b] placeholder:text-[#8b97a5] outline-none transition focus:ring-2 focus:ring-[#0b3765]/30"
                   value={formData.phone}
                   onChange={handleChange('phone')}
