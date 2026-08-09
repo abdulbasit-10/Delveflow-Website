@@ -9,21 +9,21 @@ import Linkedin_icon from "../assets/linkedin_icon.png"
 import Instagram_icon from "../assets/instagram_icon.png"
 
 const quickLinks = [
-  { label: 'Home', href: '#/home' },
-  { label: 'About Us', href: '#/about' },
-  { label: 'Services', href: '#/services' },
-  { label: 'How We Work', href: '#/homework' },
-  { label: 'Projects', href: '#/projects' },
-  { label: 'Career', href: '#/career' },
+  { label: 'Home', href: '/home' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'How We Work', href: '/homework' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Career', href: '/career' },
 ]
 
 const services = [
-  { label: 'Web Development', href: '#/services/web-development' },
-  { label: 'App Development', href: '#/services/app-development' },
-  { label: 'UI/UX Designing', href: '#/services/ui-ux-designing' },
-  { label: 'AI Solutions', href: '#/services/ai-solutions' },
-  { label: 'SaaS Development', href: '#/services/saas-development' },
-  { label: 'Cloud & DevOps', href: '#/services/cloud-devops' },
+  { label: 'Web Development', href: '/services/web-development' },
+  { label: 'App Development', href: '/services/app-development' },
+  { label: 'UI/UX Designing', href: '/services/ui-ux-designing' },
+  { label: 'AI Solutions', href: '/services/ai-solutions' },
+  { label: 'SaaS Development', href: '/services/saas-development' },
+  { label: 'Cloud & DevOps', href: '/services/cloud-devops' },
 ]
 
 const socialLinks = [
