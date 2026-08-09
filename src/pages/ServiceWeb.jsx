@@ -10,6 +10,7 @@ import ServiceProcess from '../Components/ServiceProcess'
 import ServiceTools from '../Components/ServiceTools'
 import ServiceProjects from '../Components/ServiceProjects'
 import ServiceBenefits from '../Components/ServiceBenefits'
+import { portfolioProjects } from '../data/portfolioProjects'
 import { CtaSection } from './Home'
 
 // ============================================================
@@ -123,9 +124,27 @@ const webData = {
     tools: [
       { name: 'React', icon: 'react' },
       { name: 'Next.js', icon: 'nextjs' },
-      { name: 'Node.js', icon: 'nodejs' },
-      { name: 'Tailwind CSS', icon: 'tailwind' },
-      { name: 'Vite', icon: 'vite' },
+      { name: 'Vue.js', icon: 'nodejs' },
+      { name: 'Node.js', icon: 'tailwind' },
+      { name: 'Express.js', icon: 'vite' },
+      { name: 'Nest.js', icon: 'vite' },
+      { name: 'Nuxt.js', icon: 'vite' },
+      { name: 'MongoDB', icon: 'vite' },
+      { name: 'MySql', icon: 'vite' },
+      { name: 'PostgreSql', icon: 'vite' },
+      { name: 'Supabase', icon: 'vite' },
+      { name: 'Typescript', icon: 'vite' },
+      { name: 'Prisma', icon: 'vite' },
+      { name: 'Mongoose', icon: 'vite' },
+      { name: 'Sequelize', icon: 'vite' },
+      { name: 'AWS', icon: 'vite' },
+      { name: 'GraphQl', icon: 'vite' },
+      { name: 'Docker', icon: 'vite' },
+      { name: 'Tailwind CSS', icon: 'vite' },
+      { name: 'Redux', icon: 'vite' },
+      { name: 'Firebase Cloud Messaging', icon: 'vite' },
+      { name: 'Socket.IO', icon: 'vite' },
+
     ],
   },
   projects: {
@@ -208,8 +227,14 @@ const webData = {
 // ============================================================
 // MAIN WEB DEVELOPMENT SERVICE PAGE
 // ============================================================
+
 const ServiceWeb = () => {
   const data = webData
+
+  // Portfolio se sirf 'Web Development' category ke projects nikalo
+  const webProjects = portfolioProjects.filter(
+    (project) => project.tab === 'Web Development'
+  )
 
   return (
     <>
@@ -263,7 +288,7 @@ const ServiceWeb = () => {
         gradientWord={data.projects.gradientWord}
         subtitleEnd={data.projects.subtitleEnd}
         description={data.projects.description}
-        projects={data.projects.projects}
+        projects={webProjects}
       />
 
       {/* Benefits Section */}

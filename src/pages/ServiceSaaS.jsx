@@ -10,6 +10,7 @@ import ServiceProcess from '../Components/ServiceProcess'
 import ServiceTools from '../Components/ServiceTools'
 import ServiceProjects from '../Components/ServiceProjects'
 import ServiceBenefits from '../Components/ServiceBenefits'
+import { portfolioProjects } from '../data/portfolioProjects'
 import { CtaSection } from './Home'
 
 // ============================================================
@@ -90,6 +91,7 @@ const saasData = {
     description: 'We use industry-leading frameworks, cloud platforms, databases, and development tools to build secure, scalable, and high-performance SaaS applications.',
     tools: [
       { name: 'React', icon: 'react' },
+      { name: 'Next.js', icon: 'react' },
       { name: 'Node.js', icon: 'nodejs' },
       { name: 'PostgreSQL', icon: 'postgresql' },
       { name: 'Stripe', icon: 'stripe' },
@@ -179,6 +181,10 @@ const saasData = {
 const ServiceSaaS = () => {
   const data = saasData
 
+  const saasProjects = portfolioProjects.filter(
+    (project) => project.tab === 'SaaS Development'
+  )
+
   return (
     <>
       {/* Hero Section */}
@@ -231,7 +237,7 @@ const ServiceSaaS = () => {
         gradientWord={data.projects.gradientWord}
         subtitleEnd={data.projects.subtitleEnd}
         description={data.projects.description}
-        projects={data.projects.projects}
+        projects={saasProjects}
       />
 
       {/* Benefits Section */}

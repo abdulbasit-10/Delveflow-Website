@@ -10,6 +10,7 @@ import ServiceProcess from '../Components/ServiceProcess'
 import ServiceTools from '../Components/ServiceTools'
 import ServiceProjects from '../Components/ServiceProjects'
 import ServiceBenefits from '../Components/ServiceBenefits'
+import { portfolioProjects } from '../data/portfolioProjects'
 import { CtaSection } from './Home'
 
 // ============================================================
@@ -123,7 +124,12 @@ const aiData = {
       { name: 'Python', icon: 'python' },
       { name: 'TensorFlow', icon: 'tensorflow' },
       { name: 'LangChain', icon: 'langchain' },
-      { name: 'AWS AI', icon: 'aws' },
+      { name: 'PyTorch', icon: 'aws' },
+      { name: 'Hugging Face', icon: 'aws' },
+      { name: 'NumPy', icon: 'aws' },
+      { name: 'Pandas', icon: 'aws' },
+      { name: 'SciPy', icon: 'aws' },
+      { name: 'Google Vertex AI', icon: 'aws' },
     ],
   },
   projects: {
@@ -209,6 +215,10 @@ const aiData = {
 const ServiceAI = () => {
   const data = aiData
 
+  const aiProjects = portfolioProjects.filter(
+    (project) => project.tab === 'AI Solutions'
+  )
+
   return (
     <>
       {/* Hero Section */}
@@ -261,7 +271,7 @@ const ServiceAI = () => {
         gradientWord={data.projects.gradientWord}
         subtitleEnd={data.projects.subtitleEnd}
         description={data.projects.description}
-        projects={data.projects.projects}
+        projects={aiProjects}
       />
 
       {/* Benefits Section */}

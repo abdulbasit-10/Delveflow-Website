@@ -10,6 +10,7 @@ import ServiceProcess from '../Components/ServiceProcess'
 import ServiceTools from '../Components/ServiceTools'
 import ServiceProjects from '../Components/ServiceProjects'
 import ServiceBenefits from '../Components/ServiceBenefits'
+import { portfolioProjects } from '../data/portfolioProjects'
 import { CtaSection } from './Home'
 
 // ============================================================
@@ -92,6 +93,7 @@ items: [
       { name: 'Swift', icon: 'swift' },
       { name: 'Kotlin', icon: 'kotlin' },
       { name: 'Firebase', icon: 'firebase' },
+      { name: 'GraphQL', icon: 'graphql'}
     ],
   },
   projects: {
@@ -177,6 +179,9 @@ items: [
 const ServiceApp = () => {
   const data = appData
 
+   const appProjects = portfolioProjects.filter(
+    (project) => project.tab === 'App Development'
+  )
   return (
     <>
       {/* Hero Section */}
@@ -229,7 +234,7 @@ const ServiceApp = () => {
         gradientWord={data.projects.gradientWord}
         subtitleEnd={data.projects.subtitleEnd}
         description={data.projects.description}
-        projects={data.projects.projects}
+        projects={appProjects}
       />
 
       {/* Benefits Section */}

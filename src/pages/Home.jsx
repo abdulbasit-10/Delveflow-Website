@@ -372,7 +372,7 @@ const TestimonialSection = () => {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_40%,rgba(56,107,223,0.12),transparent_45%),radial-gradient(circle_at_85%_55%,rgba(255,197,92,0.16),transparent_45%)]"/>
 
       {/* Fixed height container - increased min height */}
-      <div className="relative mx-auto max-w-5xl min-h-[500px]">
+      <div className="relative mx-auto max-w-4xl min-h-[500px]">
         <div className="mx-auto max-w-2xl text-center">
           <p className="mx-auto mb-4 inline-block border-b-2 border-[#0b3765] pb-1 text-[13px] font-bold uppercase tracking-wide text-[#0b3765]">
             Testimonial
@@ -392,10 +392,10 @@ const TestimonialSection = () => {
         </div>
 
         {/* Fixed height row */}
-        <div className="mt-14 flex flex-col items-center gap-8 sm:flex-row sm:items-stretch h-[320px] sm:h-[280px]">
-          
+        <div className="mt-14 flex flex-col items-center gap-8 sm:flex-row sm:items-stretch sm:h-[280px]">          
           {/* Photo Stack - Fixed height */}
-          <div className="flex shrink-0 flex-row gap-4 sm:flex-col sm:justify-center h-[80px] sm:h-[260px]">
+          {/* Photo Stack - Fixed height, buttons scale instead of resize */}
+          <div className="flex shrink-0 flex-row items-center gap-4 sm:flex-col sm:justify-center h-[80px] sm:h-[260px]">
             {testimonials.map((t, index) => {
               const isActive = index === active
               return (
@@ -404,10 +404,10 @@ const TestimonialSection = () => {
                   type="button"
                   onClick={() => handleManualSelect(index)}
                   aria-label={`Show testimonial from ${t.name}`}
-                  className={`shrink-0 overflow-hidden rounded-2xl transition-all duration-300 ${
+                  className={`h-14 w-14 shrink-0 origin-center overflow-hidden rounded-2xl transition-all duration-300 sm:h-20 sm:w-20 ${
                     isActive
-                      ? 'h-20 w-20 sm:h-28 sm:w-28 border-2 border-transparent bg-gradient-to-br from-[#38B9DF] to-[#d4bb15] p-[3px] shadow-[0_10px_25px_rgba(56,185,223,0.3)]'
-                      : 'h-14 w-14 sm:h-20 sm:w-20 border border-[#e3e7ee] opacity-70 hover:opacity-100'
+                      ? 'scale-[1.4] border-2 border-transparent bg-gradient-to-br from-[#38B9DF] to-[#d4bb15] p-[3px] opacity-100 shadow-[0_10px_25px_rgba(56,185,223,0.3)]'
+                      : 'scale-100 border border-[#e3e7ee] opacity-70 hover:opacity-100'
                   }`}
                 >
                   <img
@@ -421,19 +421,19 @@ const TestimonialSection = () => {
           </div>
 
           {/* Quote Card - static text block to match the original style */}
-          <div className="relative h-[250px] flex-1 overflow-hidden rounded-2xl bg-gradient-to-br from-[#38B9DF] via-[#38B9DF]/30 to-[#d4bb15] p-[2px] sm:h-[280px]">
+          <div className="relative min-h-[280px] flex-1 rounded-2xl bg-gradient-to-br from-[#38B9DF] via-[#38B9DF]/30 to-[#d4bb15] p-[2px] sm:h-[280px] sm:min-h-0">
             <div className="flex h-full w-full flex-col justify-between rounded-2xl bg-gradient-to-br from-[#f8fcf9] to-[#eef4fb] px-5 py-6 sm:px-9 sm:py-8">
               <div className="relative">
                 <div className="pointer-events-none absolute right-6 top-2 select-none font-serif text-[80px] leading-none text-[#0e2547]/10 sm:text-[110px]">
                   "
                 </div>
 
-                <p className="relative max-w-xl pr-4 text-[14px] leading-6 text-[#333333] sm:text-[15px] sm:leading-7">
+                <p className="relative max-w-xl pr-4 text-[13.5px] leading-6 text-[#333333] line-clamp-6 sm:text-[15px] sm:leading-7 sm:line-clamp-none">
                   "{current.quote}"
                 </p>
               </div>
 
-              <div className="mt-4 flex items-end justify-between gap-4 border-t border-dashed border-[#d7e5f2] pt-4 sm:mt-6 sm:pt-5">
+              <div className="mt-4 flex shrink-0 items-end justify-between gap-4 border-t border-dashed border-[#d7e5f2] pt-4 sm:mt-6 sm:pt-5">
                 <div>
                   <p className="text-[14px] font-bold text-[#06172b] sm:text-[15px]">{current.name}</p>
                   <p className="text-[12px] text-[#6b7280] sm:text-[13px]">{current.role}</p>

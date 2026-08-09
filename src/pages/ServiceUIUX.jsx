@@ -9,6 +9,7 @@ import ServiceProcess from "../Components/ServiceProcess"
 import ServiceTools from "../Components/ServiceTools"
 import ServiceProjects from "../Components/ServiceProjects"
 import ServiceBenefits from "../Components/ServiceBenefits"
+import { portfolioProjects } from '../data/portfolioProjects'
 import { CtaSection } from "./Home"
 
 // ============================================================
@@ -89,10 +90,14 @@ const uiuxData = {
     description: 'We use industry-leading design and collaboration tools to create pixel-perfect interfaces and seamless workflows.',
     tools: [
       { name: 'Figma', icon: 'figma' },
-      { name: 'Figma', icon: 'figma' },
-      { name: 'Figma', icon: 'figma' },
-      { name: 'Figma', icon: 'figma' },
-      { name: 'Figma', icon: 'figma' },
+      { name: 'Adobe XD', icon: 'figma' },
+      { name: 'Sketch', icon: 'figma' },
+      { name: 'InVision', icon: 'figma' },
+      { name: 'Photoshop', icon: 'figma' },
+      { name: 'Canva', icon: 'figma' },
+      { name: 'Illustrator', icon: 'figma' },
+      { name: 'Principle', icon: 'figma' },
+      { name: 'Framer', icon: 'figma' },
     ],
   },
   projects: {
@@ -178,6 +183,10 @@ const uiuxData = {
 const ServiceUIUX = () => {
   const data = uiuxData
 
+  const uiuxProjects = portfolioProjects.filter(
+    (project) => project.tab === 'UIUX Designing'
+  )
+
   return (
     <>
       {/* Hero Section */}
@@ -230,7 +239,7 @@ const ServiceUIUX = () => {
         gradientWord={data.projects.gradientWord}
         subtitleEnd={data.projects.subtitleEnd}
         description={data.projects.description}
-        projects={data.projects.projects}
+        projects={uiuxProjects}
       />
 
       {/* Benefits Section */}

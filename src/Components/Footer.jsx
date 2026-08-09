@@ -177,9 +177,9 @@ const Footer = () => {
         <div className="mx-auto flex w-[min(1180px,calc(100%-36px))] flex-col items-center justify-between gap-3 py-6 text-[13px] text-white/50 sm:flex-row">
           <p>© {currentYear} Delve Flow. All rights reserved.</p>
           <div className="flex items-center gap-5">
-            <a href="#/terms" className="transition hover:text-white/80">Terms of Service</a>
-            <a href="#/privacy" className="transition hover:text-white/80">Privacy Policy</a>
-            <a href="#/cookies" className="transition hover:text-white/80">Cookie Policy</a>
+            <a href="/terms" className="transition hover:text-white/80">Terms of Service</a>
+            <a href="/privacy" className="transition hover:text-white/80">Privacy Policy</a>
+            <a href="/cookies" className="transition hover:text-white/80">Cookie Policy</a>
           </div>
         </div>
       </div>

@@ -10,6 +10,7 @@ import ServiceProcess from '../Components/ServiceProcess'
 import ServiceTools from '../Components/ServiceTools'
 import ServiceProjects from '../Components/ServiceProjects'
 import ServiceBenefits from '../Components/ServiceBenefits'
+import { portfolioProjects } from '../data/portfolioProjects'
 import { CtaSection } from './Home'
 
 // ============================================================
@@ -120,6 +121,7 @@ const cloudData = {
     description: 'We leverage industry-leading cloud platforms, DevOps tools, and automation technologies to build secure infrastructure, streamline deployments, and ensure reliable application performance at every stage.',
     tools: [
       { name: 'AWS', icon: 'aws' },
+      { name: 'Azure', icon: 'aws' },
       { name: 'Docker', icon: 'docker' },
       { name: 'Kubernetes', icon: 'kubernetes' },
       { name: 'GitHub Actions', icon: 'github' },
@@ -209,6 +211,10 @@ const cloudData = {
 const ServiceCloud = () => {
   const data = cloudData
 
+  const cloudProjects = portfolioProjects.filter(
+    (project) => project.tab === 'Cloud And DevOps'
+  )
+
   return (
     <>
       {/* Hero Section */}
@@ -261,7 +267,7 @@ const ServiceCloud = () => {
         gradientWord={data.projects.gradientWord}
         subtitleEnd={data.projects.subtitleEnd}
         description={data.projects.description}
-        projects={data.projects.projects}
+        projects={cloudProjects}
       />
 
       {/* Benefits Section */}
