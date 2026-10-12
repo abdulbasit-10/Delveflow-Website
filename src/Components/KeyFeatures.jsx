@@ -1,4 +1,4 @@
-import React from 'react'
+
 // Import the custom PNG assets
 //web icons
 import CustomDevIcon from "../assets/custom_development.png"

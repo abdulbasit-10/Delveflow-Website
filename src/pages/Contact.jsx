@@ -2,7 +2,7 @@
 // File: src/pages/Contact.jsx
 
 // import React, { useState } from 'react'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Facebook_icon from "../assets/facebook_icon.png"
 import Insta_icon from "../assets/instagram_icon.png"
 import Linkedin_icon from "../assets/linkedin_icon.png"
@@ -121,27 +121,27 @@ const infoIcons = {
 }
 
 // ===== SOCIAL ICONS =====
-const socialIcons = {
-  linkedin: (
-    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-      <rect x="3.5" y="3.5" width="17" height="17" rx="3" stroke="#001530" strokeWidth="1.8" />
-      <circle cx="8" cy="9" r="1" fill="#001530" />
-      <path d="M8 11.5v5M16 16.5v-3a2 2 0 00-4 0v3M12 11.5v5" stroke="#001530" strokeWidth="1.8" strokeLinecap="round" />
-    </svg>
-  ),
-  facebook: (
-    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-      <path d="M14 8.5h2V5.5h-2c-2 0-3.5 1.5-3.5 3.5v2H8.5v3H10.5V19h3v-6h2l.5-3H13.5v-1.5c0-.5.5-1 1-1z" stroke="#001530" strokeWidth="1.6" strokeLinejoin="round" />
-    </svg>
-  ),
-  instagram: (
-    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-      <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="#001530" strokeWidth="1.8" />
-      <circle cx="12" cy="12" r="4" stroke="#001530" strokeWidth="1.8" />
-      <circle cx="17.2" cy="6.8" r="1" fill="#001530" />
-    </svg>
-  ),
-}
+// const socialIcons = {
+//   linkedin: (
+//     <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+//       <rect x="3.5" y="3.5" width="17" height="17" rx="3" stroke="#001530" strokeWidth="1.8" />
+//       <circle cx="8" cy="9" r="1" fill="#001530" />
+//       <path d="M8 11.5v5M16 16.5v-3a2 2 0 00-4 0v3M12 11.5v5" stroke="#001530" strokeWidth="1.8" strokeLinecap="round" />
+//     </svg>
+//   ),
+//   facebook: (
+//     <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+//       <path d="M14 8.5h2V5.5h-2c-2 0-3.5 1.5-3.5 3.5v2H8.5v3H10.5V19h3v-6h2l.5-3H13.5v-1.5c0-.5.5-1 1-1z" stroke="#001530" strokeWidth="1.6" strokeLinejoin="round" />
+//     </svg>
+//   ),
+//   instagram: (
+//     <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+//       <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="#001530" strokeWidth="1.8" />
+//       <circle cx="12" cy="12" r="4" stroke="#001530" strokeWidth="1.8" />
+//       <circle cx="17.2" cy="6.8" r="1" fill="#001530" />
+//     </svg>
+//   ),
+// }
 
 // ===== CONTACT SECTION =====
 const ContactSection = () => {

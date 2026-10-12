@@ -1,10 +1,10 @@
 // ===== CAREER PAGE =====
 // File: src/pages/Career.jsx
 
-import React from 'react'
+// import React from 'react'
 import Yellow_circle from "../assets/Yellow_circle.png"
 import Career_hero_img from "../assets/Career_hero.png"
-import roundedArc from '../assets/rounded_image.png'
+// import roundedArc from '../assets/rounded_image.png'
 import { CtaSection } from '../pages/Home.jsx'
 import Upload_icon from '../assets/file.png'
 import Handshake_icon from '../assets/handshake.png'

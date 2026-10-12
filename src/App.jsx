@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
+import { BrowserRouter, useLocation } from 'react-router-dom'
 import Header from './Components/Header.jsx'
 import Footer from './Components/Footer.jsx'
 import Home from './pages/Home.jsx'
@@ -99,7 +99,6 @@ const ScrollToTop = () => {
 // Main App Content with routing logic
 const AppContent = () => {
   const location = useLocation()
-  const navigate = useNavigate()
   const [currentPage, setCurrentPage] = useState('home')
 
   useEffect(() => {
@@ -133,9 +132,6 @@ const AppContent = () => {
   }
 
   const Page = getPageComponent()
-  const path = location.pathname.replace('/', '') || 'home'
-  const [, slug] = path.split('/')
-  const currentService = services.find((service) => service.slug === slug)
 
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_15%_12%,rgba(56,185,223,0.13),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f2f8ff_45%,#ffffff_100%)] text-[#0a1b2f]">

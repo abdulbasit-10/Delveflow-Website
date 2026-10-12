@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const impactStats = [
   { value: "15+", label: "Projects Delivered", icon: "projects" },

@@ -3,7 +3,6 @@
 // ============================================================
 // File: src/Components/ServiceProjects.jsx
 
-import React from 'react'
 
 const defaultProjects = [
   {

@@ -3,7 +3,6 @@
 // ============================================================
 // File: src/pages/Portfolio.jsx
 
-import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import ServiceHero from '../Components/ServiceHero'
 import ServiceProjects from '../Components/ServiceProjects'

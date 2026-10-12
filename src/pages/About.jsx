@@ -1,7 +1,7 @@
 // ===== ABOUT PAGE =====
 // File: src/pages/About.jsx
 
-import React from 'react'
+// import React from 'react'
 import abdulBasitPhoto from '../assets/abdul-basit.jpg'
 import arifaNaveedPhoto from '../assets/arifa-naveed.jpeg'
 import warishaAsadPhoto from '../assets/warisha-asad.jpeg'

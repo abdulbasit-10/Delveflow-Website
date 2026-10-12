@@ -16,16 +16,16 @@ export const projectCategories = [
 
 
 
-const makeCards = (tab, category, titlePrefix) =>
-  Array.from({ length: 4 }, (_, i) => ({
-    title: `${titlePrefix} ${i + 1}`,
-    category,
-    tab,
-    image: null,
-    link: '#',
-    description:
-      'A sleek, real-time trading platform built for speed and intelligence. Traders get live market data, smart analytics, and seamless execution empowering smarter decisions and higher profits.',
-  }))
+// const makeCards = (tab, category, titlePrefix) =>
+//   Array.from({ length: 4 }, (_, i) => ({
+//     title: `${titlePrefix} ${i + 1}`,
+//     category,
+//     tab,
+//     image: null,
+//     link: '#',
+//     description:
+//       'A sleek, real-time trading platform built for speed and intelligence. Traders get live market data, smart analytics, and seamless execution empowering smarter decisions and higher profits.',
+//   }))
 
 // export const portfolioProjects = [
 //   // ...makeCards('UI/UX Design', 'Fintech', 'UI/UX Project'),

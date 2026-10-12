@@ -53,7 +53,7 @@ const socialLinks = [
 
 {
   label: 'Linkedin',
-  href: 'https://www.instagram.com/delveflow?igsh=MXh0bGtibTJqcDZucg==',
+  href: 'https://www.linkedin.com/company/delveflow/',
   icon: (
     <img 
       src={Linkedin_icon} 

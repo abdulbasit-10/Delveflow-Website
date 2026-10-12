@@ -1,5 +1,5 @@
 // src/components/HeroSection.jsx
-import React from 'react'
+
 
 // Default image import
 import defaultHeroImage from '../assets/about_hero.png'

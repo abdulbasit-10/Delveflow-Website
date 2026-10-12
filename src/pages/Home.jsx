@@ -1,15 +1,15 @@
 // ===== IMPORTS =====
-import React, { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import web_icon from '../assets/webdevelopment.png'
-import AI_icon from '../assets/icon-robot.png'
+// import AI_icon from '../assets/icon-robot.png'
 import UI_icon from '../assets/uiux.svg'
 import SAAS_icon from '../assets/saas.png'
 import Team_icon from "../assets/team_icon.png"
 import Delivery_icon from "../assets/delivery.png"
 import Quality_icon from "../assets/quality.png"
 import Support_icon from "../assets/support.png"
-import Bg_icon from "../assets/testibg.png"
+// import Bg_icon from "../assets/testibg.png"
 import Client1 from "../assets/client1.png"
 import Client2 from "../assets/client2.png"
 import Client3 from "../assets/client3.png"
@@ -41,12 +41,12 @@ const heroStats = [
 ]
 
 // ===== TRACK STATS (for the track record panel) =====
-const trackStats = [
-  ['check', '15+', 'Projects Delivered', 'Successfully completed'],
-  ['clock', '2+', 'Years Experience', 'In the industry'],
-  ['globe', '20+', 'Global Clients', 'Across 20 countries'],
-  ['badge', '100%', 'Client Satisfaction', 'And growing'],
-]
+// const trackStats = [
+//   ['check', '15+', 'Projects Delivered', 'Successfully completed'],
+//   ['clock', '2+', 'Years Experience', 'In the industry'],
+//   ['globe', '20+', 'Global Clients', 'Across 20 countries'],
+//   ['badge', '100%', 'Client Satisfaction', 'And growing'],
+// ]
 
 // ===== ICONS (for Why Choose Us) =====
 const whyChooseIcons = {
@@ -530,7 +530,7 @@ const CtaSection = () => {
   )
 }
 // ===== HOME COMPONENT =====
-const Home = ({ services }) => {
+const Home = () => {
   const navigate = useNavigate()
 
   const handleServiceCardClick = (serviceId) => {
