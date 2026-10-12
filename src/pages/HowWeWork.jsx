@@ -1,7 +1,7 @@
 import React from 'react'
 import { CtaSection } from '../pages/Home.jsx'
 import Career_hero_img from "../assets/howweworkhero.png"
-import Yellow_circle from "../assets/Yellow_circle.png"
+import Yellow_circle from "../assets/yellow_circle.png"
 import { Search, ClipboardList, Headphones, ShieldCheck, Lightbulb } from 'lucide-react'
 import { Pencil, Code2, Eye, Trophy } from 'lucide-react'
 
