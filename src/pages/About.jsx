@@ -423,8 +423,8 @@ const ValuesSection = () => {
 // SECTION 5: EXPERTS SECTION
 // ============================================================
 const experts = [
-  ['WA', 'Warisha Asad', 'CEO & Founder', 'Visionary leader with 3+ years in Tech Industry', 'https://www.linkedin.com/in/warisha-asad-6259203b0/', warishaAsadPhoto, 'center'],
-  ['AB', 'Abdul Basit', 'Cofounder', 'Shaping businesses with executive foresight.', 'https://www.linkedin.com/in/abdul-basit-1039b522b/', abdulBasitPhoto, 'center'],
+  ['WA', 'Warisha Asad', 'CEO & Co-Founder', 'Visionary leader with 3+ years in Tech Industry', 'https://www.linkedin.com/in/warisha-asad-6259203b0/', warishaAsadPhoto, 'center'],
+  // ['AB', 'Abdul Basit', 'Cofounder', 'Shaping businesses with executive foresight.', 'https://www.linkedin.com/in/abdul-basit-1039b522b/', abdulBasitPhoto, 'center'],
   ['AN', 'Arifa Naveed', 'Chief Operation Officer', 'Shaping businesses with executive foresight.', 'https://www.linkedin.com/in/arifa-naveed-2a79773a5/', arifaNaveedPhoto, 'center'],
 ]
 
@@ -453,7 +453,7 @@ const ExpertsSection = () => {
           </p> */}
         </div>
 
-        <div className="mx-auto grid max-w-[900px] gap-6 md:grid-cols-3">
+        <div className="mx-auto grid max-w-[600px] gap-6 md:grid-cols-2">
           {experts.map(([initials, name, role, text, linkedinUrl, photo, photoPosition]) => (
             <article
               className="group overflow-hidden rounded-xl border-2 border-[#d7e5f2] bg-white transition duration-300 hover:-translate-y-1 hover:border-[#0b3765] hover:shadow-[0_20px_48px_rgba(8,36,67,0.16)]"
