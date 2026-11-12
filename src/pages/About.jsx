@@ -2,7 +2,7 @@
 // File: src/pages/About.jsx
 
 // import React from 'react'
-import abdulBasitPhoto from '../assets/abdul-basit.jpg'
+// import abdulBasitPhoto from '../assets/abdul-basit.jpg'
 import arifaNaveedPhoto from '../assets/arifa-naveed.jpeg'
 import warishaAsadPhoto from '../assets/warisha-asad.jpeg'
 import Hero_Image from '../assets/about_hero.png'
